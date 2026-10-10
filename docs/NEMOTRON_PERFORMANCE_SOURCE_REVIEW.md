@@ -1,0 +1,31 @@
+# Nemotron performance: review of the supplied comparison
+
+**Project:** Super Sovereign Source LLM IP  
+**Checked:** October 10, 2026  
+**Selected model:** Nemotron 3 Ultra; this review does not change that selection.
+
+The user supplied Matthieu Morel's [BestAIFor comparison of Nemotron 3 Super and Qwen 3.5](https://www.bestaifor.com/blog/nemotron-3-super-vs-qwen-3-5-when-speed-and-accuracy-point-in-opposite-directions), published March 19, 2026 and updated August 18, 2026. Its useful design lesson is to evaluate completion quality, retries and total cost together. We use that framing to improve the Ultra evaluation plan, while checking technical claims against primary sources.
+
+The article concerns **Super**, whereas the project selected **Ultra**. Its benchmark results, hardware examples and licensing discussion cannot be transferred between those releases. Qwen appears here as a published comparison reference, not a selected project model. This performance review also provides no evidence that resolves Ultra's recorded upstream-ancestry conflict.
+
+## Findings to retain or qualify
+
+| Topic | Primary evidence and project treatment |
+| --- | --- |
+| Peak throughput | NVIDIA reports **up to 7.5×** Super throughput over Qwen3.5-122B for **8K input / 64K output**. Its comparison uses B200 GPUs, Super NVFP4 versus Qwen BF16, and the better of vLLM/TRT-LLM for each model. This is a specific deployment comparison, not an isolated architecture effect or an Ultra speed guarantee. [Report, Figure 1](https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Super-Technical-Report.pdf). |
+| Coding accuracy and model sizes | The article's headline combines Super with the larger Qwen 397B result, while its speed comparison uses Qwen 122B. NVIDIA's OpenHands comparison reports **60.47 for Super and 66.40 for Qwen3.5-122B-A10B**, a calculated **5.93 percentage-point gap**. Keep checkpoint and harness together. These vendor-reported benchmark scores are not measured SIP success rates or independent per-step failure probabilities. [Super card, benchmarks](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16#benchmarks). |
+| Hosted speed | The article cites a roughly threefold API advantage. On this review date, its linked Artificial Analysis page displays **150 versus 130 output tokens/second**. That live snapshot does not reproduce the historical values or establish equal serving conditions. Record provider, date, workload and settings instead of adopting a permanent multiplier. [Artificial Analysis comparison](https://artificialanalysis.ai/models/comparisons/nvidia-nemotron-3-super-120b-a12b-vs-qwen3-5-122b-a10b). |
+| Hardware floor | An eight-H100 requirement is not universal across precision and hardware. NVIDIA's current Super BF16 instructions also describe **two B200/B300 GPUs** and point to smaller-footprint NVFP4 deployments. These are inference configurations, not Ultra training estimates. Use the selected artifact's measured capacity. [Super deployment instructions](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16#vllm). |
+| License notices | The article incorrectly describes Apache-2.0 redistribution as having no attribution requirements. Section 4 requires the license, applicable source notices, notices of modifications and applicable NOTICE attribution. Super's card identifies NVIDIA's Nemotron license; the selected Ultra uses OpenMDW-1.1. Preserve the exact release's terms. [Apache-2.0 §4](https://www.apache.org/licenses/LICENSE-2.0), [Super card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16#licenseterms-of-use), [Ultra card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16#licenseterms-of-use). |
+| Architectural explanation | Super includes both Mamba and attention layers; Qwen3.5 also combines linear and full attention. A simple linear-versus-quadratic contrast cannot explain the whole comparison. The article's numerical ONNX slowdown claims are not established by the primary evidence reviewed here and are not used in sizing. [NVIDIA architecture](https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/), [Qwen architecture](https://huggingface.co/Qwen/Qwen3.5-397B-A17B#model-overview). |
+
+## Application to the Ultra evaluation plan
+
+The following is a project-designed evaluation method, not a result established by the article. Apply it first to Ultra BF16 and NVFP4 using the same admitted sources, retrieval snapshot, tools and frozen SIP tasks.
+
+1. **Freeze acceptance criteria before testing.** A verified outcome must satisfy task correctness, authorized source access, supported citations and valid tool behavior. Measure answer coverage, appropriate abstention and erroneous abstention separately. Preserve the specification's attribution and privacy requirements when comparing faster settings.
+2. **Measure complete attempts.** Record time to first token and p50/p95 completion latency, output and reasoning tokens, tool calls, retries, review effort, peak memory and errors. Report first-attempt success and final success within a predeclared retry limit. Count failed attempts in both cost and time.
+3. **Compare cost per verified outcome.** Divide the total attributable inference, retry, tool and validation cost by the number of accepted outcomes. Include paid human review where used, disclose shared-infrastructure allocation, and avoid counting retry costs twice. With zero accepted outcomes, report the metric as undefined alongside total spend and failures.
+4. **Preserve the experiment conditions.** Pin model revision, precision, runtime, GPU configuration, concurrency, context/output budgets, reasoning mode, cache state and pricing date. Report counts and uncertainty by task class. A hosted API comparison is a deployment comparison unless infrastructure is controlled.
+
+No model was downloaded or benchmarked for this review. The [architecture](SOLUTION_ARCHITECTURE.md#performance-and-cost-evaluation) and [specification](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) adopt this evaluation method; the [index](USA_SOVEREIGN_AI_INDEX.md) retains its ten parameters and current Ultra selection.
