@@ -2,7 +2,9 @@
 
 **Date:** October 10, 2026. **Status:** Proposed architecture for implementation specification v0.5.
 
-Build the SIP platform with a Rust and Axum application core, Python services using Pydantic and Pydantic AI, Prefect for background workflows, and PostgreSQL as the authoritative store. Use NVIDIA Nemotron as the model family for local inference and subsequent training. The first main training target is **Nemotron 3 Nano 30B-A3B BF16**, adapted with supervised LoRA fine-tuning on admitted SIP data.
+Build the SIP platform with a Rust and Axum application core, Python services using Pydantic and Pydantic AI, Prefect for background workflows, and PostgreSQL as the authoritative store. The original model study selected **Nemotron 3 Nano 30B-A3B BF16** for supervised LoRA fine-tuning on admitted SIP data.
+
+**Model selection addendum — October 10, 2026:** the [USA Sovereign Source AI index](USA_SOVEREIGN_AI_INDEX.md) supersedes that selection under the new USA-only, no-Chinese-model requirement. The strict working screen includes base checkpoints and training teachers. Nano's [official card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16) discloses Qwen use, so this checkpoint is held. The Nemotron profiles, recipes and milestones below are retained research alternatives, not approved execution targets. Other checkpoints remain pending their own ancestry and rights review. Prioritize Ai2 or Marin training software with a newly admitted corpus for the from-scratch research path; no replacement model is approved.
 
 This design serves the [SIP implementation specification](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md): voluntary syndicates, scoped permissions, reviewed attribution and reproducible contributor accounting. M0–M4 remain a local application pilot using deterministic model and payment adapters. GPU experiments follow separately. Component responsibilities, workload limits and rollout gates below are project design choices; linked documentation supports the underlying technology capabilities.
 

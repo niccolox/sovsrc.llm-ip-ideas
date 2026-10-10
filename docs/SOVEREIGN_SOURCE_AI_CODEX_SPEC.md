@@ -10,10 +10,13 @@
 - **Status:** Proposed implementation specification; no model, funding, licenses or production deployment implied.
 - **Source:** Adapted from the Sovereign Source AI project specification v0.1 and implementation specifications v0.2–v0.4. This version adds the proposed Sovereign Source Super Intellectual Property license and an opt-in syndicate marketplace to the selected Python, Pydantic, Pydantic AI, Prefect, Rust, Axum, PostgreSQL and Nemotron architecture. The original v0.1 document remains a historical reference; this specification governs the current project scope.
 - **Architecture:** [Solution architecture and Nemotron training plan](SOLUTION_ARCHITECTURE.md), researched against primary documentation on 2026-10-10.
+- **Model selection addendum:** [USA Sovereign Source AI index](USA_SOVEREIGN_AI_INDEX.md), 2026-10-10. Ten US lab/provider candidates and ten open-source paths compared across ten parameters.
 - **Licensing:** [SS-SIP-0.1 and marketplace drafts](../licenses/README.md). Custom proposals, not OSI-approved or automatically applied to repository or third-party material.
 - **Policy reference date:** 2026-10-10, carried forward from v0.1. Revalidate policy applicability before making a production compliance claim.
 
 `MUST` means a required acceptance condition. `SHOULD` means a recommended default. Royalty rates, staffing, schedules and performance targets are proposed project choices, not statutory requirements.
+
+**Current model gate:** use US-led candidates and exclude Chinese-developed models. This research applies a strict working interpretation that also excludes Chinese base checkpoints and training teachers. Unknown ancestry MUST remain pending. The previously selected Nemotron 3 Nano checkpoint is held because its official card discloses Qwen use; references to Nemotron below describe a retained research plan, not an approved model. The index takes precedence over those model-selection references. Review tokenizers, synthetic data, filtering models, reward models and other learned dependencies as part of the release manifest. This project selection rule does not amend public open-source license grants.
 
 ## 1. Objective
 

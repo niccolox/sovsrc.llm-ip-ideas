@@ -7,7 +7,7 @@
 
 Sovereign Source AI should combine permissioned model development with evidence-based attribution, content rewards and contractual royalties for works, ideas, contributions and documented influences. The most useful distinction in the frontier-lab terms is between ownership of submitted material, permission to reuse it, permission to train another model, and an obligation to compensate its contributors. Those rights and obligations must be recorded separately.
 
-The recommended direction is to retain the project's Nemotron adaptation target, subject to review of the exact checkpoint license, while building an independent rights registry, contribution review process and rewards ledger around it. This can demonstrate permission and compensation for SIP-added material. It cannot establish that every upstream training source was enrolled, attributed or paid.
+The original recommendation was to retain the project's Nemotron adaptation target, subject to review of the exact checkpoint license, while building an independent rights registry, contribution review process and rewards ledger around it. The subsequent [USA-only selection index](USA_SOVEREIGN_AI_INDEX.md) supersedes that model recommendation: the proposed Nano checkpoint is held because its card discloses Qwen use. This multinational terms audit remains a reference for rights and contract design. Adding SIP material cannot establish that every upstream training source was enrolled, attributed or paid.
 
 ## Principal findings
 

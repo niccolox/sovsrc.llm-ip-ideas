@@ -12,6 +12,7 @@ SIP expands what the project records, recognizes and rewards through evidence an
 
 | Document | Purpose |
 | --- | --- |
+| [USA Sovereign Source AI index — single-page comparison](docs/usa-sovereign-ai-index.html) ([Markdown](docs/USA_SOVEREIGN_AI_INDEX.md)) | Ten US lab/provider candidates and ten open-source paths across ten parameters, including Berkeley, Stanford and MIT; licenses, ancestry, IP permissions and creator rewards. |
 | [Current project and implementation specification, v0.5](docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) | SIP framework, syndicate marketplace, requirements, architecture, data records, APIs, milestones and acceptance tests. |
 | [Solution architecture and Nemotron training plan](docs/SOLUTION_ARCHITECTURE.md) | Researched stack responsibilities, Rust/Python contracts, Prefect workflows, PostgreSQL isolation, model selection and training gates. |
 | [Frontier lab terms and creator rewards audit](docs/FRONTIER_LAB_IP_AND_CREATOR_REWARDS_AUDIT.md) | Eight organizations compared on IP, training permissions, attribution and compensation, with recommendations for SIP rights and rewards. |
@@ -44,7 +45,7 @@ The accompanying marketplace framework lets syndicates list open material, commi
 
 ## Architecture
 
-The initial product is a research assistant using an approved corpus. It checks permissions, supplies evidence for answers and records eligible contribution use. Nemotron is the target model family for inference and adaptation; a foundation model trained entirely on SIP-admitted data remains a separate research program.
+The initial product is a research assistant using an approved corpus. It checks permissions, supplies evidence for answers and records eligible contribution use. The [US-focused model selection index](docs/USA_SOVEREIGN_AI_INDEX.md) prioritizes auditable training through Ai2 and Stanford-origin Marin/Levanter. A foundation model trained entirely on SIP-admitted data remains a separate research program.
 
 | Technology | Role |
 | --- | --- |
@@ -55,7 +56,7 @@ The initial product is a research assistant using an approved corpus. It checks 
 | PostgreSQL and pgvector | Authoritative records, authorized retrieval, transactional outbox and ledger. |
 | Nemotron, vLLM and NeMo Megatron Bridge | Model inference, model-specific training and evaluated checkpoint export. |
 
-The first main training target is **Nemotron 3 Nano 30B-A3B BF16**, using supervised LoRA adaptation on admitted SIP data. The [solution architecture](docs/SOLUTION_ARCHITECTURE.md) explains checkpoint alternatives, compute requirements and why upstream Nemotron provenance must remain distinct from SIP-added data.
+The previously proposed **Nemotron 3 Nano 30B-A3B BF16** training target is **on hold** under the current no-Chinese-model ancestry screen: its [official card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16) discloses Qwen use. The index applies a strict working interpretation covering base models and training teachers; unknown ancestry remains pending. The [solution architecture](docs/SOLUTION_ARCHITECTURE.md) retains the Nemotron research and compute plan as a held alternative. No replacement checkpoint has been approved.
 
 ```mermaid
 flowchart TD
@@ -155,7 +156,7 @@ Syndicates distribute a contribution's allocation using accepted beneficiary sha
 | M3 | Usage capture, royalty calculations, member allocations, statements and simulated payments. |
 | M4 | Disputes, attribution corrections, marketplace cancellation/delisting, member exit, dissolution, exports and end-to-end verification. |
 | M5 | Commercial integrations, signed licenses and independent review. |
-| M6 | A Nemotron derivative trained on admitted SIP additions, with evaluated exports and disclosed upstream provenance. |
+| M6 | An ancestry-approved model training experiment with admitted SIP data, evaluated exports and disclosed provenance; the Nemotron plan is held pending model selection. |
 | M7 | A frontier candidate that passes capability, rights and safety evaluations. |
 
 The first implementation targets **M0–M4**, using synthetic fixtures and deterministic model and payment adapters. Real payouts, production deployment and large training runs are subsequent work.
