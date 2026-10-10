@@ -7,9 +7,13 @@
 
 Sovereign Source AI should combine permissioned model development with evidence-based attribution, content rewards and contractual royalties for works, ideas, contributions and documented influences. The most useful distinction in the frontier-lab terms is between ownership of submitted material, permission to reuse it, permission to train another model, and an obligation to compensate its contributors. Those rights and obligations must be recorded separately.
 
-The original recommendation was to retain the project's Nemotron adaptation target, subject to review of the exact checkpoint license, while building an independent rights registry, contribution review process and rewards ledger around it. The subsequent [USA-only selection index](USA_SOVEREIGN_AI_INDEX.md) supersedes that model recommendation: the proposed Nano checkpoint is held because its card discloses Qwen use. This multinational terms audit remains a reference for rights and contract design. Adding SIP material cannot establish that every upstream training source was enrolled, attributed or paid.
+The current user-selected target is **Nemotron 3 Ultra**, replacing the earlier Nano and Minitron recommendations. The [USA selection index](USA_SOVEREIGN_AI_INDEX.md) records its conflict with the earlier no-Qwen requirement. This multinational terms audit remains a reference for rights and contract design. Adding SIP material cannot establish that every upstream training source was enrolled, attributed or paid.
+
+The [Nemotron follow-up](NEMOTRON_NO_QWEN_RESEARCH.md) preserves older alternatives and their different licenses. Ultra's reviewed download license is **OpenMDW-1.1**; neither the older NVIDIA Open Model License nor Mini's Community Model License should be substituted for it.
 
 ## Principal findings
+
+The companion [upstream supplier research](UPSTREAM_AI_DATA_SUPPLIERS_RESEARCH.md) examines the companies, rights holders and expert communities supplying these labs, with dated relationship evidence and a directory of industry sources.
 
 1. **Output ownership is a limited allocation between contracting parties.** It does not establish exclusive authorship, clear third-party material, or authorize every downstream use. OpenAI and Anthropic qualify their allocations by applicable law; Google disclaims ownership of generated content while retaining separate use restrictions. [OpenAI content terms](https://openai.com/policies/terms-of-use/), [Anthropic commercial terms, section B](https://www.anthropic.com/legal/commercial-terms), [Gemini generated content terms](https://ai.google.dev/gemini-api/terms).
 2. **Training permission is a separate procurement question.** The reviewed business terms from OpenAI, Anthropic, Google, Grok and Meta restrict competing-model development or output training, with different exceptions. Ownership language is insufficient approval for a Nemotron training dataset. [OpenAI section 3.3 and definitions](https://openai.com/policies/services-agreement/), [Anthropic section D.4](https://www.anthropic.com/legal/commercial-terms), [Gemini use restrictions](https://ai.google.dev/gemini-api/terms), [Grok section 3.2](https://x.ai/legal/terms-of-service-enterprise), [Meta section 10.1](https://dev.meta.ai/legal/terms-of-service).
@@ -38,7 +42,7 @@ Sources are provider terms, official model repositories, program materials and p
 | [Meta](#meta) | Hosted Standard and Contributor Services differ; Llama weights have an independent license. | Llama notices and branding do not establish source-contributor payments. | Pin the access route and model license. |
 | [Mistral](#mistral) | Commercial training exceptions depend on settings, feedback, order forms and preview use. | Royalty-free service grants coexist with separate model licenses. | A paid account alone is an insufficient data-use control. |
 | [DeepSeek](#deepseek) | Hosted terms expressly contemplate distillation; general terms include improvement use and an opt-out. | R1 notices and inherited base licenses must remain intact. | Permission to distill still needs source and privacy review. |
-| [NVIDIA Nemotron](#nvidia-nemotron) | Downloaded weights support local adaptation under the applicable license. | Redistribution notices and litigation-related termination need review. | Retain the target conditionally; disclose upstream provenance limits. |
+| [NVIDIA Nemotron 3 Ultra](#nvidia-nemotron) | Downloaded weights support local adaptation under OpenMDW-1.1. | Notices, litigation termination, third-party rights and ancestry conflict. | Selected target; disclose upstream limits and preserve SIP admission controls. |
 
 The provider sections supply the sources and qualifications for each row. None of these rows is a procurement approval or a conclusion that generated material is free of third-party rights.
 
@@ -106,11 +110,11 @@ R1's repository identifies its code and weights as MIT-licensed and permits dist
 
 ### NVIDIA Nemotron
 
-The selected `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16` card identifies the NVIDIA Nemotron Open Model License and describes upstream data categories, including crawled and synthetic material. It does not represent that those contributors joined SIP. [Official model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16).
+The selected `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16` card identifies **OpenMDW-1.1**. Its upstream data disclosures include Qwen and DeepSeek dependencies; selection does not satisfy the earlier ancestry condition or establish that contributors joined SIP. [Official model card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16).
 
-The license permits commercial use and derivatives, disclaims ownership of outputs, and imposes redistribution and notice conditions. Section 2 terminates the relevant grant for specified patent or copyright litigation alleging infringement by the work or an output. Section 7 includes indemnification obligations, and section 8 permits uncompensated feedback use. [Nemotron license, sections 2–3 and 7–8](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-nemotron-open-model-license/).
+OpenMDW-1.1 permits use and modification subject to retained license/origin notices on distribution. Certain patent or copyright litigation terminates the grant, with a defensive-litigation exception. The agreement imposes no restrictions on outputs and assigns third-party rights clearance to the user. The older Nano license's indemnity and feedback provisions must not be carried over as if they were Ultra's terms. [OpenMDW-1.1 text](https://openmdw.ai/license/1-1/).
 
-**SIP implication:** retain Nemotron as a conditional technical target, not an approved legal conclusion. Review litigation termination and indemnity against the project's role representing creators. Preserve NVIDIA obligations and audit SIP additions separately. A model-weight license cannot retrospectively enroll or compensate the original corpus.
+**SIP implication:** use Ultra as the selected technical target while preserving the ancestry conflict and reviewing the exact grant against the project's role representing creators. Preserve inherited notices and audit SIP additions separately. A model-weight license cannot retrospectively enroll or compensate the original corpus.
 
 ## Rewards and licensing precedents
 
@@ -239,7 +243,7 @@ The following are proposed acceptance conditions for the project's claims, not c
 | Priority | Decision or evidence | Responsible role |
 | --- | --- | --- |
 | Before using a provider | Capture the complete applicable agreement, product policies, region and settings; approve inference, evaluation and training separately. | Rights reviewer and deployment owner |
-| Before distributing a Nemotron derivative | Review the exact license, including litigation termination, indemnity, notices and compatibility with SS-SIP additions. | Licensing counsel and release owner |
+| Before distributing an Ultra derivative | Review OpenMDW-1.1, litigation termination, notices, third-party rights clearance and compatibility with SS-SIP additions. | Licensing counsel and release owner |
 | Before admitting real contributions | Finalize service terms, contribution enrollment, syndicate authority, payment schedule and privacy disclosures for actual parties. | Legal and contributor operations |
 | Before claiming sound attribution | Establish reference datasets and acceptable error thresholds, including duplicate and adversarial influence claims. | Research and independent review |
 | Before using rewards scores | Validate whether the proposed exposure, execution and adoption measures are understandable, resistant to manipulation and acceptable to contributors. | Contributor governance and finance |
@@ -270,8 +274,8 @@ All entries were reviewed on **October 10, 2026**. Dates below are the source's 
 | DeepSeek Terms of Use | Last updated March 27, 2026 | 3.1; 4 |
 | DeepSeek Open Platform terms | Released April 22, effective April 29, 2026 | Incorporation of general terms; 4.2 |
 | DeepSeek R1 repository and MIT license | Live repository; checkpoint/revision pin still required | README section 7; license notices |
-| NVIDIA Nemotron Open Model License | Last modified December 15, 2025 | 2–3; 7–8 |
-| Nemotron 3 Nano 30B-A3B BF16 card | Live model card; checkpoint/revision pin still required | Governing license; training-data disclosures |
+| OpenMDW-1.1, governing the selected Ultra download | Version 1.1; checked October 10, 2026 | Grant; notices; termination; outputs; third-party rights |
+| Nemotron 3 Ultra 550B-A55B BF16 card | Live model card; checkpoint/revision pin still required | Governing license; training-data disclosures |
 | X Original Content Rewards terms | Effective August 7, 2026 | 2–7; linked program overview |
 | Financial Times and OpenAI announcement | April 29, 2024 | Licensing and attributed presentation |
 | Copyright Office Circular 31 | Official explanatory circular | Idea/expression distinction |

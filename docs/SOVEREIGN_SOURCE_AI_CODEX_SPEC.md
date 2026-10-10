@@ -5,18 +5,20 @@
 - **Project:** Super Sovereign Source LLM IP (`sovsrc.llm`)
 - **Core framework:** Super Intellectual Property (`SIP`)
 - **Creator program:** SIP Creator Rewards, the proposed program for compensation under accepted contribution agreements.
-- **Version:** `0.5`
+- **Version:** `0.7`
 - **Date:** 2026-10-10
 - **Status:** Proposed implementation specification; no model, funding, licenses or production deployment implied.
-- **Source:** Adapted from the Sovereign Source AI project specification v0.1 and implementation specifications v0.2–v0.4. This version adds the proposed Sovereign Source Super Intellectual Property license and an opt-in syndicate marketplace to the selected Python, Pydantic, Pydantic AI, Prefect, Rust, Axum, PostgreSQL and Nemotron architecture. The original v0.1 document remains a historical reference; this specification governs the current project scope.
+- **Source:** Adapted from the Sovereign Source AI project specification v0.1 and implementation specifications v0.2–v0.6. This version adds the commercial-platform recommendation and content-licensing/payment integration requirements, retaining Nemotron 3 Ultra, the SIP license proposal, opt-in syndicate marketplace and Python, Pydantic, Pydantic AI, Prefect, Rust, Axum and PostgreSQL architecture. The original v0.1 document remains a historical reference; this specification governs the current project scope.
 - **Architecture:** [Solution architecture and Nemotron training plan](SOLUTION_ARCHITECTURE.md), researched against primary documentation on 2026-10-10.
 - **Model selection addendum:** [USA Sovereign Source AI index](USA_SOVEREIGN_AI_INDEX.md), 2026-10-10. Ten US lab/provider candidates and ten open-source paths compared across ten parameters.
+- **Selected model:** NVIDIA Nemotron 3 Ultra; [exact checkpoints and training plan](SOLUTION_ARCHITECTURE.md#nemotron-checkpoint-selection). The [older-model review](NEMOTRON_NO_QWEN_RESEARCH.md) remains historical alternative research.
+- **Commercial platform recommendation:** NVIDIA AI Enterprise with NeMo; TollBit or direct creator agreements for licensed content, and Stripe Connect as the payout candidate. See [commercial platform research and requirements](#commercial-platform-decision-and-research). No vendor agreement or live integration is established by this recommendation.
 - **Licensing:** [SS-SIP-0.1 and marketplace drafts](../licenses/README.md). Custom proposals, not OSI-approved or automatically applied to repository or third-party material.
 - **Policy reference date:** 2026-10-10, carried forward from v0.1. Revalidate policy applicability before making a production compliance claim.
 
 `MUST` means a required acceptance condition. `SHOULD` means a recommended default. Royalty rates, staffing, schedules and performance targets are proposed project choices, not statutory requirements.
 
-**Current model gate:** use US-led candidates and exclude Chinese-developed models. This research applies a strict working interpretation that also excludes Chinese base checkpoints and training teachers. Unknown ancestry MUST remain pending. The previously selected Nemotron 3 Nano checkpoint is held because its official card discloses Qwen use; references to Nemotron below describe a retained research plan, not an approved model. The index takes precedence over those model-selection references. Review tokenizers, synthetic data, filtering models, reward models and other learned dependencies as part of the release manifest. This project selection rule does not amend public open-source license grants.
+**Current model decision:** use **NVIDIA Nemotron 3 Ultra** as requested. This supersedes the earlier Nano and Minitron default recommendations. Ultra does not meet the earlier no-Qwen/no-Chinese-teacher requirement: NVIDIA discloses those dependencies in its training data. The requirements register MUST retain that conflict until explicitly resolved; selection is not a provenance certification or a silent waiver. Review tokenizers, synthetic data, filtering models, reward models and other learned dependencies in the release manifest. Unknown evidence remains pending. [Training disclosures](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16#training-and-evaluation-datasets).
 
 ## 1. Objective
 
@@ -26,7 +28,7 @@ SIP connects formal IP rights with voluntary agreements covering research, propo
 
 The expansion is in what the project records, recognizes and rewards. SIP is a proposed project and contractual framework, not a claim that a new statutory property right already exists. Ownership, permission, attribution, governance and economic participation remain separate, explicit records.
 
-The initial product is a research assistant using an approved corpus, with source receipts, contributor and syndicate registration, a reviewed contribution graph and **SIP Creator Rewards** backed by reproducible royalty accounting. Creators can track qualified use, earnings and payout status under their accepted agreements. Nemotron is the target model family for inference and subsequent adaptation on admitted SIP data. A foundation model trained entirely on SIP-admitted data remains a separate long-term objective, with auditable provenance and sovereign deployment options.
+The initial product is a research assistant using an approved corpus, with source receipts, contributor and syndicate registration, a reviewed contribution graph and **SIP Creator Rewards** backed by reproducible royalty accounting. Creators can track qualified use, earnings and payout status under their accepted agreements. Nemotron 3 Ultra is the target for inference and subsequent adaptation on admitted SIP data. A foundation model trained entirely on SIP-admitted data remains a separate long-term objective, with auditable provenance and sovereign deployment options.
 
 The deliverable is a system around a model as well as a model development program. Model weights alone cannot establish ownership, enforce permission or administer royalties.
 
@@ -169,7 +171,7 @@ Use a modular Rust application core and a Python AI service, with Python backgro
 | Python and Pydantic | Shared wire contracts, structured validation, data preparation, evaluation and training configuration |
 | Pydantic AI | Bounded research assistance and evidence-backed attribution proposals using authorized tools |
 | Prefect | Ingestion, batch attribution, manifest construction, training supervision, evaluation and settlement scheduling |
-| Nemotron with vLLM | Private inference endpoint; deterministic model adapter remains the local pilot default |
+| Nemotron 3 Ultra with vLLM | Private inference endpoint; deterministic model adapter remains the local pilot default |
 | NVIDIA NeMo Megatron Bridge | Model-specific Nemotron conversion and training recipes for later GPU work |
 | Private object storage | Sources, evidence, dataset shards and checkpoints; a private filesystem adapter for local development |
 
@@ -207,6 +209,31 @@ flowchart TD
 The model cannot issue grants, approve ownership claims, ratify syndicate decisions, change royalty terms or authorize transfers. Store the contribution graph as versioned relational records in the pilot; a separate graph service is not required.
 
 Retrieved text is untrusted data. Instructions embedded in a source cannot override access controls, system policy or financial logic.
+
+### Commercial platform decision and research
+
+**Recommendation, researched October 10, 2026:** use **NVIDIA AI Enterprise with NeMo** as the commercial AI foundation for the selected Ultra program, on US infrastructure under project-controlled administration. NVIDIA offers commercially supported AI software and deployment tooling; its Megatron Bridge documentation supplies Ultra-specific adaptation recipes. This is the preferred fit for the project's model control and customization requirements, not a measured cost or performance ranking. GPU operations and SIP application engineering remain necessary.
+
+The reviewed offerings do not establish a complete product for SIP's source permissions, reviewed idea/influence attribution, syndicate agreements and royalty accounting. Retain Rust/Axum and PostgreSQL as the authority for those functions. Commercial support, model licensing, content permission and creator compensation are separate agreements.
+
+| Platform | Research finding | Project decision and boundary |
+| --- | --- | --- |
+| **NVIDIA AI Enterprise + NeMo** | Commercial software suite for AI development and deployment; separate Ultra recipes cover conversion, inference, SFT and LoRA. [AI Enterprise](https://www.nvidia.com/en-us/data-center/products/ai-enterprise/), [Ultra recipes](https://docs.nvidia.com/nemo/megatron-bridge/latest/models/nemotron/nemotron3-ultra.html). | Recommended commercial foundation. Confirm support for the exact Ultra checkpoint, runtime and GPU configuration in the proposed contract; published recipes do not by themselves establish enterprise support coverage. Retain the proposed vLLM serving route subject to compatibility checks; NIM adoption would require its own compatibility proof. |
+| **Databricks Mosaic AI + Unity Catalog** | Managed AI services and governance, including lineage for data and model services. [Serving and governance](https://developers.databricks.com/perspectives/databricks-model-serving-runs-generative-ai-inference-at-production-scale), [lineage documentation](https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage). | Alternative when managed data operations are the priority. Exact Ultra hosting and deployment suitability remain unverified. Operational lineage does not establish intellectual influence, rights clearance or royalty entitlement. It does not replace the SIP ledger. |
+| **TollBit** | Content licensing and metered access, with summarization, full-display and custom licenses plus transaction records. [Licenses and rates](https://docs.tollbit.com/docs/setting-rates), [developer content API](https://docs.tollbit.com/docs/content). | Preferred candidate for external licensed retrieval alongside direct creator agreements. Admit each asset under its actual license; an access purchase or API intent is not automatic training permission. Integration remains unimplemented. |
+| **ProRata** | Advertises licensed content, attribution services and 50% revenue sharing with content partners. [Provider description](https://prorata.ai/). | Partnership alternative closest to the content-rewards concept. Reviewed public material does not establish a self-hostable Ultra platform, integration rights or negotiated revenue definitions. Its advertised percentage does not replace SIP's proposed economics. |
+| **Stripe Connect** | Marketplace onboarding, multi-party transfers and payouts. [Connect](https://stripe.com/connect). | Recommended payout candidate for M5. SIP determines accepted beneficiaries and amounts; the provider executes payments and returns status. Account eligibility, supported fund flows and terms must be established for the deployment. |
+
+### Commercial integration requirements
+
+1. **Begin with licensed retrieval and recorded use.** Demonstrate the research assistant, valid citations, qualified-use receipts and agreement-based rewards before adapting Ultra. Credit-only relationships and estimated influence MUST remain distinct from payable use. An AI estimate cannot activate a beneficiary share.
+2. **Preserve source and license evidence.** A content adapter MUST retain provider/source identifiers, an asset-version digest, the applicable license version or retained terms, permitted uses and recipients, price/currency and billing unit, request/transaction references and the corresponding SIP permission decision. Missing or incompatible permission fails admission. Recheck permission for indexing, caching, retrieval, output and training separately; a network listing or payment is not authority to grant broader rights.
+3. **Separate supplier charges from creator rewards.** A provider-billed fetch is not automatically a qualified SIP earning event. Map each obligation to its accepted agreement and stable use identifier. Retry reconciliation MUST prevent accidental duplicate charges, liabilities or payouts while preserving independently agreed obligations. Identify whether an external payment satisfies a named obligation or is a separate source cost. External content fees MUST NOT silently change section 12's eligible-revenue formula or beneficiary splits; do not subtract them from the proposed pool without a separately accepted amendment.
+4. **Keep payout execution outside reward calculation.** The Stripe adapter MUST consume core-authorized payout instructions, preserve idempotency and provider references, authenticate callbacks, tolerate duplicate and out-of-order notifications, and reconcile refunds, failures and returned funds. Provider request acceptance is not proof of completed payout. Keep calculation, posting, transfer and confirmed payout states separate and apply corrections through linked ledger entries.
+5. **Verify the deployment and support boundary.** Before M5, record the exact model/runtime/hardware support scope, commercial terms, approved processors, US region, administrative access, storage and telemetry locations, export/exit provisions and measured operating cost. US vendor headquarters alone does not satisfy the sovereignty gate. Preserve exportable SIP evidence and balances independently of vendor lifecycle changes.
+6. **Keep the local pilot independent.** M0–M4 continue with synthetic sources, deterministic model behavior and simulated payments. Paid connectors and GPU services are later adapters, not new prerequisites for the local demonstration. Model grants, content licenses and signed reward agreements remain independent of the custom SS-SIP draft.
+
+This recommendation does not resolve Ultra's disclosed Qwen/DeepSeek ancestry conflict. Maintain the existing model decision and release requirements. No vendor has been contracted, content purchased, payout initiated or training run authorized through this research.
 
 ## 7. Rights and consent requirements
 
@@ -549,8 +576,8 @@ Disputes should be acknowledged within five business days, receive an initial ev
 | M2 — Research assistant and attribution | Python/Pydantic AI research service, core-authorized retrieval, deterministic model and relationship-proposal adapters, reviewed contribution graph and receipts | Supported answer with valid source locations; accepted acknowledgment is distinct from estimation; private evidence cannot leak; final revocation check works |
 | M3 — Accounting | Core-owned usage capture and allocation engine, transactional outbox, Prefect jobs, revenue fixtures, member splits, statements and simulated payout | Golden examples and member splits match exactly; overlapping portfolios and worker restarts cannot duplicate liabilities; ledger balances |
 | M4 — Review and operations | Disputes, targeted holds, release-attribution corrections, order cancellation/delisting, mandate withdrawal, member exit/dissolution, revocation remediation and exports | Complete individual, syndicate and marketplace demonstrations; accrued obligations and surviving public grants persist; documented local run procedure |
-| M5 — Commercial pilot | Verified Nemotron serving configuration, live integrations, signed licenses, identity/tax handling and independent review | Model/provider compatibility checks, actual payment reconciliation, deployment assessment and measured unit economics |
-| M6 — Nemotron adaptation | Admitted SIP corpus, supervised LoRA training pipeline and evaluated Nano 30B-A3B derivative | Complete provenance for added data, disclosed upstream limits, reproducible save/resume and export, independent evaluation and rollback |
+| M5 — Commercial pilot | Verified Ultra serving and commercial support scope; licensed-content and payout adapters under section 6; signed licenses, identity/tax handling and independent review | Model/provider compatibility, source/license receipts, supplier-charge and payout reconciliation, deployment assessment and measured unit economics; pass the commercial integration proof below |
+| M6 — Nemotron 3 Ultra adaptation | Admitted SIP corpus, supervised LoRA training pipeline and evaluated Ultra derivative | Complete provenance for added data, recorded resolution of the ancestry conflict, disclosed upstream limits, reproducible save/resume and export, independent evaluation and rollback |
 | M7 — Frontier candidate | Larger model research and sovereign deployment options | Capability, rights, security and financial gates all pass |
 
 Suggested repository structure, adaptable to existing conventions:
@@ -617,6 +644,15 @@ Prefer modules over separately deployed services. Create only directories needed
 | Marketplace allocation | The synthetic fixed-fee order yields the same $1,200/$500/$300 split exactly once; fees and pool deductions cannot be charged twice. |
 | Marketplace cancellation | Apply the accepted refund and fulfillment rules, preserve posted history and preserve unrelated open-license rights. |
 
+### Commercial integration proof (M5)
+
+| Test | Required behavior |
+| --- | --- |
+| External content scope | Paid summarization access cannot authorize training or a prohibited processor; missing terms prevent admission. A permitted use retains source, license, price and transaction evidence. |
+| Supplier usage and SIP rewards | A duplicated request or delayed billing acknowledgment reconciles to its stable identity without multiplying an obligation. A supplier charge alone creates no SIP earning event; separately agreed obligations remain visible without changing the pool formula. |
+| Payout lifecycle | Authenticated duplicate/out-of-order callbacks and an ambiguous initiation response cannot duplicate a payment or mark an unconfirmed payout complete. Reconciliation and linked adjustments preserve balances after failure or return. |
+| Deployment and exit | The named Ultra configuration passes compatibility checks within the contracted support scope; permission evidence, financial records and approved artifacts remain exportable, with regional and administrative controls demonstrated. |
+
 ### Production and model gates
 
 - **Rights:** every admitted asset resolves to an approved basis for its intended use; no unresolved critical defect.
@@ -624,9 +660,11 @@ Prefer modules over separately deployed services. Create only directories needed
 - **Attribution:** at least 1,000 independently reviewed claims; lower 95% confidence bound on support precision of at least 95%. Report coverage and abstention separately.
 - **Memorization:** at least 10,000 stratified adversarial extraction attempts and no unresolved severe unauthorized disclosure. Report observed rates and limits.
 - **Accounting:** independent reconciliation without unexplained differences; complete test coverage of required financial invariants.
+- **Commercial integration:** section 6's selected services have applicable agreements and verified support scope; source transactions and external payouts reconcile to SIP records, and the M5 integration proof passes. A provider's attribution or revenue-share marketing is not acceptance evidence.
 - **Operations:** proposed 30-day pilot with 99.5% availability under a declared load and demonstrated recovery.
 - **Sovereignty:** verified regional boundaries, access control, key rotation and rollback for the offered deployment profile.
 - **Capability:** freeze a balanced suite and three leading comparison models at evaluation start; match their median normalized aggregate with no priority domain more than 10% relatively below its comparison median.
+- **Performance economics:** compare Ultra BF16 and NVFP4 on frozen SIP tasks using first-attempt success, bounded-retry success, p50/p95 latency and total cost per verified outcome. Include failed attempts and validation costs; report coverage and abstention separately. Preserve attribution and privacy thresholds. Follow the [evaluation method and source review](NEMOTRON_PERFORMANCE_SOURCE_REVIEW.md); Super benchmark numbers are not Ultra results.
 - **Safety:** no unresolved critical finding; independent assessors verify controls against observed capability.
 - **Nemotron integration:** pinned model/server/template/parser configuration passes tool, structured-output, citation, truncation and timeout checks; do not infer compatibility from an API label.
 - **Training execution:** import, optimizer update, save/resume, merge/export and serving of the exported checkpoint pass; all run inputs resolve to the approved manifest and pinned recipe.
@@ -635,7 +673,7 @@ Register test definitions, samples and scoring before evaluating. Do not count l
 
 ## 17. Model and laboratory program
 
-Use Nemotron as the target family. Start the main adaptation program from `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16` using supervised LoRA fine-tuning on admitted SIP examples. Establish an unmodified inference baseline first. The base checkpoint `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16` is reserved for later continued-pretraining and instruction-tuning experiments; Nano 4B is an optional smaller integration target, and Super 120B-A12B is a later scaling candidate. See the [checkpoint selection and training program](SOLUTION_ARCHITECTURE.md#nemotron-checkpoint-selection).
+Use **Nemotron 3 Ultra**. Start the adaptation program from `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16` using supervised LoRA fine-tuning on admitted SIP examples. Establish an unmodified inference baseline first; compare `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4` for serving. Reserve `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16` for later continued pretraining and instruction tuning. Its Base variant is not presumed free of Qwen-derived data. See the [checkpoint selection and training program](SOLUTION_ARCHITECTURE.md#nemotron-checkpoint-selection).
 
 Use the model-specific NVIDIA NeMo Megatron Bridge recipe in a pinned GPU environment and serve evaluated exports through vLLM. Train citation behavior, evidence-grounded responses, attribution proposals and appropriate abstention. Permission decisions and financial rules remain outside the model. Model and framework references, hardware caveats and experiment gates are recorded in the architecture.
 
@@ -645,7 +683,7 @@ Training records MUST preserve source families, deduplication, transforms, data 
 
 Keep evaluation holdouts separate before training and check contamination. Additional modalities require separate media rights and evaluation gates.
 
-Size GPU work from total checkpoint storage, architecture, sequence length, batch size, optimizer state and measured runtime overhead. The approximate raw BF16 weight storage for a nominal 30B model is 60 GB before training or serving overhead; its active parameter count does not establish GPU memory requirements. The architecture distinguishes NVIDIA's published multi-GPU recipe settings from a universal hardware minimum.
+Size GPU work from total checkpoint storage, architecture, sequence length, batch size, optimizer state and measured runtime overhead. Ultra's nominal 550B parameters imply approximately 1.1 TB of raw BF16 weights before auxiliary tensors and training or serving overhead; its active parameter count does not establish GPU memory requirements. The architecture distinguishes NVIDIA's published multi-GPU recipe settings from a universal hardware minimum.
 
 Run a short resource-capped experiment that proves checkpoint import, an optimizer update, save/resume, export and inference before a full training allocation. Budget separately for retries, data preparation, evaluations, serving, licensing, personnel and reserves for contractual obligations. Use measured tokens per second and contracted prices before committing resources.
 
@@ -703,7 +741,7 @@ model and payment adapters by default. Keep sources/ read-only.
 
 Use Rust/Axum for the authoritative core; Python/Pydantic/Pydantic AI for
 AI workflows; Prefect for background work; and PostgreSQL for domain state,
-retrieval and accounting. Prepare the Nemotron adapter and training contracts
+retrieval and accounting. Prepare the Nemotron 3 Ultra adapter and training contracts
 without starting GPU training as part of the local application pilot.
 
 Implement Super Intellectual Property through voluntary syndicates, scoped

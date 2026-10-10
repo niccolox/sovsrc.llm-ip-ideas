@@ -13,9 +13,12 @@ SIP expands what the project records, recognizes and rewards through evidence an
 | Document | Purpose |
 | --- | --- |
 | [USA Sovereign Source AI index — single-page comparison](docs/usa-sovereign-ai-index.html) ([Markdown](docs/USA_SOVEREIGN_AI_INDEX.md)) | Ten US lab/provider candidates and ten open-source paths across ten parameters, including Berkeley, Stanford and MIT; licenses, ancestry, IP permissions and creator rewards. |
-| [Current project and implementation specification, v0.5](docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) | SIP framework, syndicate marketplace, requirements, architecture, data records, APIs, milestones and acceptance tests. |
+| [Current project and implementation specification, v0.7](docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) | SIP framework, syndicate marketplace, commercial-platform research, requirements, architecture, APIs, milestones and acceptance tests. |
 | [Solution architecture and Nemotron training plan](docs/SOLUTION_ARCHITECTURE.md) | Researched stack responsibilities, Rust/Python contracts, Prefect workflows, PostgreSQL isolation, model selection and training gates. |
+| [Nemotron research: alternatives without disclosed Qwen ancestry](docs/NEMOTRON_NO_QWEN_RESEARCH.md) | Historical alternative candidates and evidence; Ultra is the current selected target and does not pass the earlier ancestry screen. |
+| [Nemotron speed, accuracy and cost review](docs/NEMOTRON_PERFORMANCE_SOURCE_REVIEW.md) | The supplied BestAIFor article checked against primary sources, with a cost-per-verified-outcome evaluation plan for Ultra. |
 | [Frontier lab terms and creator rewards audit](docs/FRONTIER_LAB_IP_AND_CREATOR_REWARDS_AUDIT.md) | Eight organizations compared on IP, training permissions, attribution and compensation, with recommendations for SIP rights and rewards. |
+| [Upstream AI data suppliers and development communities](docs/UPSTREAM_AI_DATA_SUPPLIERS_RESEARCH.md) | Expert-data suppliers, licensed-content sellers, lab relationships, industry publications, public and gated communities, and a SIP procurement shortlist. |
 | [Sovereign Source Super Intellectual Property license](licenses/SS-SIP-0.1.md) | Custom license draft for source sharing, contributor attribution and documented influence notices. |
 | [Syndicate marketplace terms](licenses/SYNDICATE-MARKETPLACE-TERMS-0.1.md) | Opt-in participation, listings, commissions, creator rewards, earnings, payouts and appeals. |
 | [Licensing guide and examples](licenses/README.md) | Adoption instructions, open-source design references and unaccepted attribution/order templates. |
@@ -54,9 +57,13 @@ The initial product is a research assistant using an approved corpus. It checks 
 | Pydantic AI | Evidence-grounded answers and reviewed attribution proposals. |
 | Prefect | Ingestion, manifests, training supervision, evaluation and settlement workflows. |
 | PostgreSQL and pgvector | Authoritative records, authorized retrieval, transactional outbox and ledger. |
-| Nemotron, vLLM and NeMo Megatron Bridge | Model inference, model-specific training and evaluated checkpoint export. |
+| Nemotron 3 Ultra, vLLM and NeMo Megatron Bridge | Model inference, model-specific training and evaluated checkpoint export. |
 
-The previously proposed **Nemotron 3 Nano 30B-A3B BF16** training target is **on hold** under the current no-Chinese-model ancestry screen: its [official card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16) discloses Qwen use. The index applies a strict working interpretation covering base models and training teachers; unknown ancestry remains pending. The [solution architecture](docs/SOLUTION_ARCHITECTURE.md) retains the Nemotron research and compute plan as a held alternative. No replacement checkpoint has been approved.
+**Selected model: NVIDIA Nemotron 3 Ultra.** Use `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16` as the reference for inference and SIP adaptation, and evaluate its NVFP4 variant for serving. The [architecture](docs/SOLUTION_ARCHITECTURE.md#nemotron-checkpoint-selection) now uses Ultra-specific training and compute plans. This replaces the Nano target and Minitron recommendation.
+
+**Recommended commercial foundation: NVIDIA AI Enterprise with NeMo.** The [platform comparison and integration requirements](docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md#commercial-platform-decision-and-research) recommend TollBit or direct creator agreements for licensed content and Stripe Connect for payouts, while retaining Databricks and ProRata as alternatives. SIP keeps permission decisions, reviewed attribution, syndicate splits and accounting in its own core. Start with licensed retrieval and recorded-use rewards before adaptation; commercial support and integrations remain to be established.
+
+Ultra's current download license is **OpenMDW-1.1**. NVIDIA discloses Qwen and DeepSeek in its training sources, so Ultra **does not meet the earlier no-Qwen condition**. That conflict remains recorded; selection does not certify ancestry or clear upstream content rights. SIP additions still require admitted sources, accepted attribution and creator-reward agreements. [Ultra card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16), [license](https://openmdw.ai/license/1-1/).
 
 ```mermaid
 flowchart TD
@@ -156,7 +163,7 @@ Syndicates distribute a contribution's allocation using accepted beneficiary sha
 | M3 | Usage capture, royalty calculations, member allocations, statements and simulated payments. |
 | M4 | Disputes, attribution corrections, marketplace cancellation/delisting, member exit, dissolution, exports and end-to-end verification. |
 | M5 | Commercial integrations, signed licenses and independent review. |
-| M6 | An ancestry-approved model training experiment with admitted SIP data, evaluated exports and disclosed provenance; the Nemotron plan is held pending model selection. |
+| M6 | Nemotron 3 Ultra adaptation on admitted SIP data, evaluated exports and disclosed provenance; the earlier ancestry requirement needs a recorded resolution before release. |
 | M7 | A frontier candidate that passes capability, rights and safety evaluations. |
 
 The first implementation targets **M0–M4**, using synthetic fixtures and deterministic model and payment adapters. Real payouts, production deployment and large training runs are subsequent work.

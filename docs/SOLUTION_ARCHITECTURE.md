@@ -1,14 +1,24 @@
 # Super Sovereign Source LLM IP Solution Architecture
 
-**Date:** October 10, 2026. **Status:** Proposed architecture for implementation specification v0.5.
+**Date:** October 10, 2026. **Status:** Proposed architecture for implementation specification v0.7.
 
-Build the SIP platform with a Rust and Axum application core, Python services using Pydantic and Pydantic AI, Prefect for background workflows, and PostgreSQL as the authoritative store. The original model study selected **Nemotron 3 Nano 30B-A3B BF16** for supervised LoRA fine-tuning on admitted SIP data.
+Build the SIP platform with a Rust and Axum application core, Python services using Pydantic and Pydantic AI, Prefect for background workflows, and PostgreSQL as the authoritative store. **NVIDIA Nemotron 3 Ultra** is the user-selected target for inference and subsequent supervised LoRA adaptation on admitted SIP data.
 
-**Model selection addendum — October 10, 2026:** the [USA Sovereign Source AI index](USA_SOVEREIGN_AI_INDEX.md) supersedes that selection under the new USA-only, no-Chinese-model requirement. The strict working screen includes base checkpoints and training teachers. Nano's [official card](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16) discloses Qwen use, so this checkpoint is held. The Nemotron profiles, recipes and milestones below are retained research alternatives, not approved execution targets. Other checkpoints remain pending their own ancestry and rights review. Prioritize Ai2 or Marin training software with a newly admitted corpus for the from-scratch research path; no replacement model is approved.
+**Current selection:** use `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16` as the reference checkpoint, with its NVFP4 variant evaluated for serving. This replaces the Nano target and Minitron recommendation. It is the Nemotron 3 Ultra release, distinct from the older Llama-Nemotron Ultra 253B. NVIDIA describes 550B total / 55B active parameters and a hybrid Mamba-Transformer LatentMoE architecture. [Official release](https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/).
+
+**Ancestry conflict:** Ultra's disclosed training sources include Qwen and DeepSeek. Selecting Ultra does not satisfy or silently waive the earlier no-Chinese-teacher requirement. Record that criterion as **does not meet**, keep it unresolved for release, and do not describe the model as Qwen-free. The [index](USA_SOVEREIGN_AI_INDEX.md) records selection separately from eligibility; the [older-model research](NEMOTRON_NO_QWEN_RESEARCH.md) remains available as an alternative. [Ultra training disclosures](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16#training-and-evaluation-datasets).
 
 This design serves the [SIP implementation specification](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md): voluntary syndicates, scoped permissions, reviewed attribution and reproducible contributor accounting. M0–M4 remain a local application pilot using deterministic model and payment adapters. GPU experiments follow separately. Component responsibilities, workload limits and rollout gates below are project design choices; linked documentation supports the underlying technology capabilities.
 
 Contributor-facing views call the compensation program **SIP Creator Rewards** and distinguish qualified use, estimated earnings, earned balances and payouts. These labels map to the existing usage, agreement, ledger and settlement records; eligibility decisions and exact calculations remain in the Rust core. Every pilot payout is labeled simulated.
+
+## Commercial platform and integration boundaries
+
+The [specification's commercial-platform research](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md#commercial-platform-decision-and-research), checked October 10, 2026, recommends NVIDIA AI Enterprise with NeMo for the Ultra production program. Confirm commercial support for the exact checkpoint, runtime and hardware; retain vLLM until any replacement passes compatibility checks. Databricks remains a managed-governance alternative, and ProRata a content-rewards partnership alternative. Neither is an adopted dependency.
+
+Use TollBit or direct creator agreements as candidates for licensed content supply and Stripe Connect as the payout candidate. Content adapters pass source, license, price and transaction evidence to the Rust core for admission; an external fetch charge does not establish training permission or a SIP earning event. Payment adapters execute core-authorized amounts, authenticate callbacks and reconcile provider status without recalculating beneficiary shares. Supplier costs, qualified-use rewards and actual payouts remain distinct records linked to their agreements. Preserve section 12's proposed pool formula unless an accepted amendment changes it.
+
+Start with licensed retrieval and verified usage accounting before model adaptation. The specification defines M5 proof for use restrictions, duplicate transactions, payment-state recovery and deployment/exit controls. M0–M4 retain deterministic local adapters; these recommendations create no new cloud dependency or production integration in the local pilot.
 
 ## Component responsibilities
 
@@ -20,7 +30,7 @@ Contributor-facing views call the compensation program **SIP Creator Rewards** a
 | Prefect | Ingestion, attribution batches, manifest construction, evaluation, training job supervision and settlement scheduling | Coordinates work; calls the Rust core for authoritative transitions |
 | PostgreSQL with pgvector | Domain records, reviewed contribution graph, document index, transactional outbox and financial ledger | Constraints and transactions enforce invariants independently of model output |
 | Private object storage | Sources, confidential evidence, dataset shards, checkpoints and restricted workflow results | Access through scoped credentials or an authorization gateway |
-| vLLM with Nemotron | Private model inference through a Chat Completions compatible interface | Generates candidate text and tool arguments; never determines financial eligibility |
+| vLLM with Nemotron 3 Ultra | Private model inference through a Chat Completions compatible interface | Generates candidate text and tool arguments; never determines financial eligibility |
 | NVIDIA NeMo Megatron Bridge | Nemotron checkpoint conversion and GPU training | Runs approved, versioned experiments against frozen manifests |
 
 Axum provides typed extraction and integrates with Tokio and Tower middleware. SQLx provides asynchronous PostgreSQL access, transactions, migrations and checked-query facilities. Use those capabilities to keep the application core modular within one Rust workspace. [Axum documentation](https://docs.rs/axum/latest/axum/), [SQLx documentation](https://docs.rs/sqlx/latest/sqlx/).
@@ -84,7 +94,7 @@ Pydantic AI supports custom compatible endpoints and a vLLM provider. Select `Op
 
 Prefer constrained native JSON output if the exact model/server combination passes the compatibility checks. Otherwise use tested tool output, with prompted JSON and bounded validation retries as a fallback. Schema validity still does not prove a citation is correct. Pydantic AI documents these three output modes and their different guarantees. [Structured output modes](https://ai.pydantic.dev/output/).
 
-NVIDIA's Nano model card supplies a vLLM serving example with tool and reasoning parsers. Pin the model, tokenizer, chat template and parser code together rather than downloading executable parser code from a mutable branch at startup. Begin with a proposed 8K inference context limit and bounded output length, then increase only after measuring memory, accuracy and latency. [Nano serving instructions](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16).
+Use NVIDIA's Ultra-specific vLLM cookbook as the serving reference. Pin weights, tokenizer, template, parsers and container digest together; review any required remote code before deployment. The current card names `nemotron_v3` for reasoning and `qwen3_coder` for tool parsing. The parser name is a format implementation, not a separate Qwen checkpoint; the ancestry finding comes from the training disclosures. Begin with a proposed 8K application context limit and bounded output, then raise limits only after measurement. [Ultra serving cookbook](https://github.com/NVIDIA-NeMo/Nemotron/blob/main/usage-cookbook/Nemotron-3-Ultra/vllm_cookbook.ipynb), [card configuration](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16#vllm).
 
 ## PostgreSQL and authorized retrieval
 
@@ -128,18 +138,19 @@ A single-server local profile can use Prefect's integrated services. For a deplo
 
 ## Nemotron checkpoint selection
 
+These artifacts define the selected Ultra program. Pin exact revisions and license copies before execution. Selection sets the implementation direction; it is not evidence that release requirements have passed.
+
 | Candidate | Intended role in this project | Decision |
 | --- | --- | --- |
-| `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16` | Main inference baseline and first supervised LoRA adaptation | Primary target: start from its existing instruction and tool behavior, then improve SIP tasks |
-| `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16` | Continued pretraining followed by a broader instruction-tuning program | Later experiment when corpus scale and measured domain gaps justify it |
-| `nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16` | Smaller local integration and training-pipeline experiments | Optional capacity fallback; validate its own architecture and recipe |
-| `nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16` | Larger quality comparison or subsequent adaptation | Scale only after Nano meets rights, quality and economics gates |
+| `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16` | Reference inference baseline and supervised LoRA adaptation | Selected primary checkpoint |
+| `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4` | Lower-memory serving comparison | Selected deployment candidate; benchmark against BF16 |
+| `nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16` | Continued pretraining and a new instruction-tuning program | Later experiment; not the initial assistant |
 
-The Nano base card identifies the checkpoint as a starting point for instruction fine-tuning. The 4B model is a compressed hybrid derived from Nano 9B v2, so it is not simply a resized 30B MoE checkpoint. Super is the larger 120B-A12B family member. Keep separate compatibility records for each. [Nano base model](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16), [Nano 4B model](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16), [Super model](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16).
+NVIDIA publishes post-trained BF16, NVFP4 and Base BF16 releases separately. Base is not an escape from upstream teacher dependencies: its own data table identifies Qwen and DeepSeek-generated material. Minitron and Nano are no longer default fallbacks; a different model would require an explicit selection change. [Release artifacts](https://research.nvidia.com/labs/nemotron/Nemotron-3-Ultra/), [Base disclosure](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16).
 
 Use BF16 training checkpoints as the baseline. Quantized inference artifacts are separate deployment candidates and must be evaluated after conversion. Avoid assuming that a generic transformer LoRA target list, a QLoRA recipe or live adapter serving works for the hybrid Mamba/MoE architecture.
 
-NVIDIA Megatron Bridge documents pretraining, full fine-tuning, LoRA, checkpoint import/export and a LoRA merge path for Nano. Use that model-specific recipe and record the selected target modules. Its published recipe uses multi-GPU configurations; a smaller alternative requires its own measured proof. [Nano Megatron Bridge recipe](https://docs.nvidia.com/nemo/megatron-bridge/latest/models/nemotron/nemotron3-nano.html).
+Megatron Bridge supplies Ultra conversion, inference, pretraining, full SFT and LoRA PEFT examples. Use an Ultra-specific recipe, record target modules, and prove save/resume and deployable export before scaling. Replace sample training data with the admitted SIP manifest; neither the sample corpus nor a generic Nano recipe is selected by this architecture. [Ultra model guide](https://docs.nvidia.com/nemo/megatron-bridge/latest/models/nemotron/nemotron3-ultra.html), [Ultra training examples](https://github.com/NVIDIA-NeMo/Megatron-Bridge/blob/main/examples/models/nemotron/nemotron_3/ultra/README.md).
 
 ## Training program and SIP provenance
 
@@ -147,12 +158,12 @@ Train for evidence-grounded answers, accurate citation structure, useful relatio
 
 | Stage | Proposed experiment | Exit condition |
 | --- | --- | --- |
-| T0 | Evaluate the unmodified Nano checkpoint on frozen SIP tasks and identical retrieval inputs | Measured baseline for support precision, missing credit, JSON validity, tool use, latency and memory |
+| T0 | Evaluate unmodified Ultra BF16, then its NVFP4 serving candidate, on frozen SIP tasks and identical retrieval inputs | Measured baseline for support precision, missing credit, JSON validity, tool use, latency and memory |
 | T1 | Validate extraction, rights filtering, family-level splits and tokenizer/chat-template formatting | Every included example has an approved basis; no evaluation-family leakage |
-| T2 | LoRA supervised fine-tuning on reviewed SIP examples; proposed initial sequence length 2K–4K | Finite loss, reproducible data lineage, save/resume success and no critical behavioral regression |
+| T2 | LoRA supervised fine-tuning on reviewed SIP examples; start with 4,096-token packing aligned with the Ultra recipe | Finite loss, reproducible data lineage, save/resume success and no critical behavioral regression |
 | T3 | Compare adapted and unmodified models using the same task set, retrieval and inference budget | Predeclared improvement target met, preserved capability floor and all rights/privacy gates passed |
 | T4 | Merge/export candidate, test loading and re-evaluate the deployed precision and parser configuration | Serving outputs remain valid; promotion and rollback are reproducible |
-| T5 | Consider preference optimization, continued pretraining or Super adaptation | A measured remaining failure justifies the additional data, method and compute |
+| T5 | Consider preference optimization or continued pretraining of Ultra Base | A measured remaining failure justifies the additional data, method and compute |
 
 Do not automatically include example datasets shipped with training recipes. Replace them with an explicit admitted manifest and fail a real run if it falls back to mock or default data. Separate train, validation and test by source family and related contributions before generating synthetic variants. Preserve reviewed negative examples: insufficient evidence, independent invention, rejected attribution and prompts that attempt to override permissions.
 
@@ -160,20 +171,28 @@ Each training example must resolve to asset/contribution versions, grants, manda
 
 Training manifests are immutable, but permission is time-dependent. Check authorization before staging data and launching, then define safe checkpoints at which newly effective restrictions are applied. A revoked manifest version cannot silently launch another run. For work already incorporated into a checkpoint, follow the accepted remedy and quarantine the candidate where required. Deleting an adapter or a source is not general proof of unlearning.
 
-The initial derivative can claim controlled provenance for its SIP-added examples and transformations. It cannot claim that all upstream Nemotron training data was individually admitted under SIP. NVIDIA's base card describes public, private, crawled and synthetic training sources; maintain that upstream provenance limitation in the model registry and customer-facing model card. A model trained entirely from SIP-admitted data remains a separate research program. [Nano training-data disclosure](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16#training-testing-and-evaluation-datasets).
+The initial derivative can claim controlled provenance for its SIP-added examples and transformations. It cannot claim that all upstream Ultra training data was individually admitted under SIP. Retain disclosed synthetic generators and remaining source-permission gaps in the release record. A model trained entirely from SIP-admitted data remains a separate research program. [Ultra Base training-data disclosure](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16#training-and-evaluation-datasets).
 
-The Nemotron license permits commercial use and derivatives subject to its terms, including redistribution and notice conditions. Store the exact license and notices with each selected revision; preserve them with distributed derivatives. The model license does not enroll NVIDIA's upstream contributors into SIP or replace dataset-level permission review. [NVIDIA Nemotron Open Model License](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-nemotron-open-model-license/).
+The reviewed Ultra releases identify **OpenMDW-1.1** as their governing download license. It permits use and modification, requires preservation of the agreement and applicable origin notices on distribution, and includes a litigation-triggered termination provision with a defensive-litigation exception. It places third-party rights clearance on the user and does not impose obligations on model outputs. Preserve the exact grant with each revision; do not substitute older NVIDIA model licenses or treat this grant as automatic enrollment in SIP. [OpenMDW-1.1](https://openmdw.ai/license/1-1/).
+
+## Performance and cost evaluation
+
+Use the supplied [BestAIFor Super-versus-Qwen article](https://www.bestaifor.com/blog/nemotron-3-super-vs-qwen-3-5-when-speed-and-accuracy-point-in-opposite-directions) as motivation to assess completed work, retries and cost together. Its Super results do not establish Ultra performance. The [source review](NEMOTRON_PERFORMANCE_SOURCE_REVIEW.md) records primary-source checks and corrections to the comparison.
+
+For T0 and T3, compare Ultra BF16 and NVFP4 on identical SIP tasks and retrieval inputs. Record first-attempt and bounded-retry success, citation support, answer coverage, abstention, tool validity, p50/p95 completion latency, reasoning/output tokens, memory and total attributable cost. Freeze acceptance criteria and retry limits before evaluation. A faster setting cannot compensate for failing the required attribution, access-control or privacy criteria.
+
+Define **cost per verified outcome** as total attributable inference, retry, tool and validation cost divided by accepted outcomes. Include failed attempts and paid human review where used, disclose shared-cost allocation and avoid double counting retries. Report zero-success runs as undefined for this metric, with spend and failures still visible. Pin workload, precision, runtime, hardware, concurrency, reasoning mode, cache state and price date. These are proposed evaluation requirements; no benchmark results are claimed.
 
 ## Compute and execution profiles
 
-The primary Nano target is roughly a 30B-total-parameter model even though only a fraction is active per token. For planning, 30 billion parameters at two bytes each is approximately **60 GB of raw BF16 weights alone**. This calculation excludes activations, gradients, optimizer states, runtime buffers and serving cache; active parameter count is not a VRAM sizing rule.
+Ultra is a cluster-scale target. Using the nominal 550 billion parameters at two bytes each gives approximately **1.1 TB of raw BF16 weights alone**. Actual artifacts and runtime memory must be measured, including auxiliary tensors, cache, activations, gradients and optimizer state. The 55B active count is not a VRAM sizing rule; NVFP4 serving capacity also needs measurement.
 
-NVIDIA's referenced Nano recipe recommends 32 H100 GPUs for its pretraining configuration and states 16 H100 GPUs for the documented full fine-tuning setup, with its LoRA example retaining those settings. These describe that recipe, not a universal hardware minimum for all possible adaptations. Do not promise a single-GPU 30B training run without a tested alternative. [Recipe hardware notes](https://docs.nvidia.com/nemo/megatron-bridge/latest/models/nemotron/nemotron3-nano.html).
+NVIDIA's Ultra Bridge examples reserve at least **2.5 TB for conversion storage**, before training outputs. Their LoRA starting point is **4 × 8-H100 nodes (32 H100 GPUs)** or **4 × 4-GB200 nodes (16 GB200 GPUs)**; the full-SFT examples are substantially larger. These are recipe starting points, not minimum hardware guarantees or an approved compute purchase. Inference and training allocations are separate, and Nano estimates no longer apply. [Ultra hardware and storage guidance](https://github.com/NVIDIA-NeMo/Megatron-Bridge/blob/main/examples/models/nemotron/nemotron_3/ultra/README.md).
 
 | Profile | Services and resources | Purpose |
 | --- | --- | --- |
 | Local application | Axum core, Python AI service, PostgreSQL, local private storage, Prefect server and process worker; deterministic model adapter | Complete M0–M4 without GPU or external credentials |
-| GPU integration | Local application plus a private vLLM endpoint for a selected Nemotron checkpoint | Verify tools, structured outputs, citations and request limits |
+| GPU integration | Local application plus a private vLLM endpoint for Ultra BF16 or evaluated NVFP4 | Verify tools, structured outputs, citations and request limits |
 | Training experiment | Isolated GPU worker, pinned Megatron Bridge container, approved dataset staging and checkpoint storage | Short, budget-capped training and restart experiment before a full run |
 | Production region | Independent data, model endpoints, credentials, storage, Prefect state and operational access for the contracted region | Enforce residency and restore/rollback requirements |
 
@@ -200,8 +219,8 @@ Use separate dependency environments for CPU application code, vLLM serving and 
 | M2 | Python research service, authorized retrieval and reviewed graph proposals | Invalid references fail; model output cannot approve rights; revocation wins before release |
 | M3 | Outbox, Prefect jobs, Rust allocation engine and simulated settlement | Crash/retry tests cannot duplicate usage, launch identity, allocations or postings |
 | M4 | Exit, revocation, review, export and operator recovery flows | Existing SIP end-to-end and financial examples pass across both services |
-| M5 | Real Nemotron serving compatibility and production integrations | Tested model/profile/parser, measured performance, signed agreements and independent review |
-| M6 | Nemotron LoRA adaptation and release registry | T0–T4 gates pass, checkpoint provenance is explicit and rollback is demonstrated |
+| M5 | Nemotron 3 Ultra serving compatibility and production integrations | Tested model/profile/parser, measured performance, signed agreements and independent review |
+| M6 | Nemotron 3 Ultra LoRA adaptation and release registry | T0–T4 gates pass, ancestry conflict has a recorded resolution, checkpoint provenance is explicit and rollback is demonstrated |
 
 The first integration proof should exercise one admitted source, one authorized answer, one reviewed influence proposal and the existing `$2,000` syndicate allocation. Introduce a worker restart, a duplicated event and a permission change during generation. This tests the architecture's boundaries before expanding the corpus or model.
 
