@@ -50,6 +50,8 @@ The provider sections supply the sources and qualifications for each row. None o
 
 ### OpenAI
 
+The dedicated [OpenAI competing-model restrictions report](OPENAI_COMPETING_MODEL_RESTRICTIONS_RESEARCH.md) examines the applicable clauses, exceptions, commercial consequences and uncertain boundaries in more detail.
+
 Consumer terms retain input rights and assign OpenAI's output interests, subject to law. They permit improvement use with a training opt-out, caution that outputs may overlap, and allow feedback use without compensation. [Consumer terms, Content and Feedback](https://openai.com/policies/terms-of-use/).
 
 The Services Agreement limits customer-content use and requires explicit agreement for development or improvement. Its competing-model restriction has narrow exceptions for certain internal classification or organization models and customization through OpenAI services; these are not general permission to train a competing LLM. [Services Agreement, sections 3.3, 4 and Permitted Exception](https://openai.com/policies/services-agreement/).
