@@ -1,8 +1,8 @@
 # Super Sovereign Source LLM IP
 
-**An AI laboratory and language model platform built around Super Intellectual Property: rights, ideas, contributions and influences, with shared stewardship and compensation.**
+**An LLM that respects intellectual property and ideas.**
 
-Super Sovereign Source LLM IP (`sovsrc.llm`) aims to develop capable language models while recognizing and rewarding the people whose works, ideas, contributions and influences make them possible. Its **Super Intellectual Property (SIP)** framework connects scoped permissions, AI-assisted attribution, voluntary contributor syndicates and auditable revenue sharing.
+Super Sovereign Source LLM IP (`sovsrc.llm`) aims to build a capable large language model that uses source material with permission, recognizes the people behind it and lets eligible creators earn from agreed contribution use. Its **Super Intellectual Property (SIP)** framework recognizes works, ideas, contributions and influences through scoped permissions, AI-assisted attribution, voluntary contributor syndicates and auditable creator rewards.
 
 SIP expands what the project records, recognizes and rewards through evidence and agreements. It is a proposed framework, not an assertion that a new statutory IP right already exists. Ownership, permission, credit, governance and payment are recorded separately.
 
@@ -12,7 +12,12 @@ SIP expands what the project records, recognizes and rewards through evidence an
 
 | Document | Purpose |
 | --- | --- |
-| [Current project and implementation specification, v0.3](docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) | SIP framework, syndicate model, requirements, architecture, data records, APIs, milestones and acceptance tests. |
+| [Current project and implementation specification, v0.5](docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) | SIP framework, syndicate marketplace, requirements, architecture, data records, APIs, milestones and acceptance tests. |
+| [Solution architecture and Nemotron training plan](docs/SOLUTION_ARCHITECTURE.md) | Researched stack responsibilities, Rust/Python contracts, Prefect workflows, PostgreSQL isolation, model selection and training gates. |
+| [Frontier lab terms and creator rewards audit](docs/FRONTIER_LAB_IP_AND_CREATOR_REWARDS_AUDIT.md) | Eight organizations compared on IP, training permissions, attribution and compensation, with recommendations for SIP rights and rewards. |
+| [Sovereign Source Super Intellectual Property license](licenses/SS-SIP-0.1.md) | Custom license draft for source sharing, contributor attribution and documented influence notices. |
+| [Syndicate marketplace terms](licenses/SYNDICATE-MARKETPLACE-TERMS-0.1.md) | Opt-in participation, listings, commissions, creator rewards, earnings, payouts and appeals. |
+| [Licensing guide and examples](licenses/README.md) | Adoption instructions, open-source design references and unaccepted attribution/order templates. |
 | [Original project specification, v0.1](docs/origin/Sovereign_Source_AI_Project_Specification_v0_1.docx) | Historical source for laboratory strategy, proposed economics, governance and policy references. |
 
 ## Super Intellectual Property and syndicates
@@ -29,9 +34,28 @@ A syndicate is a voluntary group that administers selected works, ideas, contrib
 
 AI helps identify references, possible duplicates, contribution relationships and missing credit. Authorized reviewers accept or correct those proposals. A similarity score cannot establish ownership, permission or payment eligibility. Member mandates, contribution-specific splits, exit terms and disputes are versioned and auditable.
 
+## License and syndicate marketplace
+
+The proposed **Sovereign Source Super Intellectual Property License (SS-SIP-0.1)** permits use, modification, redistribution and commercial activity while requiring source access for distributed covered portions, contributor credit and preservation of documented influences. Its attribution duties include a correction and enforcement process. Unknown ancestry and AI-generated allegations do not automatically become required credits or royalty claims.
+
+The license is intended to preserve open-source freedoms and is a **custom draft for legal review, not an OSI-approved license**. It applies only where an authorized holder identifies covered material and expressly adopts it. The draft does not relicense this entire repository or replace third-party and Nemotron terms.
+
+The accompanying marketplace framework lets syndicates list open material, commissions, services, additional permissions and voluntary revenue agreements. Accepted orders define authority, delivery, credits, fees and beneficiary splits. **SIP Creator Rewards** is the proposed program for earning through those contribution agreements. Using the open license requires no marketplace membership or royalty; paid agreements cannot withdraw those public rights. The local pilot will demonstrate listings and orders with synthetic parties and simulated payouts.
+
 ## Architecture
 
-The initial product is a research assistant using an approved corpus. It checks permissions, supplies evidence for answers and records eligible contribution use. An independently trained foundation model is a later research milestone.
+The initial product is a research assistant using an approved corpus. It checks permissions, supplies evidence for answers and records eligible contribution use. Nemotron is the target model family for inference and adaptation; a foundation model trained entirely on SIP-admitted data remains a separate research program.
+
+| Technology | Role |
+| --- | --- |
+| Rust and Axum | API, permission enforcement, syndicate decisions, response authorization and exact accounting. |
+| Python and Pydantic | Shared contracts, validation, data preparation, evaluation and training configuration. |
+| Pydantic AI | Evidence-grounded answers and reviewed attribution proposals. |
+| Prefect | Ingestion, manifests, training supervision, evaluation and settlement workflows. |
+| PostgreSQL and pgvector | Authoritative records, authorized retrieval, transactional outbox and ledger. |
+| Nemotron, vLLM and NeMo Megatron Bridge | Model inference, model-specific training and evaluated checkpoint export. |
+
+The first main training target is **Nemotron 3 Nano 30B-A3B BF16**, using supervised LoRA adaptation on admitted SIP data. The [solution architecture](docs/SOLUTION_ARCHITECTURE.md) explains checkpoint alternatives, compute requirements and why upstream Nemotron provenance must remain distinct from SIP-added data.
 
 ```mermaid
 flowchart TD
@@ -55,10 +79,10 @@ flowchart TD
         U --> P --> D --> M --> V --> E --> O
     end
 
-    subgraph Accounting[Contributor accounting]
+    subgraph Accounting[Creator rewards]
         R[Eligible revenue records]
-        L[Royalty calculation and audit ledger]
-        S[Member statements and simulated settlement]
+        L[Agreed rewards calculation and audit ledger]
+        S[Earnings statements and simulated payouts]
         R --> L --> S
     end
 
@@ -92,9 +116,22 @@ Permission checks and financial decisions operate outside the model. A citation 
 - **Sovereign deployment controls:** specify data location, administrative access, keys, model versions and update authority.
 - **Review and appeal:** support disputed ownership, missing credit, payment corrections and permission revocation.
 
-## Proposed contributor economy
+## SIP Creator Rewards
 
-The draft allocates **20% of eligible collected revenue** to a contributor pool. Eligible revenue deducts refunds, chargebacks, sales taxes and directly charged payment processing fees; it does not deduct general operating expenses.
+**Bring your ideas. Get credited. Earn from agreed use.**
+
+The proposed program rewards useful source material, original contributions and documented influences when they meet an accepted agreement's earning conditions. Creators can participate individually or through a syndicate that administers their agreed shares.
+
+1. **Submit your contribution:** identify what you created, improved, licensed or influenced, with supporting evidence and upstream credits.
+2. **Confirm eligibility:** complete rights and contribution review and accept the terms, earning rules and beneficiary shares.
+3. **Record qualified use:** count the training exposure, paid execution, adoption or accepted delivery specified by your agreement. Duplicate events and unsupported claims do not create additional earnings.
+4. **Track earnings and payouts:** review provisional estimates, posted balances, adjustments and payment status. The pilot labels every payout as simulated.
+
+Original contributions can include a new idea, analysis, implementation, prompt or improvement that adds identifiable value. Building on others' work preserves their credit and required permissions. Licensed source material can earn under its own agreement; an influence earns only through an expressly accepted share. Credit alone does not create a payout.
+
+### Proposed rewards pool
+
+The draft allocates **20% of eligible collected revenue** to a creator rewards pool, called the contributor pool in the accounting specification. Eligible revenue deducts refunds, chargebacks, sales taxes and directly charged payment processing fees; it does not deduct general operating expenses.
 
 | Track | Share of contributor pool | Proposed allocation basis |
 | --- | --- | --- |
@@ -104,6 +141,8 @@ The draft allocates **20% of eligible collected revenue** to a contributor pool.
 
 These are proposed contractual terms, not existing statutory royalty rates. Minimum guarantees, retrieval fees and bounties follow their own agreements. The [royalty engine specification](docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md#12-royalty-engine) defines offsets, rounding, reserves, disputes and settlement examples.
 
+Rewards are contractual compensation when earned under accepted terms. Program eligibility changes cannot erase accrued obligations; creators can request corrections and appeal disputed decisions.
+
 Syndicates distribute a contribution's allocation using accepted beneficiary shares within these existing tracks. For example, a `$2,000` allocation split 60/25/15 pays `$1,200` to an idea contributor, `$500` to an implementation contributor and `$300` to an acknowledged influence contributor. Credit-only influences receive acknowledgment without payment. The default administration fee is zero, and membership in multiple syndicates cannot multiply the same entitlement.
 
 ## Implementation roadmap
@@ -111,12 +150,12 @@ Syndicates distribute a contribution's allocation using accepted beneficiary sha
 | Milestone | Deliverable |
 | --- | --- |
 | M0 | Local setup, domain model, migrations and synthetic fixtures. |
-| M1 | Private submissions, grants, syndicate charters and mandates, accepted agreements and splits, and adoption. |
+| M1 | Private submissions, grants, syndicate mandates, license records, reviewed listings, accepted orders and splits, and adoption. |
 | M2 | Research assistant with authorized retrieval, reviewed contribution and influence links, and source receipts. |
 | M3 | Usage capture, royalty calculations, member allocations, statements and simulated payments. |
-| M4 | Disputes, attribution corrections, revocation, member exit, dissolution, exports and end-to-end verification. |
+| M4 | Disputes, attribution corrections, marketplace cancellation/delisting, member exit, dissolution, exports and end-to-end verification. |
 | M5 | Commercial integrations, signed licenses and independent review. |
-| M6 | An owned research model trained on admitted data. |
+| M6 | A Nemotron derivative trained on admitted SIP additions, with evaluated exports and disclosed upstream provenance. |
 | M7 | A frontier candidate that passes capability, rights and safety evaluations. |
 
 The first implementation targets **M0–M4**, using synthetic fixtures and deterministic model and payment adapters. Real payouts, production deployment and large training runs are subsequent work.
@@ -126,7 +165,8 @@ The first implementation targets **M0–M4**, using synthetic fixtures and deter
 Open the [implementation specification](docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) and use this prompt:
 
 ```text
-Read applicable repository instructions and docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md.
+Read applicable repository instructions, docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md
+and docs/SOLUTION_ARCHITECTURE.md.
 Implement milestones M0–M4 as a working local Super Sovereign Source LLM IP pilot.
 
 Reuse existing repository patterns. Use synthetic fixtures and deterministic
@@ -134,12 +174,14 @@ model and payment adapters by default. Keep sources/ read-only.
 
 Implement Super Intellectual Property with voluntary syndicates, scoped
 mandates, reviewed contribution and influence links, and accepted member splits.
+Include the synthetic marketplace journey and preserve the distinction between
+public license grants and optional paid orders described in licenses/README.md.
 Verify permissions, tenant isolation, honest attribution, durable usage capture,
 exact royalties, member exit, revocation and disputes. Document setup and report
 verification results and remaining production dependencies.
 ```
 
-The proposed greenfield stack is React and TypeScript, a Python API, PostgreSQL, private object storage and one background worker. The implementation should reuse suitable existing infrastructure. Setup commands will be documented when the application exists.
+The selected stack uses React and TypeScript, a Rust/Axum core, Python with Pydantic and Pydantic AI, Prefect, PostgreSQL and private object storage. Nemotron serving and GPU training have separate profiles. Setup commands and exact dependency pins will be documented when the application exists.
 
 ## Completion criteria
 

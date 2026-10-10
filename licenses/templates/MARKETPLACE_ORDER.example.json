@@ -1,0 +1,58 @@
+{
+  "schema_version": "ss-sip-marketplace-order-example-0.1",
+  "example_only": true,
+  "state": "unaccepted",
+  "order_id": "synthetic-order-001",
+  "terms_version": "Sovereign Source Syndicate Marketplace Terms 0.1",
+  "accepted_terms_digest": null,
+  "operator": null,
+  "buyer": null,
+  "seller": null,
+  "mandate_versions": [],
+  "listing_version": "synthetic-listing-001-v1",
+  "offer_version": "synthetic-offer-001-v1",
+  "category": "commission",
+  "deliverable": {
+    "description": "Synthetic implementation of an accepted idea with documented influence credit.",
+    "artifact_versions": [],
+    "acceptance_criteria": null,
+    "delivery_method": null,
+    "due_at": null
+  },
+  "rights": {
+    "proposed_license_id": "LicenseRef-SS-SIP-0.1",
+    "application_status": "not_applied",
+    "covered_material": [],
+    "source_location": null,
+    "additional_permissions": [],
+    "third_party_exclusions": [],
+    "attribution_record": "ATTRIBUTION.example.json"
+  },
+  "economics": {
+    "currency": "USD",
+    "gross_amount_minor": "200000",
+    "administration_fee_minor": "0",
+    "administration_fee_recipient": null,
+    "distributable_amount_minor": "200000",
+    "calculation_basis": "fixed_fee_example_after_zero_fees",
+    "tax_treatment": null,
+    "project_contributor_pool_elected": false,
+    "beneficiaries": [
+      {"id": "synthetic-idea-beneficiary", "share_basis_points": 6000, "amount_minor": "120000"},
+      {"id": "synthetic-implementation-beneficiary", "share_basis_points": 2500, "amount_minor": "50000"},
+      {"id": "synthetic-influence-beneficiary", "share_basis_points": 1500, "amount_minor": "30000"}
+    ],
+    "adjustment_and_refund_terms": null,
+    "minimum_and_offset_terms": null,
+    "payment_due_at": null,
+    "payment_method": "simulation_only",
+    "responsible_payer": null
+  },
+  "term_and_exit": null,
+  "privacy_and_credit_preferences": null,
+  "governing_law": null,
+  "dispute_forum": null,
+  "notice_contacts": [],
+  "acceptances": [],
+  "execution_blocked_reason": "Synthetic, incomplete and unaccepted example; no rights or payment obligation exists."
+}

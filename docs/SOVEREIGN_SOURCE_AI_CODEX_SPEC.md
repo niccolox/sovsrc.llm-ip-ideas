@@ -4,10 +4,13 @@
 
 - **Project:** Super Sovereign Source LLM IP (`sovsrc.llm`)
 - **Core framework:** Super Intellectual Property (`SIP`)
-- **Version:** `0.3`
+- **Creator program:** SIP Creator Rewards, the proposed program for compensation under accepted contribution agreements.
+- **Version:** `0.5`
 - **Date:** 2026-10-10
 - **Status:** Proposed implementation specification; no model, funding, licenses or production deployment implied.
-- **Source:** Adapted from the Sovereign Source AI project specification v0.1 and implementation specification v0.2. This version introduces Super Intellectual Property, a syndicate model for rights and contributions, and AI-assisted attribution. The original v0.1 document remains a historical reference; this specification governs the current project scope.
+- **Source:** Adapted from the Sovereign Source AI project specification v0.1 and implementation specifications v0.2–v0.4. This version adds the proposed Sovereign Source Super Intellectual Property license and an opt-in syndicate marketplace to the selected Python, Pydantic, Pydantic AI, Prefect, Rust, Axum, PostgreSQL and Nemotron architecture. The original v0.1 document remains a historical reference; this specification governs the current project scope.
+- **Architecture:** [Solution architecture and Nemotron training plan](SOLUTION_ARCHITECTURE.md), researched against primary documentation on 2026-10-10.
+- **Licensing:** [SS-SIP-0.1 and marketplace drafts](../licenses/README.md). Custom proposals, not OSI-approved or automatically applied to repository or third-party material.
 - **Policy reference date:** 2026-10-10, carried forward from v0.1. Revalidate policy applicability before making a production compliance claim.
 
 `MUST` means a required acceptance condition. `SHOULD` means a recommended default. Royalty rates, staffing, schedules and performance targets are proposed project choices, not statutory requirements.
@@ -20,7 +23,7 @@ SIP connects formal IP rights with voluntary agreements covering research, propo
 
 The expansion is in what the project records, recognizes and rewards. SIP is a proposed project and contractual framework, not a claim that a new statutory property right already exists. Ownership, permission, attribution, governance and economic participation remain separate, explicit records.
 
-The initial product is a research assistant using an approved corpus, with source receipts, contributor and syndicate registration, a reviewed contribution graph and reproducible royalty accounting. The long-term objective is an independently trained, competitively evaluated foundation model with auditable data provenance and sovereign deployment options.
+The initial product is a research assistant using an approved corpus, with source receipts, contributor and syndicate registration, a reviewed contribution graph and **SIP Creator Rewards** backed by reproducible royalty accounting. Creators can track qualified use, earnings and payout status under their accepted agreements. Nemotron is the target model family for inference and subsequent adaptation on admitted SIP data. A foundation model trained entirely on SIP-admitted data remains a separate long-term objective, with auditable provenance and sovereign deployment options.
 
 The deliverable is a system around a model as well as a model development program. Model weights alone cannot establish ownership, enforce permission or administer royalties.
 
@@ -31,7 +34,7 @@ When asked to implement this specification:
 1. Read applicable `AGENTS.md` files and inspect the repository before choosing a stack or editing files.
 2. Treat all synced files under `sources/` as read-only references. Create implementation files outside that directory.
 3. Reuse existing architecture, authentication, storage, components and test tooling where suitable.
-4. For an empty repository, use the proposed architecture in section 6 and record consequential deviations in a short architecture decision record.
+4. Use the selected architecture in section 6 and read `docs/SOLUTION_ARCHITECTURE.md`. Reuse compatible repository patterns and record consequential deviations in a short architecture decision record.
 5. Implement milestones M0 through M4 as a working local pilot. Complete the end-to-end flow before adding breadth.
 6. Use clearly labeled synthetic fixtures, a deterministic model adapter and a simulated payment adapter by default. Fixtures must not masquerade as real ownership, contracts or payouts.
 7. Keep paid services, real payouts, production publishing and large training runs outside the local pilot. Their integration points must be explicit; actual activation requires the relevant credentials, agreements and authorization.
@@ -57,6 +60,8 @@ This file defines work to perform when implementation is requested. Generating t
 | P10 | Make syndicate participation voluntary and scoped. Membership, credit, voting power, ownership and revenue shares are distinct. |
 | P11 | Use AI to propose attribution relationships and explain evidence; require authorized review before proposals change permissions, accepted credit or payment eligibility. |
 | P12 | Preserve accepted lineage and accrued obligations across syndicate changes, derivative work and model updates according to the applicable agreements. |
+| P13 | Keep open-license grants independent of marketplace accounts, membership, fees and optional revenue agreements. Delisting does not revoke a compliant recipient's public grant. |
+| P14 | Admit marketplace orders only after authority review, complete terms and all required acceptances; a listing or AI proposal creates no economic entitlement. |
 
 ### Super Intellectual Property coverage
 
@@ -69,6 +74,22 @@ This file defines work to perform when implementation is requested. Generating t
 | Combinations and descendants | Joint work, adaptations, assembled workflows, datasets and model versions, preserving applicable upstream obligations and recording new contributions separately. |
 
 For each subject, the platform MUST distinguish five dimensions: the asserted rights and their basis; consent for specific uses; attribution and provenance; contractual economic participation; and authority to make decisions. A person may receive credit without owning an asset, receive an agreed share without controlling a license, or hold rights without joining a syndicate. An AI-generated suggestion is evidence for review, not an additional rights holder or beneficiary.
+
+### Creator rewards language
+
+Use the following terms in contributor-facing explanations and statements. They describe the existing agreement and accounting model; internal record names and the royalty engine remain unchanged. The [licensing guide](../licenses/README.md#creator-rewards-language) records the language reference.
+
+| Term | Project meaning |
+| --- | --- |
+| Eligible creator | A contributor, rights holder or agreed beneficiary satisfying the applicable rights, authority and compensation terms. |
+| Original contribution | The identifiable idea, analysis, implementation or improvement a participant adds, with upstream credit preserved. This description does not establish ownership or replace permission review. |
+| Qualified use | An evidenced, deduplicated earning event under an accepted agreement: training exposure, paid execution, adoption or accepted delivery where specified. |
+| Creator rewards | Contractual compensation calculated from the accepted earning mechanism and split schedule. |
+| Estimated earnings | A provisional calculation, separate from posted accounting entries. |
+| Earned balance | The balance from posted entries, showing holds and adjustments separately; not necessarily all currently payable. |
+| Payout | A payment event with its initiation and confirmation status visible; pilot payments are explicitly simulated. |
+
+Licensed source material and agreed influence shares can earn under their own terms without being presented as newly authored work. A credit-only influence remains credit-only. Rewards language MUST NOT make accrued compensation discretionary or introduce new earning conditions through interface copy.
 
 ## 4. Scope
 
@@ -83,6 +104,8 @@ For each subject, the platform MUST distinguish five dimensions: the asserted ri
 - Voluntary syndicates with versioned charters, accepted memberships and scoped representation mandates.
 - Syndicate portfolios of works, ideas, contributions and influences, with reviewed attribution links and agreed beneficiary splits.
 - AI-assisted relationship proposals using a deterministic local adapter; authorized review, correction and rejection of those proposals.
+- Explicit license-application and release-attribution records, with distinct public, negotiated and third-party license bases.
+- A local syndicate marketplace catalog, versioned offers, acceptance and fulfillment/cancellation flows using synthetic parties and simulated payments.
 - Durable usage events and a configurable royalty engine.
 - Monthly statements and simulated settlement.
 - Disputes, payment holds and revocation.
@@ -93,7 +116,8 @@ For each subject, the platform MUST distinguish five dimensions: the asserted ri
 - Real identity, tax and payment integrations.
 - Independent financial, security and rights audits.
 - Dedicated regional and disconnected deployments.
-- An owned text and code model trained on admitted data.
+- A Nemotron derivative adapted on admitted SIP data, with upstream provenance limitations disclosed.
+- A separately gated foundation-model program trained entirely on admitted data.
 - Larger models, additional languages and additional modalities after separate gates.
 - Any open-weight release after evaluating rights, safety and downstream payment feasibility.
 - Agreements between syndicates, delegated collection and more complex portfolio licensing after separate review.
@@ -105,6 +129,7 @@ For each subject, the platform MUST distinguish five dimensions: the asserted ri
 - A blockchain, cryptocurrency or speculative rights token.
 - Claims of perfect attribution, guaranteed noninfringement or universal unlearning.
 - A public marketplace for trading purported ownership of abstract ideas.
+- Mandatory fees or account enrollment as a condition of using an open-license grant.
 - Tradable syndicate interests, nested syndicate payment chains or automatic AI valuation of rights.
 - Unrestricted autonomous agents or external actions.
 - Training a frontier model as part of the application scaffold.
@@ -116,6 +141,7 @@ For each subject, the platform MUST distinguish five dimensions: the asserted ri
 | Contributor | Submit material, specify permissions, accept terms, inspect adoption and statements, request revocation, dispute a decision. |
 | Syndicate member | Join or leave under accepted terms, enroll selected contributions, approve mandates and splits, inspect permitted collective decisions and personal earnings. |
 | Syndicate steward | Administer a portfolio and propose agreements within delegated authority; cannot grant rights or redirect payments merely by holding this role. |
+| Marketplace operator | Review listing authority and disclosures, administer versioned offers and orders, and handle service disputes without rewriting public licenses or beneficiary agreements. |
 | Customer | Query authorized sources, inspect citations and receipts, export allowed material, report incorrect or missing credit. |
 | Rights reviewer | Inspect confidential evidence, approve scoped grants, quarantine assets, record reasons and resolve permission questions. |
 | Finance operator | Reconcile revenue, preview settlements, inspect holds, approve permitted payment batches and record corrections. |
@@ -125,20 +151,32 @@ For each subject, the platform MUST distinguish five dimensions: the asserted ri
 
 The core demonstration MUST show a syndicate with three contributors: one supplying a licensed source work and implementation, one supplying an adopted idea and one supplying a documented influence on that idea. Members accept scoped mandates and the 60/25/15 allocation agreement illustrated in section 12; a reviewer admits the eligible material and relationship evidence; a customer obtains a supported answer; an eligible use produces member statements and an auditable simulated settlement. Include a separate credit-only influence and an individual contribution outside a syndicate to demonstrate both paths.
 
+Add a synthetic marketplace journey: a steward publishes a reviewed commission or service listing, the required parties accept a complete versioned order, delivery includes the agreed attribution, and a $2,000 distributable amount yields the agreed member statements. An open-material listing must also demonstrate license/source access without a paid order. Keep any marketplace fee separate from the public license grant.
+
 ## 6. Proposed architecture
 
-Use a modular monolith and one background worker for the pilot. Prefer the repository's existing stack. For a greenfield project, the suggested baseline is:
+Use a modular Rust application core and a Python AI service, with Python background workflows managed by Prefect. The [solution architecture](SOLUTION_ARCHITECTURE.md) defines component boundaries, request and training flows, failure recovery, source references and acceptance gates.
 
-- React and TypeScript for the web interface.
-- Python and FastAPI for the application API and research integration.
-- PostgreSQL for transactional records, permissions, receipts and accounting.
-- PostgreSQL vector search for the initial document index where suitable.
-- Private object storage for sources and confidential evidence; a filesystem adapter for local development.
-- A PostgreSQL transactional outbox and worker for indexing and settlement tasks.
-- Provider-neutral model and payment adapters.
-- Containers for repeatable local dependencies.
+| Technology | Selected responsibility |
+| --- | --- |
+| React and TypeScript | Contributor, syndicate, customer and reviewer web interface |
+| Rust, Axum and Tokio | Public API, authenticated context, permission decisions, domain transitions, final response authorization and exact accounting |
+| SQLx and PostgreSQL | One migration owner, transactional domain records, durable receipts, outbox jobs and financial ledger |
+| pgvector and PostgreSQL full-text search | Authorized retrieval with a separately versioned embedding adapter; exact search first, approximate indexing only after measurement |
+| Python and Pydantic | Shared wire contracts, structured validation, data preparation, evaluation and training configuration |
+| Pydantic AI | Bounded research assistance and evidence-backed attribution proposals using authorized tools |
+| Prefect | Ingestion, batch attribution, manifest construction, training supervision, evaluation and settlement scheduling |
+| Nemotron with vLLM | Private inference endpoint; deterministic model adapter remains the local pilot default |
+| NVIDIA NeMo Megatron Bridge | Model-specific Nemotron conversion and training recipes for later GPU work |
+| Private object storage | Sources, evidence, dataset shards and checkpoints; a private filesystem adapter for local development |
 
-Select and pin supported dependency versions during implementation. Do not introduce Kubernetes, Kafka, a separate graph database or multiple independently deployed services without an observed need.
+The Rust core owns accepted rights, syndicate decisions, usage records and ledger mutations. Python and Prefect submit scoped commands to that core and cannot write those tables directly. Keep rights and finance logic out of model tools. Pydantic schemas define transport shape; Rust and database constraints enforce business invariants.
+
+Use one PostgreSQL server with separate SIP and Prefect databases/roles for local development, one Prefect process worker and repeatable containers. Prefect's durable state is separate from the SIP financial ledger. A production profile with separated Prefect services may also require Redis for its messaging, as described in the architecture. Do not add Kafka, a separate graph database or Kubernetes without a demonstrated need.
+
+The outbox is committed atomically with business changes. Workflow effects use stable business identifiers, input digests and idempotent core commands. Prefect retries or cached task results cannot replace financial uniqueness checks. Protect tenant and member boundaries with explicit authorization and PostgreSQL row-level security using nonprivileged runtime roles.
+
+Pin a tested set of runtime, library, model, tokenizer, parser and container versions before implementation or GPU execution. Keep CPU application, inference and training environments separate; do not assume their latest releases are mutually compatible.
 
 ```mermaid
 flowchart TD
@@ -192,6 +230,8 @@ Patents, trademarks, copyright and trade secrets require different review. Permi
 | R09 | For syndicate-administered use, verify the relevant rights holders' accepted mandates as well as the asset grants. A steward cannot extend the scope, duration, recipients or territory of a member's authority. |
 | R10 | Record credit-only relationships separately from rights grants and economic agreements. Acknowledgment, semantic similarity or an influence estimate cannot authorize use or create a payment claim. |
 | R11 | Record human contributions and AI assistance separately for mixed work, including relevant inputs, tools and provenance limits. An SIP entry cannot itself establish authorship or exclusive rights. |
+| R12 | Record public-license grants separately from revocable service access and representation mandates. A fee dispute, member exit or listing removal cannot revoke surviving public rights. |
+| R13 | Apply SS-SIP only through an explicit authorized grant over identified material; preserve upstream license terms and verify source/attribution obligations before release. |
 
 Use an explicit permission decision service. Its input includes the actor, tenant, resource version, requested use, purpose, region, recipients and current time. Its output includes `allow` or `deny`, a reason code and the exact grant, mandate and policy versions evaluated. A syndicate bundle requires permission for every included resource; it cannot override a missing member grant. Syndicate membership does not itself confer access to another member's private material or another tenant's records.
 
@@ -213,6 +253,14 @@ The pilot supports one level of syndicate administration and direct simulated se
 
 A charter or split change requires the approvals specified in the governing agreements, including consent from parties whose accepted economic terms change. Apply changes prospectively from their effective time; corrections to posted periods use linked adjustments. Syndicates may negotiate collective licenses only within recorded mandates; formation does not establish ownership, authorization to represent nonmembers or blanket permission to use a portfolio.
 
+### License and marketplace contract model
+
+The proposed [SS-SIP license](../licenses/SS-SIP-0.1.md) governs explicitly covered material and its applicable source/attribution obligations. The [marketplace terms](../licenses/SYNDICATE-MARKETPLACE-TERMS-0.1.md) govern only identified participants and accepted transactions. The license's influence notices acknowledge documented relationships; contractual beneficiary schedules determine payments. Neither graph registration nor a credit record creates ownership of an idea.
+
+Use these listing categories: open material, commission/bounty, service, additional permission and voluntary revenue participation. Disclose existing public rights, exactly what is being sold, authority, deliverables, acceptance criteria, source access, applicable credits, fees and refund/exit rules. A seller cannot market rights already granted publicly as an unavoidable paid license or promise exclusivity over them.
+
+The core MUST reject activation of orders missing real required fields in a production environment, or the corresponding clearly synthetic fields in a local fixture. Identity, mandate, governing terms, consideration, allocation, delivery and required party acceptance must resolve to immutable versions. The supplied unaccepted example files remain nonexecutable until those fields are completed. A public license needs no marketplace acceptance to grant rights to its recipients.
+
 ## 8. Contribution lifecycle
 
 ```text
@@ -226,7 +274,7 @@ Dispute state is tracked separately so a contested contribution can retain its a
 - **Under review:** check relevant rights, duplicates, usefulness, confidentiality, supporting evidence and any proposed influence links or syndicate authority.
 - **Accepted:** all required parties accept the versioned agreement, compensation rules, term and credit preferences, including any syndicate mandate and beneficiary split schedule.
 - **Adopted:** link the contribution to a deployed template, implementation change or admitted dataset and its evaluation evidence; record accepted upstream contribution and influence links.
-- **Earning:** count contract-eligible uses or adoption points.
+- **Earning:** count qualified use: the contract-eligible events or adoption points defined by the accepted agreement.
 - **Rejected:** preserve the reason and appeal route; do not use the submission in production.
 - **Retired:** stop new eligibility as specified by the agreement while preserving accrued obligations.
 
@@ -256,6 +304,8 @@ All mutable business entities need versioning and an audit trail. Use immutable 
 | Contributor | `id`, private identity reference, public alias, contact preferences, payment profile reference, status |
 | AssetVersion | `asset_id`, `version`, digest, parent versions, private object reference, media type, origin, confidentiality, tenant |
 | RightsGrant | `id`, asset version, claimant, evidence reference, permitted uses, recipients, territories, validity, attribution rules, revocation terms, state, reviewer, policy version, syndicate mandate reference if represented |
+| LicenseApplication | rights holder/authority, covered versions and exclusions, license ID/text digest, express grant evidence, Source Form location, public or negotiated basis, survival/termination rules |
+| ReleaseAttribution | release/artifact versions, license applications, source references, contributor credits, documented influence links and their basis, upstream notices, privacy-safe correction history |
 | Contribution | `id`, version, kind, contributor IDs, evidence reference, human/AI contribution disclosure, review state, agreement version, adoption reference, earning term, track, split schedule reference |
 | AgreementVersion | parties, accepted terms digest, acceptance evidence, effective dates, royalty rules, minimums, offsets, termination and descendant obligations |
 | Syndicate | `id`, tenant, name, purpose, charter version and terms digest, approval evidence, effective dates, steward IDs, governance rules, status |
@@ -265,6 +315,9 @@ All mutable business entities need versioning and an audit trail. Use immutable 
 | SyndicateDecision | syndicate, proposal and target versions, governing charter, eligible voters, approvals/votes, conflicts, decision, effective time, audit references |
 | AttributionLink | `id`, version, source and target references, relationship type, assertion basis, evidence references, proposer, AI model/method and uncertainty if used, reviewer, state, visibility, correction reference |
 | SplitScheduleVersion | `id`, version, contribution/agreement, earning mechanism, syndicate if applicable, beneficiaries and exact shares, fee beneficiary and share if any, effective interval, acceptance evidence, state |
+| MarketplaceListing | seller/syndicate, category, covered contribution versions, authority references, rights/public-license disclosures, attribution record, visibility, review state, listing versions |
+| MarketplaceOfferVersion | listing version, parties, proposed deliverable and criteria, permission scope, credits, price/revenue basis, fees, splits, adjustments, term, source obligations, immutable digest |
+| MarketplaceOrder | offer/terms versions, required party acceptances, authority snapshots, buyer/seller/operator, jurisdiction/forum, fulfillment and cancellation state, economic-event references, disputes |
 | AdoptionRecord | contribution version, deployed component or manifest, evaluation reference, reviewer, adoption date |
 | DatasetManifest | included asset versions, grant snapshots, transforms, deduplication decisions, exposure units, digest, signature |
 | ModelVersion | base model and license, manifest or disclosed provenance limitation, run ID, code version, checkpoint digest, evaluation references, release status |
@@ -274,6 +327,11 @@ All mutable business entities need versioning and an audit trail. Use immutable 
 | LedgerTransaction | immutable ID, currency, balanced debit/credit entries, business event, settlement version, correction reference |
 | Statement | contributor, period, revenue basis, score breakdown, gross contribution allocations, syndicate and split schedule references, beneficiary shares, fees, minimums, adjustments, holds, payable balance, calculation version |
 | Dispute | claimant, affected records, evidence, status, amount held, decisions, appeal and remediation |
+| ResearchRequest | stable request ID, actor/tenant, input digest, permission context, status, response reference, release transaction and idempotency key |
+| WorkflowJob / OutboxEvent | business key, command/schema version, input digest, tenant, lease/attempt state, external Prefect or GPU job ID, result reference, timestamps |
+| TrainingRun | base model/tokenizer revisions, approved manifest digest, recipe/container versions, hyperparameters, resource limit, external job ID, checkpoint lineage and exposure summary |
+| EvaluationRun | model artifact digest, frozen evaluation dataset/configuration, metrics, failures, reviewer and release-gate result |
+| ModelRelease | model/checkpoint, tokenizer, parser, prompt/configuration and evaluation digests, approval evidence, deployment scope and rollback target |
 
 Personal identity documents, source contents and prompts belong in access-controlled stores, not the append-only accounting log. Audit records reference opaque identifiers. Retention and deletion must distinguish confidential content from required financial evidence.
 
@@ -302,6 +360,14 @@ Endpoint names are suggested; preserve existing repository conventions. Mutating
 | `POST /v1/attribution-links` | Submit a human or AI relationship proposal with evidence and visibility restrictions. |
 | `POST /v1/attribution-links/{id}/review` | Accept, reject or supersede a proposal with reasons; cannot itself approve ownership or payment. |
 | `GET /v1/syndicates/{id}/portfolio` | Return only caller-authorized entries, mandates, accepted relationships and agreement summaries. |
+| `POST /v1/license-applications` | Record an authorized grant over identified material; cannot relicense excluded upstream components. |
+| `POST /v1/marketplace/listings` | Propose a listing with authority, public-rights disclosures, attribution and category. |
+| `GET /v1/marketplace/listings` | Return published, caller-visible offers and public source/license locations without disclosing private review evidence. |
+| `POST /v1/marketplace/listings/{id}/review` | Approve, reject or delist with reasons; preserve surviving license and order rights. |
+| `POST /v1/marketplace/offers` | Propose an immutable offer version with complete transaction terms. |
+| `POST /v1/marketplace/orders` | Create an unaccepted draft order referencing an exact offer version; creates no permission or payment obligation. |
+| `POST /v1/marketplace/orders/{id}/acceptances` | Record authenticated acceptance of the exact offer; activate only when all required fields and consents are valid. |
+| `POST /v1/marketplace/orders/{id}/transitions` | Record authorized fulfillment, acceptance, cancellation or correction under the accepted order; deduplicate economic effects. |
 | `POST /v1/research` | Answer using only authorized resources; return a receipt identifier. |
 | `GET /v1/receipts/{id}` | Return the caller-authorized receipt view. |
 | `GET /v1/contributors/me/statements` | Return the contributor's own accounting statements. |
@@ -356,6 +422,8 @@ Required attribution must survive supported exports. Confidential credits use on
 
 ## 12. Royalty engine
 
+This engine calculates **SIP Creator Rewards**. Contributor-facing views use qualified use, estimated earnings, earned balances and payouts as defined in section 3, while statements retain the precise contractual basis for each amount.
+
 ### Proposed economics
 
 For a monthly accounting period and one currency:
@@ -397,6 +465,8 @@ Renaming a product, distilling a checkpoint or changing a bundle must not erase 
 ### Syndicate allocation
 
 The proposed pool remains 20% of eligible revenue with the same 60/20/20 track proportions. Syndicates administer member allocations within those tracks; they do not create an additional pool or charge. Classify each earning mechanism in its agreement before use. Additional bounties and service fees must identify their separate funding basis.
+
+The pool is a proposed contractual option, not a fee imposed by SS-SIP or every marketplace listing. A marketplace order must expressly select the pool policy or its own fixed-fee/revenue formula. Disclose whether administration fees are deducted before splitting or included within beneficiary shares; never apply both treatments to the same fee. Public-license use alone cannot create a payable event.
 
 First calculate the eligible contribution's gross allocation, then distribute that amount using its accepted split schedule. Each schedule must allocate exactly 100%, including any explicitly approved administration share. The pilot defaults to no administration fee and direct simulated payment to each beneficiary. Any minimum guarantee or offset must identify whether it applies to the contribution or a named beneficiary; apply it only at that agreed level, once, and show its effect separately.
 
@@ -443,7 +513,7 @@ Proposed operational defaults: statements within 15 days of month end; undispute
 
 ### Revocation
 
-Immediately enforce effective revocation in the permission service. Remove affected online index entries and caches within a proposed 24-hour target. A stale index must not bypass the current permission check.
+Immediately enforce effective revocation of revocable permissions in the permission service. Preserve independently surviving public-license grants and distinguish license breach/termination from delisting, membership exit or withdrawal of representation. Remove affected online index entries and caches within a proposed 24-hour target where the effective rights or service-access decision requires it. A stale index must not bypass the current permission check.
 
 For trained checkpoints, record the agreed remedy: exclusion from future training, retraining, validated unlearning or retirement. Deleting a source object is not proof of removing its influence from weights. Existing checkpoint rights and remedies must be clear before admission.
 
@@ -471,30 +541,27 @@ Disputes should be acknowledged within five business days, receive an initial ev
 
 | Milestone | Deliverable | Completion evidence |
 | --- | --- | --- |
-| M0 — Foundation | Repository setup, architecture decision, domain model, migrations, local adapters and fixtures | Repeatable setup; no external credentials required; fixture status clearly visible |
-| M1 — Rights, contributions and syndicates | Private intake, review, scoped grants, charters, memberships, mandates, portfolio enrollment, agreement and split acceptance, adoption | Unauthorized transitions and overbroad mandates fail; missing or expired permission prevents admission; two tenants remain isolated |
-| M2 — Research assistant and attribution | Approved ingestion, retrieval, deterministic model and relationship-proposal adapters, reviewed contribution graph and receipts | Supported answer with valid source locations; accepted acknowledgment is distinct from estimation; private evidence cannot leak; final revocation check works |
-| M3 — Accounting | Usage capture, revenue import fixtures, contribution allocation, member splits, statements and simulated payout | Golden examples and member splits match exactly; overlapping portfolios and retries cannot duplicate liabilities; ledger balances |
-| M4 — Review and operations | Disputes, targeted holds, attribution corrections, mandate withdrawal, member exit/dissolution, revocation remediation, exports and audit views | Complete individual and syndicate demonstrations and failure tests; accrued obligations survive exit; documented local run procedure |
-| M5 — Commercial pilot | Live integrations, signed licenses, identity/tax handling and independent review | Actual payment reconciliation, deployment assessment and measured unit economics |
-| M6 — Owned model | Admitted corpus, training pipeline and evaluated 7–14B research model | Complete manifest lineage, reproducible run records and independent evaluation |
+| M0 — Foundation | Rust/Python workspaces, shared Pydantic schemas, domain model, core-owned migrations, PostgreSQL, local Prefect and deterministic adapters | Repeatable setup; Rust/Python contract parity; no external credentials required; fixture status clearly visible |
+| M1 — Rights, contributions and syndicates | Private intake, license applications, scoped grants, charters, mandates, portfolio enrollment, reviewed marketplace listings/offers, order and split acceptance, adoption | Unauthorized transitions and overbroad mandates fail; incomplete orders remain inactive; public rights survive optional commerce; two tenants remain isolated |
+| M2 — Research assistant and attribution | Python/Pydantic AI research service, core-authorized retrieval, deterministic model and relationship-proposal adapters, reviewed contribution graph and receipts | Supported answer with valid source locations; accepted acknowledgment is distinct from estimation; private evidence cannot leak; final revocation check works |
+| M3 — Accounting | Core-owned usage capture and allocation engine, transactional outbox, Prefect jobs, revenue fixtures, member splits, statements and simulated payout | Golden examples and member splits match exactly; overlapping portfolios and worker restarts cannot duplicate liabilities; ledger balances |
+| M4 — Review and operations | Disputes, targeted holds, release-attribution corrections, order cancellation/delisting, mandate withdrawal, member exit/dissolution, revocation remediation and exports | Complete individual, syndicate and marketplace demonstrations; accrued obligations and surviving public grants persist; documented local run procedure |
+| M5 — Commercial pilot | Verified Nemotron serving configuration, live integrations, signed licenses, identity/tax handling and independent review | Model/provider compatibility checks, actual payment reconciliation, deployment assessment and measured unit economics |
+| M6 — Nemotron adaptation | Admitted SIP corpus, supervised LoRA training pipeline and evaluated Nano 30B-A3B derivative | Complete provenance for added data, disclosed upstream limits, reproducible save/resume and export, independent evaluation and rollback |
 | M7 — Frontier candidate | Larger model research and sovereign deployment options | Capability, rights, security and financial gates all pass |
 
 Suggested repository structure, adaptable to existing conventions:
 
 ```text
 apps/web/
-services/api/
-workers/
-domain/rights/
-domain/contributions/
-domain/syndicates/
-domain/attribution/
-domain/accounting/
-adapters/models/
-adapters/storage/
-adapters/payments/
-research/
+crates/sip-core/             # Axum, domain modules, SQLx, accounting and outbox
+python/sip-contracts/        # Pydantic models and schema export
+python/sip-ai/               # Pydantic AI service and model adapters
+python/sip-workflows/        # Prefect flows and workers
+python/sip-training/         # Approved training and evaluation entry points
+contracts/schema/           # Generated cross-language wire schemas
+migrations/                 # One SIP migration sequence owned by the core
+infra/                      # Local profiles and later deployment configuration
 tests/fixtures/
 tests/integration/
 docs/decisions/
@@ -535,6 +602,17 @@ Prefer modules over separately deployed services. Create only directories needed
 | Worker outage | Durable events survive restart without duplicate processing or lost liability. |
 | Late event | A closed period stays immutable; correction appears in a linked adjustment. |
 | Privacy deletion | Deleting confidential content does not disclose it through the accounting history. |
+| Cross-language contracts | Rust and Python accept/reject the same versioned fixtures, including unknown fields, numeric bounds and invalid enum values. |
+| Pooled tenant context | A reused database connection cannot inherit a previous request's tenant; the runtime role cannot bypass RLS. |
+| AI service authority | A service credential or model tool cannot approve a grant, accept a split, inspect another tenant or post a settlement. |
+| Outbox launch recovery | A crash between workflow submission and acknowledgment preserves one business job identity and cannot duplicate effects. |
+| Workflow resume | A resumed or cached flow rechecks current permission and does not replay an irreversible action as a new economic event. |
+| License adoption | A draft license or incomplete template cannot establish an actual grant; excluded third-party material keeps its own license. |
+| Open grant independence | Open-license use requires no marketplace enrollment or paid order, and delisting/nonpayment of an optional service cannot withdraw the public grant. |
+| Required credit | Distributed covered material includes source access and relevant contributor/influence records; unsupported AI claims do not become mandatory credits. |
+| Order acceptance | Missing identities, authority, terms, allocation or party acceptances prevent execution; a changed offer digest invalidates acceptance of that changed offer. |
+| Marketplace allocation | The synthetic fixed-fee order yields the same $1,200/$500/$300 split exactly once; fees and pool deductions cannot be charged twice. |
+| Marketplace cancellation | Apply the accepted refund and fulfillment rules, preserve posted history and preserve unrelated open-license rights. |
 
 ### Production and model gates
 
@@ -547,36 +625,30 @@ Prefer modules over separately deployed services. Create only directories needed
 - **Sovereignty:** verified regional boundaries, access control, key rotation and rollback for the offered deployment profile.
 - **Capability:** freeze a balanced suite and three leading comparison models at evaluation start; match their median normalized aggregate with no priority domain more than 10% relatively below its comparison median.
 - **Safety:** no unresolved critical finding; independent assessors verify controls against observed capability.
+- **Nemotron integration:** pinned model/server/template/parser configuration passes tool, structured-output, citation, truncation and timeout checks; do not infer compatibility from an API label.
+- **Training execution:** import, optimizer update, save/resume, merge/export and serving of the exported checkpoint pass; all run inputs resolve to the approved manifest and pinned recipe.
 
 Register test definitions, samples and scoring before evaluating. Do not count local fixtures as independent production evidence. A frontier label is conditional on this evidence and does not establish general superintelligence.
 
 ## 17. Model and laboratory program
 
-Start with text and code research in the 7–14B parameter range. Compare dense and mixture-of-experts candidates through smaller controlled experiments. Scale only after validating learning curves, corpus sufficiency, security and economics.
+Use Nemotron as the target family. Start the main adaptation program from `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16` using supervised LoRA fine-tuning on admitted SIP examples. Establish an unmodified inference baseline first. The base checkpoint `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16` is reserved for later continued-pretraining and instruction-tuning experiments; Nano 4B is an optional smaller integration target, and Super 120B-A12B is a later scaling candidate. See the [checkpoint selection and training program](SOLUTION_ARCHITECTURE.md#nemotron-checkpoint-selection).
 
-A third-party model can support the application pilot where permitted. It cannot support an end-to-end permissioned training claim unless its upstream provenance is audited. The first model making that claim must use admitted data and audited dependencies.
+Use the model-specific NVIDIA NeMo Megatron Bridge recipe in a pinned GPU environment and serve evaluated exports through vLLM. Train citation behavior, evidence-grounded responses, attribution proposals and appropriate abstention. Permission decisions and financial rules remain outside the model. Model and framework references, hardware caveats and experiment gates are recorded in the architecture.
+
+The Nemotron derivative can establish admitted provenance for the project's added training data; it cannot imply that upstream Nemotron data was enrolled in SIP. A foundation model making an end-to-end SIP admission claim needs a separate program with approved data and audited dependencies throughout. Record the base model license, provenance limitations and inherited notices with every derivative.
 
 Training records MUST preserve source families, deduplication, transforms, data mixtures, tokenizer, code, hyperparameters, checkpoints and compute consumption. Pay instruction writers, raters and domain experts under explicit agreements. Synthetic data and distillation require authorized inputs and generators, with preserved lineage.
 
 Keep evaluation holdouts separate before training and check contamination. Additional modalities require separate media rights and evaluation gates.
 
-Illustrative scale calculation, not a hardware quote or capability forecast:
+Size GPU work from total checkpoint storage, architecture, sequence length, batch size, optimizer state and measured runtime overhead. The approximate raw BF16 weight storage for a nominal 30B model is 60 GB before training or serving overhead; its active parameter count does not establish GPU memory requirements. The architecture distinguishes NVIDIA's published multi-GPU recipe settings from a universal hardware minimum.
 
-```text
-C ≈ 6 × parameter_count × training_tokens
-  ≈ 6 × 70 billion × 2 trillion
-  ≈ 8.4e23 FLOPs
-
-Assuming 512 accelerators each sustaining 250 TFLOP/s:
-idealized runtime ≈ 76 days
-accelerator hours ≈ 0.93 million
-```
-
-Budget separately for retries, preparation, post-training, evaluations, serving, licensing, personnel and reserves for contractual obligations. Use measured throughput and contracted prices before committing resources.
+Run a short resource-capped experiment that proves checkpoint import, an optimizer update, save/resume, export and inference before a full training allocation. Budget separately for retries, data preparation, evaluations, serving, licensing, personnel and reserves for contractual obligations. Use measured tokens per second and contracted prices before committing resources.
 
 A proposed 24-person pilot laboratory includes six researchers, six data/provenance engineers, four product/platform engineers, three security/evaluation specialists, three rights/contributor operators and two finance/program operators, plus specialist counsel and independent evaluators. Larger training programs require a separate staffing plan.
 
-The indicative program is foundation in months 0–3, paid pilot in months 3–6, an owned research model in months 6–12, scaling decisions in months 12–24 and a frontier candidate from month 24 onward. Funding, hiring, rights supply and evaluation results govern progression.
+The indicative program is foundation in months 0–3, paid pilot in months 3–6, a Nemotron adaptation in months 6–12, scaling decisions in months 12–24 and a frontier candidate from month 24 onward. A model trained entirely on SIP-admitted data has a separate funding and corpus gate. Funding, hiring, rights supply and evaluation results govern progression.
 
 ## 18. Trump administration policy mapping
 
@@ -601,6 +673,8 @@ The local implementation is complete when:
 - All M0–M4 journeys work through the application and persisted API state.
 - A user can inspect an answer's supporting sources, reviewed contribution and influence links, and attribution limitations.
 - Members can create a syndicate, accept its charter, enroll selected contributions under scoped mandates and accept a contribution-specific split schedule.
+- A synthetic marketplace order proceeds from reviewed listing and offer through required acceptances, delivery, attribution and simulated settlement; open-material access also works without a paid order.
+- License records preserve required source access, documented credits, upstream exclusions and surviving public grants independently of marketplace state.
 - An AI proposal can be reviewed, rejected or corrected without automatically changing rights or money.
 - Individual and syndicate contributors can see reproducible royalty statements and clearly simulated settlements; the three-member example and credit-only influence behave as specified.
 - Member exit, mandate withdrawal, attribution correction and syndicate dissolution preserve the applicable permissions, privacy and accrued obligations.
@@ -608,10 +682,11 @@ The local implementation is complete when:
 - Settlement is exact, auditable and independent of model-generated judgments.
 - No external credential is required for the default demonstration.
 - Configuration, migrations, backup assumptions and adapters are documented.
+- Rust/Python contract parity, core-owned authoritative writes and Prefect/outbox recovery pass the local architecture checks.
 - The repository's relevant lint, type, unit and integration checks pass.
 - The completion report names real integrations still required and distinguishes local proof from production acceptance gates.
 
-Document launch dependencies without blocking independent pilot work: legal entity and governance instruments; signed licenses, contribution terms, syndicate charters and representation mandates; accepted beneficiary schedules and approved production scorecards; commercial model/provider terms; deployment jurisdiction and residency; identity/tax/payment providers; independent reviewers; and funded operations.
+Document launch dependencies without blocking independent pilot work: legal entity and governance instruments; qualified review and intentional adoption of the custom license where appropriate; signed contribution terms, syndicate charters, representation mandates and marketplace agreements; accepted beneficiary schedules and approved production scorecards; commercial model/provider terms; deployment jurisdiction and residency; identity/tax/payment providers; independent reviewers; and funded operations.
 
 ## 20. Suggested Codex implementation prompt
 
@@ -619,14 +694,21 @@ Document launch dependencies without blocking independent pilot work: legal enti
 Implement the local Super Sovereign Source LLM IP pilot described in
 docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md.
 
-Read repository instructions and reuse existing patterns first. Implement M0–M4
+Read repository instructions and docs/SOLUTION_ARCHITECTURE.md first. Implement M0–M4
 as one working end-to-end product, using synthetic fixtures and deterministic
 model and payment adapters by default. Keep sources/ read-only.
+
+Use Rust/Axum for the authoritative core; Python/Pydantic/Pydantic AI for
+AI workflows; Prefect for background work; and PostgreSQL for domain state,
+retrieval and accounting. Prepare the Nemotron adapter and training contracts
+without starting GPU training as part of the local application pilot.
 
 Implement Super Intellectual Property through voluntary syndicates, scoped
 mandates, reviewed links among works, ideas, contributions and influences,
 and accepted beneficiary splits. Keep legal rights, credit, governance and
 economic participation distinct; AI suggestions require authorized review.
+Read licenses/README.md and include the synthetic marketplace lifecycle.
+Keep public license grants independent of optional commercial agreements.
 
 Prioritize scoped permissions, tenant isolation, honest attribution, durable
 usage capture, exact member allocations, mandate withdrawal and disputes.
