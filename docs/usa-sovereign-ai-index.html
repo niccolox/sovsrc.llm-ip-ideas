@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>USA Sovereign Source AI Index | Super Sovereign Source LLM IP</title><meta name="description" content="Ten US lab candidates and ten open-source paths compared across ten criteria for permissioned, attributable AI."><style>
+:root{--ink:#19251f;--muted:#53635a;--line:#d4ddd5;--paper:#f5f7f1;--accent:#246245;--soft:#e6eee2}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+main{max-width:1570px;padding:54px 40px 44px;margin:auto}.eyebrow{font-size:12px;letter-spacing:.17em;font-weight:750;color:var(--accent);margin:0 0 20px}h1{font-size:clamp(32px,4.3vw,64px);letter-spacing:-.045em;line-height:1.06;margin:0 0 20px;max-width:1000px}h1 span{color:var(--accent)}.subtitle{font-size:22px;font-weight:600;margin:0 0 16px}p{max-width:1120px;font-size:15px;margin:16px 0}a{color:var(--accent);text-underline-offset:3px}a:hover{color:#0d3825}a:focus-visible,summary:focus-visible,.table-wrap:focus-visible{outline:3px solid #b56825;outline-offset:4px}h2{font-size:25px;line-height:1.25;letter-spacing:-.025em;margin:40px 0 15px}strong{font-weight:680}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:18px 0 22px}table{border-collapse:collapse;width:100%;min-width:1250px;text-align:left;font-size:12px;line-height:1.4}th{font-size:11px;color:#4b6053;text-transform:uppercase;letter-spacing:.04em;background:#edf2e9;padding:13px 10px;vertical-align:bottom}td{padding:14px 10px;vertical-align:top;border-top:1px solid #e0e6de}tbody tr:nth-child(even){background:#fafbf8}td:first-child,th:first-child{width:245px;min-width:225px;position:sticky;left:0;background:#f1f5ec;border-right:1px solid var(--line)}td:first-child{font-size:12px}th:first-child{z-index:1}td:nth-child(8){background:#fff8e8}td:last-child{font-weight:650;color:#24583d}td .ref{display:inline-block;font-size:10px;font-weight:650;white-space:nowrap}
+summary{cursor:pointer;font-size:14px;font-weight:650;padding:16px 20px;color:#234b34}details{border:1px solid var(--line);border-radius:12px;background:#fff;margin:26px 0}details[open]{padding:0 22px 12px}details[open]>summary{margin:0 -22px;border-bottom:1px solid var(--line)}details h2{margin-top:24px}.method table{min-width:680px;font-size:14px}.method td:first-child{width:220px;font-size:14px}.evidence li{font-size:14px;margin:15px 0;max-width:1150px}.evidence p{font-size:14px}ol{padding-left:25px;max-width:1120px}ol li{margin:14px 0;font-size:15px}footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);margin-top:32px;padding-top:20px}nav{display:flex;gap:18px;flex-wrap:wrap;margin:22px 0 30px;font-size:13px;font-weight:650}
+@media(max-width:700px){main{padding:28px 18px}p,ol li{font-size:14px}h2{font-size:22px}.table-wrap{border-radius:8px}td:first-child,th:first-child{min-width:175px;width:175px}}
+@media print{body{background:#fff}main{padding:0;max-width:none}h1{font-size:30px}nav{display:none}details{display:block}details>*{display:block!important}details>summary{display:none!important}.table-wrap{overflow:visible;border-radius:0}table{min-width:0;font-size:8px}td:first-child,th:first-child{position:static;min-width:0;width:18%}th{font-size:7px}td,th{padding:6px}a{color:inherit}h2{break-after:avoid}tr{break-inside:avoid}@page{size:A3 landscape;margin:12mm}
+</style></head><body><main><p class="eyebrow">SOVEREIGN SOURCE · RESEARCH / 01</p><h1>Choose the foundation.<br><span>Keep the provenance.</span></h1><p class="subtitle">USA Sovereign Source AI Index</p>
+<p><strong>Super Sovereign Source LLM IP · Research snapshot: October 10, 2026</strong><br />
+<strong>10 lab/provider candidates · 10 open-source paths · 10 comparison parameters</strong><br />
+<a href="USA_SOVEREIGN_AI_INDEX.md">Markdown edition</a> · <a href="FRONTIER_LAB_IP_AND_CREATOR_REWARDS_AUDIT.md">Detailed terms audit</a> · <a href="SOLUTION_ARCHITECTURE.md">Architecture</a></p>
+<p><strong>Recommendation:</strong> prioritize Ai2's auditable training ecosystem and Stanford-origin Marin/Levanter for a model trained from scratch on SIP-admitted material. Evaluate downloadable US-company models only after ancestry and rights review. None of the reviewed releases establishes the complete SIP combination of source permission, verified ancestry, attribution and contractual creator rewards. This is a finding about available evidence, not proof that no suitable private arrangement exists.</p>
+<p><strong>Nemotron decision:</strong> hold the previously proposed Nemotron 3 Nano 30B-A3B checkpoint. Its official card says it was improved using Qwen, so it fails the strict model-ancestry screen used here. NVIDIA remains a potential infrastructure supplier; that does not qualify this checkpoint. <a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16">NVIDIA model card</a>.</p>
+<details class="method"><summary>Method, eligibility rules and the ten parameters</summary><h2 id="scope">Scope and how to read the index</h2>
+<p>“USA” means a US-headquartered provider or a project led by or originating at a US institution. It does not certify every collaborator, training location or data source as American. Google is included through its US parent/provider; Google DeepMind is an international organization with UK origins. A requirement for exclusively US research operations would exclude that route and require additional institutional diligence elsewhere.</p>
+<p><strong>Working interpretation of “no Chinese models”:</strong> exclude Chinese-developed checkpoints and their derivatives, including synthetic training teachers. Record model-based data transformations, reward models, embeddings and evaluation judges too. Unknown ancestry is <strong>pending</strong>, never a pass. Chinese language, an author's name and contributor ethnicity are not evidence of model origin. This is a project selection rule, not a restriction added to public open-source licenses.</p>
+<p>The ten labs are a project-specific shortlist spanning frontier providers and open-model research, not a claim that all ten have equivalent frontier capability. Entries compare the <strong>named route</strong>, not every product a company offers. Order favors inspectability and independent deployment; no numerical capability ranking is asserted. Older releases are deliberate research baselines, not recommendations for frontier-quality production assistants. No models were benchmarked in this review.</p>
+<p>The open-source list contains <strong>six baseline model families, one training framework route and three supporting tools</strong>. It does not claim ten fully verified, purely open-source frontier LLMs exist. Software licenses, model licenses and training-data permissions are assessed separately. Apache/MIT weights alone do not establish a complete open-source AI system: the OSI definition also requires training code and adequate data information. Nor does open-source status establish permission for every training work. <a href="https://opensource.org/ai/open-source-ai-definition">OSI Open Source AI Definition 1.0</a>.</p>
+<h2 id="parameters">The ten parameters</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Comparison table; scroll horizontally if needed"><table>
+<thead>
+<tr>
+<th scope="col">Parameter</th>
+<th scope="col">Question answered</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 · Capability</strong></td>
+<td>What does the selected release actually provide: assistant, base model, training or serving tool?</td>
+</tr>
+<tr>
+<td><strong>2 · Local control</strong></td>
+<td>Can we operate the selected weights or software on infrastructure we control?</td>
+</tr>
+<tr>
+<td><strong>3 · License</strong></td>
+<td>What license or service agreement governs that selected artifact?</td>
+</tr>
+<tr>
+<td><strong>4 · Adaptation</strong></td>
+<td>Can we modify/train locally, or only customize a managed service?</td>
+</tr>
+<tr>
+<td><strong>5 · Redistribution</strong></td>
+<td>Can we commercially distribute the selected weights or code, subject to its terms?</td>
+</tr>
+<tr>
+<td><strong>6 · Training visibility</strong></td>
+<td>Are training code, data information and recipes available for inspection?</td>
+</tr>
+<tr>
+<td><strong>7 · Model ancestry</strong></td>
+<td>Does the evidence clear the no-Chinese-base/teacher screen?</td>
+</tr>
+<tr>
+<td><strong>8 · Source permission</strong></td>
+<td>Is there asset-level evidence sufficient for SIP's permission standard?</td>
+</tr>
+<tr>
+<td><strong>9 · Creator rewards</strong></td>
+<td>Is the full SIP attribution, influence and royalty system supplied?</td>
+</tr>
+<tr>
+<td><strong>10 · SIP decision</strong></td>
+<td>What role should this route have in the project?</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Legend:</strong> <strong>A2</strong> = Apache-2.0; <strong>Gap</strong> = reviewed sources do not establish asset-level SIP permission; <strong>Build</strong> = implement SIP agreements, attribution and rewards separately; <strong>Pending</strong> = not ancestry-cleared; <strong>Inputs</strong> = software route, with every chosen model/dataset still subject to review; <strong>Terms</strong> = conditional permission, not an unrestricted grant. “Yes” under redistribution covers the named artifact, not its training corpus. No row is approved for a production release.</p>
+</details>
+<nav aria-label="Index sections"><a href="#labs">10 labs</a><a href="#open-source">10 open-source paths</a><a href="#decision">Project decision</a><a href="#evidence">Sources</a></nav><h2 id="labs">Ten US lab and provider candidates</h2>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Comparison table; scroll horizontally if needed"><table>
+<thead>
+<tr>
+<th scope="col">Lab / selected route</th>
+<th scope="col">1 Capability</th>
+<th scope="col">2 Local control</th>
+<th scope="col">3 License</th>
+<th scope="col">4 Adaptation</th>
+<th scope="col">5 Redistribution</th>
+<th scope="col">6 Training visibility</th>
+<th scope="col">7 Model ancestry</th>
+<th scope="col">8 Source permission</th>
+<th scope="col">9 Creator rewards</th>
+<th scope="col">10 SIP decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ai2</strong> · original OLMo-7B <a class="ref" href="#evidence-l1">L1</a></td>
+<td>Research base</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local training</td>
+<td>Yes</td>
+<td>Code + Dolma</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Prioritize recipe</td>
+</tr>
+<tr>
+<td><strong>OpenAI</strong> · gpt-oss-20b <a class="ref" href="#evidence-l2">L2</a></td>
+<td>Local reasoning</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local tuning</td>
+<td>Yes</td>
+<td>Partial</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Conditional evaluation</td>
+</tr>
+<tr>
+<td><strong>Google</strong> · Gemma 4 <a class="ref" href="#evidence-l3">L3</a></td>
+<td>Multimodal family</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local tuning</td>
+<td>Yes</td>
+<td>Partial</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Conditional; US parent</td>
+</tr>
+<tr>
+<td><strong>Microsoft Research</strong> · Phi-4 <a class="ref" href="#evidence-l4">L4</a></td>
+<td>Small assistant</td>
+<td>Yes</td>
+<td>MIT</td>
+<td>Local tuning</td>
+<td>Yes</td>
+<td>Partial</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Conditional evaluation</td>
+</tr>
+<tr>
+<td><strong>Databricks / MosaicML</strong> · MPT-7B Base <a class="ref" href="#evidence-l5">L5</a></td>
+<td>Legacy base</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local training</td>
+<td>Yes</td>
+<td>Code + mixture</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Research baseline</td>
+</tr>
+<tr>
+<td><strong>NVIDIA</strong> · Nemotron 3 Nano 30B-A3B <a class="ref" href="#evidence-l6">L6</a></td>
+<td>Reasoning / agents</td>
+<td>Yes</td>
+<td>Custom</td>
+<td>Terms</td>
+<td>Terms</td>
+<td>Recipe + data subsets</td>
+<td><strong>Fails: Qwen</strong></td>
+<td>Gap</td>
+<td>Build</td>
+<td><strong>Hold checkpoint</strong></td>
+</tr>
+<tr>
+<td><strong>Meta</strong> · Llama 4 <a class="ref" href="#evidence-l7">L7</a></td>
+<td>Multimodal family</td>
+<td>Yes</td>
+<td>Custom</td>
+<td>Terms</td>
+<td>Terms</td>
+<td>Partial</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>License-dependent</td>
+</tr>
+<tr>
+<td><strong>Amazon</strong> · Nova Forge <a class="ref" href="#evidence-l8">L8</a></td>
+<td>Managed customization</td>
+<td>AWS-hosted</td>
+<td>Service</td>
+<td>Managed training</td>
+<td>Not established</td>
+<td>Partial / managed</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Managed alternative</td>
+</tr>
+<tr>
+<td><strong>Anthropic</strong> · Claude commercial API <a class="ref" href="#evidence-l9">L9</a></td>
+<td>Hosted assistant</td>
+<td>No public weights</td>
+<td>Service</td>
+<td>Competitor restriction</td>
+<td>No weights grant</td>
+<td>Closed</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Service only</td>
+</tr>
+<tr>
+<td><strong>xAI</strong> · Grok-1 open release <a class="ref" href="#evidence-l10">L10</a></td>
+<td>Legacy 314B base</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local modification</td>
+<td>Yes</td>
+<td>Inference code</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Low-priority baseline</td>
+</tr>
+</tbody>
+</table></div>
+<p>Hosted GPT, Gemini and Grok have separate agreements from gpt-oss, Gemma and Grok-1. The reviewed hosted terms restrict competing-model development or output training; do not use API outputs as a sovereign training corpus without applicable permission. Claude's reviewed commercial terms also require approval for competing products. Nova Forge provides AWS customization, not evidence of unrestricted weight export or offline ownership. <a href="https://openai.com/policies/services-agreement/">OpenAI §3.3</a>, <a href="https://ai.google.dev/gemini-api/terms">Gemini terms</a>, <a href="https://x.ai/legal/terms-of-service-enterprise">Grok §3.2</a>, <a href="https://www.anthropic.com/legal/commercial-terms">Anthropic §D.4</a>, <a href="https://aws.amazon.com/nova/forge/">Nova Forge</a>.</p>
+<h2 id="open-source">Ten US-led open-source paths</h2>
+<p>All ten selected paths expose software under Apache-2.0 or MIT. The six baseline families also publish weights under Apache-2.0. This is a component-level shortlist, not an OSI certification of their complete AI systems or permission clearance of their corpora.</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="Comparison table; scroll horizontally if needed"><table>
+<thead>
+<tr>
+<th scope="col">Project / US anchor</th>
+<th scope="col">1 Capability</th>
+<th scope="col">2 Local control</th>
+<th scope="col">3 License</th>
+<th scope="col">4 Adaptation</th>
+<th scope="col">5 Redistribution</th>
+<th scope="col">6 Training visibility</th>
+<th scope="col">7 Model ancestry</th>
+<th scope="col">8 Source permission</th>
+<th scope="col">9 Creator rewards</th>
+<th scope="col">10 SIP decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OLMo-7B, original</strong> · Ai2 <a class="ref" href="#evidence-o1">O1</a></td>
+<td>Research base</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local training</td>
+<td>Weights + code</td>
+<td>Code + Dolma</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Preferred audit baseline</td>
+</tr>
+<tr>
+<td><strong>Marin / Levanter</strong> · Stanford origin <a class="ref" href="#evidence-o2">O2</a></td>
+<td>From-scratch trainer</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Own training run</td>
+<td>Code</td>
+<td>Public experiments</td>
+<td>Inputs</td>
+<td>Own corpus</td>
+<td>Build</td>
+<td>Preferred training path</td>
+</tr>
+<tr>
+<td><strong>Pythia</strong> · EleutherAI <a class="ref" href="#evidence-o3">O3</a></td>
+<td>Model-dynamics suite</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local training</td>
+<td>Weights + code</td>
+<td>Code + Pile ordering</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Attribution experiments</td>
+</tr>
+<tr>
+<td><strong>MPT-7B Base</strong> · MosaicML <a class="ref" href="#evidence-o4">O4</a></td>
+<td>Legacy base</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local training</td>
+<td>Weights + code</td>
+<td>Code + mixture</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Engineering baseline</td>
+</tr>
+<tr>
+<td><strong>RedPajama-INCITE-7B-Base</strong> · Together AI <a class="ref" href="#evidence-o5">O5</a></td>
+<td>Legacy base</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local training</td>
+<td>Weights + code</td>
+<td>GPT-NeoX + corpus</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Data-pipeline reference</td>
+</tr>
+<tr>
+<td><strong>Cerebras-GPT</strong> · Cerebras <a class="ref" href="#evidence-o6">O6</a></td>
+<td>Scaling-law suite</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local modification</td>
+<td>Weights + code</td>
+<td>Recipe + Pile</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>Scaling research</td>
+</tr>
+<tr>
+<td><strong>OpenLLaMA 7B v1 / EasyLM</strong> · Berkeley researchers <a class="ref" href="#evidence-o7">O7</a></td>
+<td>Legacy base / trainer</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Local training</td>
+<td>Weights + code</td>
+<td>Code + RedPajama</td>
+<td>Pending</td>
+<td>Gap</td>
+<td>Build</td>
+<td>JAX training reference</td>
+</tr>
+<tr>
+<td><strong>vLLM</strong> · Berkeley origin <a class="ref" href="#evidence-o8">O8</a></td>
+<td>Inference server</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Modify serving code</td>
+<td>Code</td>
+<td>No pretrained model</td>
+<td>Inputs</td>
+<td>Own inputs</td>
+<td>Build</td>
+<td>Serving shortlist</td>
+</tr>
+<tr>
+<td><strong>SkyRL</strong> · Berkeley Sky Lab <a class="ref" href="#evidence-o9">O9</a></td>
+<td>RL training library</td>
+<td>Yes</td>
+<td>A2</td>
+<td>Own RL run</td>
+<td>Code</td>
+<td>Public RL code</td>
+<td>Inputs</td>
+<td>Own inputs</td>
+<td>Build</td>
+<td>Later post-training</td>
+</tr>
+<tr>
+<td><strong>StreamingLLM</strong> · MIT Han Lab <a class="ref" href="#evidence-o10">O10</a></td>
+<td>Streaming inference</td>
+<td>Yes</td>
+<td>MIT</td>
+<td>Modify serving code</td>
+<td>Code</td>
+<td>No pretrained model</td>
+<td>Inputs</td>
+<td>Own inputs</td>
+<td>Build</td>
+<td>Optional efficiency study</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>University boundaries:</strong> Stanford contributes transparent training infrastructure; the selected Marin route starts from new weights and an admitted corpus. Its published 8B Instruct data includes Bespoke-Stratos, which uses DeepSeek-R1 outputs, so that checkpoint is excluded under this screen. Berkeley's SkyRL code is distinct from downloaded example models; its dependencies and recipes require review. MIT's StreamingLLM is an inference technique, not an MIT foundation LLM, and it discards middle context rather than creating unlimited memory. <a href="https://huggingface.co/marin-community/marin-8b-base">Marin dataset list</a>, <a href="https://huggingface.co/datasets/bespokelabs/Bespoke-Stratos-17k">Bespoke-Stratos origin</a>, <a href="https://github.com/NovaSky-AI/SkyRL">SkyRL</a>, <a href="https://github.com/mit-han-lab/streaming-llm">StreamingLLM FAQ</a>.</p>
+<h2 id="decision">Project decision</h2>
+<ol>
+<li><strong>Build the SIP control system first.</strong> Keep Rust/Axum and PostgreSQL authoritative for permission, accepted attribution, syndicate splits and exact accounting. Use Python/Pydantic/Pydantic AI for bounded model work and Prefect for manifests, training supervision and settlement workflows.</li>
+<li><strong>Prove training at a small scale.</strong> Evaluate an Ai2 or Marin training stack with newly initialized weights and exclusively admitted data. Include tokenizer training, filtering models, teachers and transformations in the ancestry manifest. A fresh initialization does not clear unreviewed data. Original OLMo/Pythia can support separately labeled research after admission review; their old public corpora are not automatically SIP-qualified.</li>
+<li><strong>Keep capable open-weight options conditional.</strong> gpt-oss, Gemma 4 and Phi-4 offer local deployment under permissive licenses. Request or establish ancestry and permission evidence before treating them as a fully sovereign source foundation. Local deployment alone is an operational property, not a full provenance claim.</li>
+<li><strong>Preserve the Nemotron study as a held alternative.</strong> Do not launch the planned Nano adaptation under the current strict screen. Another NVIDIA checkpoint would need its own complete review; the family name grants no exemption.</li>
+<li><strong>Release only on evidence.</strong> Pin revisions, licenses, dependencies and data manifests; establish source authority and accepted reward agreements; benchmark capability and citation accuracy; test privacy, revocation and exact settlement. The next deliverable is an admitted small-model experiment, not a promised frontier-scale training run.</li>
+</ol>
+<p>No reviewed standard release supplies SIP's entire reward system. Provider notices and source citations are not contributor royalties. SIP must preserve upstream notices, distinguish verified use from estimated influence, and calculate payments from accepted agreements. This index changes model selection priorities; it does not adopt SS-SIP, relicense third-party material, purchase compute or authorize a training run.</p>
+<details class="evidence"><summary>Evidence register · official sources and release-specific notes</summary><h2 id="evidence">Evidence register</h2>
+<p>All sources below were checked on October 10, 2026. Model families can contain incompatible licenses and ancestries: findings apply only to named artifacts. Mutable repository references must be pinned before adoption. “Gap” and “Pending” express limits of this desk review, not allegations of infringement or concealed ancestry.</p>
+<ul>
+<li><span id="evidence-l1"></span><span id="evidence-o1"></span><strong>L1 / O1 — Ai2:</strong> original <a href="https://huggingface.co/allenai/OLMo-7B">OLMo-7B model card</a> identifies Apache-2.0 code/weights, Dolma and training artifacts. <a href="https://allenai.org/olmo">Current Olmo program</a> includes later families; the original-model assessment does not clear Olmo 2, Olmo 3 or their post-training mixtures.</li>
+<li><span id="evidence-l2"></span><strong>L2 — OpenAI:</strong> <a href="https://developers.openai.com/api/docs/models/gpt-oss-20b">gpt-oss-20b documentation</a> establishes local use, Apache-2.0 and tuning. It does not supply a complete asset-level permission or teacher-origin register. <a href="https://openai.com/policies/services-agreement/">Services agreement</a> is effective January 1, 2026 and governs the separate hosted route.</li>
+<li><span id="evidence-l3"></span><strong>L3 — Google:</strong> <a href="https://ai.google.dev/gemma/docs/core/model_card_4">Gemma 4 model card</a>, updated July 30, 2026, and <a href="https://ai.google.dev/gemma/apache_2">Apache-2.0 license</a>. Its data description is categorical rather than an asset-level SIP register. Do not apply the <a href="https://ai.google.dev/gemma/terms">older Gemma terms</a>, modified April 1, 2026, to Gemma 4; that page expressly distinguishes them.</li>
+<li><span id="evidence-l4"></span><strong>L4 — Microsoft:</strong> <a href="https://huggingface.co/microsoft/phi-4">Phi-4 card</a> specifies MIT licensing and synthetic/public/acquired data categories. <a href="https://www.microsoft.com/en-us/research/publication/phi-4-technical-report/">Technical report</a> discusses GPT-4 teaching; this is not a complete certification of every ancestor or dataset.</li>
+<li><span id="evidence-l5"></span><span id="evidence-o4"></span><strong>L5 / O4 — Databricks:</strong> <a href="https://www.databricks.com/blog/mpt-7b">MPT-7B release</a>, May 5, 2023, identifies a from-scratch Apache-2.0 base model. The assessment does not extend to MPT-Chat, StoryWriter, DBRX or every dataset named by those variants.</li>
+<li><span id="evidence-l6"></span><strong>L6 — NVIDIA:</strong> <a href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16">Nano card</a>, released December 15, 2025, discloses Qwen use. <a href="https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-nemotron-open-model-license/">Nemotron license</a> is custom; it is not identified here as an OSI-approved license. The <a href="https://research.nvidia.com/labs/nemotron/files/NVIDIA-Nemotron-3-Nano-Technical-Report.pdf">Nano technical report</a> details synthetic-data methods.</li>
+<li><span id="evidence-l7"></span><strong>L7 — Meta:</strong> <a href="https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE">Llama 4 license</a>, release date April 5, 2025, imposes notice/branding, policy and other conditions, including a large-platform threshold and an EU-domicile limitation for the multimodal grant. It is not an unrestricted Apache/MIT path.</li>
+<li><span id="evidence-l8"></span><strong>L8 — Amazon:</strong> <a href="https://aws.amazon.com/nova/forge/">Nova Forge</a> describes early checkpoints, blending customer and Amazon-curated data, and hosting on AWS. The public product description is insufficient evidence of a portable, fully source-auditable model license.</li>
+<li><span id="evidence-l9"></span><strong>L9 — Anthropic:</strong> <a href="https://www.anthropic.com/legal/commercial-terms">Commercial terms</a>, effective June 17, 2025, govern the selected Claude service route. No public Claude checkpoint grant is established by this instrument.</li>
+<li><span id="evidence-l10"></span><strong>L10 — xAI:</strong> <a href="https://github.com/xai-org/grok-1">Grok-1 repository</a> expressly licenses its code and associated weights under Apache-2.0. This 314B base snapshot is distinct from the current hosted Grok service and its <a href="https://x.ai/legal/terms-of-service-enterprise">enterprise terms</a>, updated August 14, 2026.</li>
+<li><span id="evidence-o2"></span><strong>O2 — Stanford origin:</strong> <a href="https://marin.community/blog/2025/05/19/announcement/">Marin launch</a>, May 19, 2025, documents Stanford CRFM origins and open experiments; <a href="https://raw.githubusercontent.com/marin-community/marin/main/LICENSE">Marin license</a> and <a href="https://raw.githubusercontent.com/marin-community/levanter/main/LICENSE">Levanter license</a> are Apache-2.0. The recommendation concerns software plus a new corpus, not automatic reuse of released mixtures or tokenizers.</li>
+<li><span id="evidence-o3"></span><strong>O3 — EleutherAI:</strong> <a href="https://github.com/EleutherAI/pythia">Pythia repository</a> supplies Apache-2.0 code/weights, checkpoints and training-order information. Its <a href="https://downloads.regulations.gov/NTIA-2023-0009-0291/attachment_1.pdf">NTIA submission</a>, March 2024, identifies the institute as a US research organization. Pile component permissions and current availability require separate examination.</li>
+<li><span id="evidence-o5"></span><strong>O5 — Together AI:</strong> <a href="https://huggingface.co/togethercomputer/RedPajama-INCITE-7B-Base">RedPajama base card</a> identifies Together leadership, Apache-2.0 and international collaborators. US-led does not mean exclusively US-authored. The base assessment does not clear its instruction/chat variants.</li>
+<li><span id="evidence-o6"></span><strong>O6 — Cerebras:</strong> <a href="https://www.cerebras.ai/blog/cerebras-gpt-a-family-of-open-compute-efficient-large-language-models">Cerebras-GPT announcement</a>, March 28, 2023, identifies Apache-2.0 releases and Pile-based scaling experiments. <a href="https://arxiv.org/abs/2304.03208">Training paper</a> documents the wafer-scale setup; reproducing the original hardware run differs from adapting downloadable weights.</li>
+<li><span id="evidence-o7"></span><strong>O7 — Berkeley researchers:</strong> <a href="https://github.com/openlm-research/open_llama">OpenLLaMA</a> documents Apache-2.0 weights and EasyLM, with separate v1/v2 data mixtures. <a href="https://github.com/young-geng/EasyLM">EasyLM</a> is the training framework. The selected 7B v1 is an independently trained reproduction, not a grant to relicense Meta Llama checkpoints.</li>
+<li><span id="evidence-o8"></span><strong>O8 — Berkeley origin:</strong> <a href="https://github.com/vllm-project/vllm">vLLM repository</a> documents its Sky Computing Lab origins and local serving; <a href="https://raw.githubusercontent.com/vllm-project/vllm/main/LICENSE">license</a> is Apache-2.0. Supporting an architecture does not require selecting that architecture's weights.</li>
+<li><span id="evidence-o9"></span><strong>O9 — Berkeley:</strong> <a href="https://github.com/NovaSky-AI/SkyRL">SkyRL repository</a> identifies the Sky Computing Lab/Anyscale collaboration and inherited components; <a href="https://raw.githubusercontent.com/NovaSky-AI/SkyRL/main/LICENSE">license</a> is Apache-2.0. Configure only admitted models, teachers and environments; example recipes are not ancestry approval.</li>
+<li><span id="evidence-o10"></span><strong>O10 — MIT:</strong> <a href="https://hanlab.mit.edu/projects/streamingllm">Han Lab project</a>, <a href="https://github.com/mit-han-lab/streaming-llm">source and limitations</a>, and <a href="https://raw.githubusercontent.com/mit-han-lab/streaming-llm/main/LICENSE">MIT license</a>. This is an optional inference research component, not a replacement for source retrieval or durable attribution records.</li>
+</ul>
+<p>Chinese-developed models are excluded from selection; Nemotron's known Qwen dependency and Marin Instruct's known DeepSeek-derived data are retained only as exclusion evidence. Non-US-led providers such as Mistral, Cohere and UAE-led Falcon are outside this US-focused shortlist. The earlier multinational terms audit remains available for historical comparison.</p>
+</details><footer>Research only · No model download, training run, partnership or procurement has been authorized by this index.</footer></main><script>
+function revealEvidence(){
+ if(location.hash.startsWith('#evidence')){
+  document.querySelector('.evidence').open=true;
+  document.getElementById(location.hash.slice(1))?.scrollIntoView({block:'center'});
+ }
+}
+addEventListener('hashchange',revealEvidence);revealEvidence();
+</script></body></html>
