@@ -14,6 +14,7 @@
 - **Selected model:** NVIDIA Nemotron 3 Ultra; [exact checkpoints and training plan](SOLUTION_ARCHITECTURE.md#nemotron-checkpoint-selection). The [older-model review](NEMOTRON_NO_QWEN_RESEARCH.md) remains historical alternative research.
 - **Commercial platform recommendation:** NVIDIA AI Enterprise with NeMo; TollBit or direct creator agreements for licensed content, and Stripe Connect as the payout candidate. See [commercial platform research and requirements](#commercial-platform-decision-and-research). No vendor agreement or live integration is established by this recommendation.
 - **Licensing:** [SS-SIP-0.1 and marketplace drafts](../licenses/README.md). Custom proposals, not OSI-approved or automatically applied to repository or third-party material.
+- **Development permissions addendum:** [Pathway from ChatGPT to an independent LLM with content rewards](CHATGPT_TO_INDEPENDENT_LLM_PATHWAY.md). Proposed routes through explicit permission or independently authorized development; prior AI assistance and source rights need artifact-specific review.
 - **Policy reference date:** 2026-10-10, carried forward from v0.1. Revalidate policy applicability before making a production compliance claim.
 
 `MUST` means a required acceptance condition. `SHOULD` means a recommended default. Royalty rates, staffing, schedules and performance targets are proposed project choices, not statutory requirements.
@@ -262,6 +263,7 @@ Patents, trademarks, copyright and trade secrets require different review. Permi
 | R11 | Record human contributions and AI assistance separately for mixed work, including relevant inputs, tools and provenance limits. An SIP entry cannot itself establish authorship or exclusive rights. |
 | R12 | Record public-license grants separately from revocable service access and representation mandates. A fee dispute, member exit or listing removal cannot revoke surviving public rights. |
 | R13 | Apply SS-SIP only through an explicit authorized grant over identified material; preserve upstream license terms and verify source/attribution obligations before release. |
+| R14 | Before using externally generated material to develop a competing model, record evidence that its source terms or a specific permission authorize the intended use under the [development pathway](CHATGPT_TO_INDEPENDENT_LLM_PATHWAY.md). Independently sourced replacements need their own reviewed basis. Include design, code, labels, evaluations and feedback; this specification and earlier chats are not automatically cleared model-development inputs. |
 
 Use an explicit permission decision service. Its input includes the actor, tenant, resource version, requested use, purpose, region, recipients and current time. Its output includes `allow` or `deny`, a reason code and the exact grant, mandate and policy versions evaluated. A syndicate bundle requires permission for every included resource; it cannot override a missing member grant. Syndicate membership does not itself confer access to another member's private material or another tenant's records.
 

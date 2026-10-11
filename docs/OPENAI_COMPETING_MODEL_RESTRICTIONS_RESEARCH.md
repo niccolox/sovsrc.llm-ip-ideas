@@ -131,3 +131,5 @@ For each externally generated artifact considered for model development, retain:
 These are proposed evidence fields, not implemented features. For the first independently trained release, favor original commissioned contributions and datasets whose agreements expressly address the intended model development. Preserve unresolved provenance as an unresolved issue rather than filling it with an assumed permission.
 
 The repository's earlier chat export remains a historical snapshot. This research should be consulted alongside the current specification when deciding whether any generated project material can enter a training or model-development pipeline.
+
+The [pathway from ChatGPT to an independent LLM with content rewards](CHATGPT_TO_INDEPENDENT_LLM_PATHWAY.md) turns these findings into two proposed routes: explicit contractual permission or independently authorized development. It includes treatment of prior assistance, contributor agreements and release evidence; it grants no waiver or model-development clearance.
