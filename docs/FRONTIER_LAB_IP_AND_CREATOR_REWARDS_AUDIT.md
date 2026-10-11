@@ -27,7 +27,7 @@ The sample covers OpenAI, Anthropic, Google DeepMind through Gemini, xAI/Grok, M
 
 Each assessment distinguishes consumer access, business or developer access, and independently distributed model weights. A subscription, API account and downloaded checkpoint can impose different conditions. The review examines ownership, provider reuse, downstream training, attribution, compensation and practical control. It does not audit actual training datasets, signed enterprise amendments, implementation compliance or the merits of litigation.
 
-Sources are provider terms, official model repositories, program materials and public legal authorities. The version register records displayed dates separately from the research date. The Anthropic consumer page retrieved for this review expressly covers EEA and Swiss consumers; Mistral's consumer page covers consumers outside the EEA. Those findings must not be silently generalized to other regional agreements. Google Gemini Apps privacy guidance is identified as guidance rather than a substitute for its complete consumer contract.
+Sources are provider terms, official model repositories, program materials and public legal authorities. The version register records displayed dates separately from the research date. The Anthropic consumer page retrieved for this review expressly covers EEA and Swiss consumers; Mistral's consumer page covers consumers outside the EEA. Those findings must not be silently generalized to other regional agreements. Google's consumer, developer, Cloud and Workspace contracts are distinguished from privacy guidance.
 
 **Interpretation rules:** “Express permission” remains subject to the instrument's scope and conditions. “No general entitlement identified” describes the reviewed text, not undisclosed contracts. A proposed SIP control below is a design recommendation unless it already appears in the linked project specification. Before adopting a service or releasing weights, preserve the applicable terms and incorporated policies with their versions and obtain a review for the actual parties, jurisdiction and use.
 
@@ -67,6 +67,8 @@ Commercial terms prohibit training on Customer Content, allocate inputs and outp
 **SIP implication:** distinguish ordinary service feedback, security reporting and compensated contributions. Do not assume that a confidential commercial interaction authorizes transferring its outputs into Nemotron training, or that the consumer page describes every region.
 
 ### Google DeepMind and Gemini
+
+The dedicated [Gemini commercial restrictions report](GEMINI_COMMERCIAL_RESTRICTIONS_RESEARCH.md) covers access routes, exceptions and commercial exposure. The US consumer terms restrict generated-content use for machine-learning development. [Google US terms](https://policies.google.com/terms?hl=en-US). Cloud has broader competitive-use clauses and limited exceptions. [Cloud service terms, 17](https://cloud.google.com/terms/service-terms). Workspace restricts generated output as a material input to competing-model development. [Workspace service terms, 12.4](https://workspace.google.com/terms/service-terms/).
 
 Gemini API unpaid use generally permits product and model improvement, including human review. Paid-service treatment excludes prompt and response use for product improvement; billing configuration and the EEA/Swiss/UK exception matter. The terms restrict competing-model development. Google claims no ownership of generated content, but applicable attribution and grounding restrictions remain. Search-grounded results have separate limits on training, collection, storage and display. [Gemini API Additional Terms, Use Restrictions, Unpaid Services, Paid Services and Grounding](https://ai.google.dev/gemini-api/terms).
 
@@ -266,6 +268,9 @@ All entries were reviewed on **October 10, 2026**. Dates below are the source's 
 | Anthropic Consumer Terms | Effective October 8, 2025; retrieved EEA/Swiss version | 3–4 |
 | Anthropic Commercial Terms | Effective June 17, 2025 | A.3; B; D.4; E |
 | Gemini API Additional Terms | Effective March 23, 2026 | Use Restrictions; Generated Content; data and Grounding sections |
+| Google US Terms of Service | Effective July 30, 2026; United States version | Generated-content restriction under service abuse |
+| Google Cloud Service Specific Terms | Last modified October 8, 2026; account applicability must be checked | 17; detailed report covers exceptions |
+| Google Workspace Service Specific Terms | Last modified August 31, 2026 | 12.4; 12.8; 12.11 |
 | Gemini Apps Privacy Hub | Live guidance; not treated as a contractual effective date | Keep Activity; temporary chats; feedback |
 | Grok consumer terms | Last updated September 11, 2026; SpaceXAI LLC named | 4 |
 | Grok enterprise terms | Last updated August 14, 2026 | 3.1–3.2 |
