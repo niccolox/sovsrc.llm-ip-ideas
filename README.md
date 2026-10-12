@@ -23,6 +23,7 @@ SIP expands what the project records, recognizes and rewards through evidence an
 | [Gemini commercial restrictions on competing LLMs](docs/GEMINI_COMMERCIAL_RESTRICTIONS_RESEARCH.md) | API, Cloud, consumer and Workspace restrictions; limited exceptions, commercial exposure and the separate Gemma licensing route. |
 | [Upstream AI data suppliers and development communities](docs/UPSTREAM_AI_DATA_SUPPLIERS_RESEARCH.md) | Expert-data suppliers, licensed-content sellers, lab relationships, industry publications, public and gated communities, and a SIP procurement shortlist. |
 | [Hermes Agent research](docs/HERMES_AGENT_RESEARCH.md) | Architecture, desktop and mobile access, model routing, licensing, deployment and a proposed integration with SIP permissions and content rewards. |
+| [KL3M research for independent model development](docs/KL3M_CLEAN_ROOM_RESEARCH.md) | US provenance, model and dataset distinctions, commercial licensing, certification, clean-room limits and a proposed attribution and rewards pilot. |
 | [Sovereign Source Super Intellectual Property license](licenses/SS-SIP-0.1.md) | Custom license draft for source sharing, contributor attribution and documented influence notices. |
 | [Syndicate marketplace terms](licenses/SYNDICATE-MARKETPLACE-TERMS-0.1.md) | Opt-in participation, listings, commissions, creator rewards, earnings, payouts and appeals. |
 | [Licensing guide and examples](licenses/README.md) | Adoption instructions, open-source design references and unaccepted attribution/order templates. |
