@@ -58,6 +58,8 @@ For every route, separately approve its contract, exact purpose, processors, pro
 
 ## Architecture and deployment
 
+The [OpenCode 2 assessment](OPENCODE_2_SOVEREIGN_SOURCE_RESEARCH.md) proposes a self-hosted engineering and experiment interface with separately admitted models. Keep that optional development service behind scoped SIP tools; production authorization, durable workflows and creator settlement remain in the core services below.
+
 ```mermaid
 flowchart TD
     User[Customer or creator] --> Edge[Identity and API ingress]
