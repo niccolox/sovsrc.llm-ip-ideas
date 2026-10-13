@@ -12,7 +12,27 @@ Keep the existing Nemotron 3 Ultra selection and NVIDIA training path as the ref
 
 SkyRL supplies training infrastructure. SIP must still supply permission checks, source evidence, contribution agreements and accounting. An RL reward is a numerical learning signal; a creator reward is a contractual financial entitlement. They need separate records and decision rules.
 
-### Ten-parameter assessment
+## The SkyRL approach in practice
+
+**Improve an existing LLM by letting it attempt tasks, checking the results and updating its weights to favor successful behavior.** For Sovereign Source, the proposed task environment would contain admitted documents, approved tools and reviewed evaluation criteria.
+
+The training loop is:
+
+1. Give the model a task and access to selected tools.
+2. Let it answer or take several actions, such as searching a collection and reading a source.
+3. Check the outcome and assign a numerical learning score.
+4. Update the model parameters using the scored attempts.
+5. Repeat, then evaluate on tasks excluded from training.
+
+SkyRL coordinates attempts, environments and parameter updates; the operator supplies the model, task material and scoring rules. [System overview](https://docs.skyrl.ai/docs/getting-started/overview).
+
+For example, a proposed SIP task could ask the model to explain a scientific result using an authorized paper. Evaluation would check whether the cited passage supports the answer, required credit survives, and the source-use receipt matches the actual tool activity. Missing evidence should lead to appropriate abstention. Permission checks in the tool service would block unauthorized access independently of the model's learned behavior.
+
+Rule-based validators can provide learning scores without requiring ChatGPT or Claude as a teacher. Semantic judgments, such as whether a passage supports a scientific claim, still need carefully reviewed criteria and reference answers. [Custom environments and scoring](https://docs.skyrl.ai/docs/tutorials/new_env).
+
+**Creator payments follow a separate path:** accepted agreements and verified use determine financial eligibility in the SIP ledger. A higher training score does not create a royalty. Begin with the [small-model pilot](#pilot-and-adoption-criteria), comparing the original model, supervised fine-tuning and supervised fine-tuning plus RL. Base-model lineage and Ultra compatibility remain separate gates, detailed below.
+
+## Ten-parameter assessment
 
 These are project judgments supported by the evidence below, not benchmark rankings.
 
