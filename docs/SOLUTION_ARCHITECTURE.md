@@ -10,6 +10,8 @@ Build the SIP platform with a Rust and Axum application core, Python services us
 
 This design serves the [SIP implementation specification](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md): voluntary syndicates, scoped permissions, reviewed attribution and reproducible contributor accounting. M0–M4 remain a local application pilot using deterministic model and payment adapters. GPU experiments follow separately. Component responsibilities, workload limits and rollout gates below are project design choices; linked documentation supports the underlying technology capabilities.
 
+The [production system plan](PRODUCTION_SYSTEM_PLAN.md) extends this design with conditional local and frontier model routes, deployment and recovery choices, creator-payment operations, launch gates and a worked operating budget. It preserves the current lineage requirement and keeps restricted inference outputs outside training admission.
+
 Contributor-facing views call the compensation program **SIP Creator Rewards** and distinguish qualified use, estimated earnings, earned balances and payouts. These labels map to the existing usage, agreement, ledger and settlement records; eligibility decisions and exact calculations remain in the Rust core. Every pilot payout is labeled simulated.
 
 ## Commercial platform and integration boundaries
@@ -62,7 +64,7 @@ flowchart TD
 
 ## Contracts between Rust and Python
 
-Define the shared wire contracts in a dedicated Pydantic package and export versioned JSON Schema. Generate Rust transport structs where practical and validate both implementations against the same positive and negative fixtures. Keep business rules in Rust and database constraints; a successful deserialization is not an authorization decision. Pydantic supports JSON Schema generation and strict validation, though JSON inputs retain some type-specific allowances that need explicit contract tests. [Pydantic JSON Schema](https://docs.pydantic.dev/latest/concepts/json_schema/), [strict mode](https://docs.pydantic.dev/latest/concepts/strict_mode/).
+Define the shared wire contracts in a dedicated Pydantic package and export versioned JSON Schema. Generate Rust transport structs where practical and validate both implementations against the same positive and negative fixtures. Keep business rules in Rust and database constraints; a successful deserialization is not an authorization decision. Pydantic supports JSON Schema generation and strict validation, though JSON inputs retain some type-specific allowances that need explicit contract tests. [Pydantic JSON Schema](https://pydantic.dev/docs/validation/latest/concepts/json_schema/), [strict mode](https://pydantic.dev/docs/validation/latest/concepts/strict_mode/).
 
 | Contract | Required content |
 | --- | --- |
@@ -92,7 +94,7 @@ Use a defined response-release transaction: concurrent revocation and release se
 
 Pydantic AI supports custom compatible endpoints and a vLLM provider. Select `OpenAIChatModel` for this interface, explicitly configure the provider/profile, and keep endpoint selection in trusted configuration. Compatibility with Chat Completions does not imply support for the Responses API or every structured-output feature. [Compatible APIs](https://pydantic.dev/docs/ai/models/compatible-apis/).
 
-Prefer constrained native JSON output if the exact model/server combination passes the compatibility checks. Otherwise use tested tool output, with prompted JSON and bounded validation retries as a fallback. Schema validity still does not prove a citation is correct. Pydantic AI documents these three output modes and their different guarantees. [Structured output modes](https://ai.pydantic.dev/output/).
+Prefer constrained native JSON output if the exact model/server combination passes the compatibility checks. Otherwise use tested tool output, with prompted JSON and bounded validation retries as a fallback. Schema validity still does not prove a citation is correct. Pydantic AI documents these three output modes and their different guarantees. [Structured output modes](https://pydantic.dev/docs/ai/core-concepts/output/).
 
 Use NVIDIA's Ultra-specific vLLM cookbook as the serving reference. Pin weights, tokenizer, template, parsers and container digest together; review any required remote code before deployment. The current card names `nemotron_v3` for reasoning and `qwen3_coder` for tool parsing. The parser name is a format implementation, not a separate Qwen checkpoint; the ancestry finding comes from the training disclosures. Begin with a proposed 8K application context limit and bounded output, then raise limits only after measurement. [Ultra serving cookbook](https://github.com/NVIDIA-NeMo/Nemotron/blob/main/usage-cookbook/Nemotron-3-Ultra/vllm_cookbook.ipynb), [card configuration](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16#vllm).
 
@@ -130,7 +132,7 @@ The Rust core writes an outbox record in the same transaction as the business ch
 
 Treat execution as at least once. Prefect task caching does not make an external payment, model request or database side effect exactly once. Database uniqueness, immutable inputs and command idempotency supply that guarantee for SIP records. Payment-provider idempotency and reconciliation are a separate production integration.
 
-Use normal asynchronous Pydantic AI calls for interactive requests. For long-running agent workflows, the current Pydantic AI integration offers `PrefectDurability` inside an explicit Prefect flow; its older `PrefectAgent` wrapper is deprecated. Choose the documented API matching the pinned package version and test restart behavior. Do not layer a second orchestration engine over Prefect. [Pydantic AI Prefect integration](https://ai.pydantic.dev/durable_execution/prefect/).
+Use normal asynchronous Pydantic AI calls for interactive requests. For long-running agent workflows, the current Pydantic AI integration offers `PrefectDurability` inside an explicit Prefect flow; its older `PrefectAgent` wrapper is deprecated. Choose the documented API matching the pinned package version and test restart behavior. Do not layer a second orchestration engine over Prefect. [Pydantic AI Prefect integration](https://pydantic.dev/docs/ai/capabilities/durable_execution/prefect/).
 
 Persist only necessary workflow results in approved storage. Cache pure transformations by tenant, source digest, processing version and relevant permission version. Reauthorize when resuming; never cache final authorization or settlement posting. Keep raw prompts, confidential excerpts and private reasoning out of Prefect parameters, logs and public artifacts; configure result persistence explicitly.
 
@@ -150,7 +152,7 @@ NVIDIA publishes post-trained BF16, NVFP4 and Base BF16 releases separately. Bas
 
 Use BF16 training checkpoints as the baseline. Quantized inference artifacts are separate deployment candidates and must be evaluated after conversion. Avoid assuming that a generic transformer LoRA target list, a QLoRA recipe or live adapter serving works for the hybrid Mamba/MoE architecture.
 
-Megatron Bridge supplies Ultra conversion, inference, pretraining, full SFT and LoRA PEFT examples. Use an Ultra-specific recipe, record target modules, and prove save/resume and deployable export before scaling. Replace sample training data with the admitted SIP manifest; neither the sample corpus nor a generic Nano recipe is selected by this architecture. [Ultra model guide](https://docs.nvidia.com/nemo/megatron-bridge/latest/models/nemotron/nemotron3-ultra.html), [Ultra training examples](https://github.com/NVIDIA-NeMo/Megatron-Bridge/blob/main/examples/models/nemotron/nemotron_3/ultra/README.md).
+Megatron Bridge supplies Ultra conversion, inference, pretraining, full SFT and LoRA PEFT examples. Use an Ultra-specific recipe, record target modules, and prove save/resume and deployable export before scaling. Replace sample training data with the admitted SIP manifest; neither the sample corpus nor a generic Nano recipe is selected by this architecture. [Ultra model guide](https://docs.nvidia.com/nemo/megatron-bridge/latest/models/nemotron/nemotron3-ultra.html), [Ultra training examples](https://github.com/NVIDIA-NeMo/Megatron-Bridge/blob/main/examples/models/nemotron/nemotron_3_ultra/README.md).
 
 ## Training program and SIP provenance
 
@@ -187,7 +189,7 @@ Define **cost per verified outcome** as total attributable inference, retry, too
 
 Ultra is a cluster-scale target. Using the nominal 550 billion parameters at two bytes each gives approximately **1.1 TB of raw BF16 weights alone**. Actual artifacts and runtime memory must be measured, including auxiliary tensors, cache, activations, gradients and optimizer state. The 55B active count is not a VRAM sizing rule; NVFP4 serving capacity also needs measurement.
 
-NVIDIA's Ultra Bridge examples reserve at least **2.5 TB for conversion storage**, before training outputs. Their LoRA starting point is **4 × 8-H100 nodes (32 H100 GPUs)** or **4 × 4-GB200 nodes (16 GB200 GPUs)**; the full-SFT examples are substantially larger. These are recipe starting points, not minimum hardware guarantees or an approved compute purchase. Inference and training allocations are separate, and Nano estimates no longer apply. [Ultra hardware and storage guidance](https://github.com/NVIDIA-NeMo/Megatron-Bridge/blob/main/examples/models/nemotron/nemotron_3/ultra/README.md).
+NVIDIA's Ultra Bridge examples reserve at least **2.5 TB for conversion storage**, before training outputs. Their LoRA starting point is **4 × 8-H100 nodes (32 H100 GPUs)** or **4 × 4-GB200 nodes (16 GB200 GPUs)**; the full-SFT examples are substantially larger. These are recipe starting points, not minimum hardware guarantees or an approved compute purchase. Inference and training allocations are separate, and Nano estimates no longer apply. [Ultra hardware and storage guidance](https://github.com/NVIDIA-NeMo/Megatron-Bridge/blob/main/examples/models/nemotron/nemotron_3_ultra/README.md).
 
 | Profile | Services and resources | Purpose |
 | --- | --- | --- |

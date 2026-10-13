@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "observed_date": "2026-10-10",
+  "requested_name": "OLMo-7B-0724-h",
+  "resolved_repository": "allenai/OLMo-7B-0724-hf",
+  "model_revision": "1ee306df318ee15bfe4a76ebd5c002b0105b1ab6",
+  "model_repository_last_modified": "2024-07-16T17:00:55.000Z",
+  "scope": "Public documentation, source code and downloaded small configuration/tokenizer artifacts. This is not a weights or full-corpus audit.",
+  "artifacts": [
+    {
+      "kind": "model_card",
+      "url": "https://huggingface.co/allenai/OLMo-7B-0724-hf/resolve/1ee306df318ee15bfe4a76ebd5c002b0105b1ab6/README.md",
+      "sha256": "1f89ec6879abf6e573ba6c55fb2c556680d1faf4b7d4d0974480d12c0fe1315a",
+      "bytes": 18611
+    },
+    {
+      "kind": "model_configuration",
+      "url": "https://huggingface.co/allenai/OLMo-7B-0724-hf/resolve/1ee306df318ee15bfe4a76ebd5c002b0105b1ab6/config.json",
+      "sha256": "44de7fa4984fec2d3f8388f102c24e93fa178d4aa84fb65e7afe9dadd2dfbf76",
+      "bytes": 610
+    },
+    {
+      "kind": "tokenizer_configuration",
+      "url": "https://huggingface.co/allenai/OLMo-7B-0724-hf/resolve/1ee306df318ee15bfe4a76ebd5c002b0105b1ab6/tokenizer_config.json",
+      "sha256": "78a839c7851f14f9fb30e664c2b46166dc0628f2900679e5ec160656f702edff",
+      "bytes": 5372
+    },
+    {
+      "kind": "target_tokenizer",
+      "url": "https://huggingface.co/allenai/OLMo-7B-0724-hf/resolve/1ee306df318ee15bfe4a76ebd5c002b0105b1ab6/tokenizer.json",
+      "sha256": "a094266ac6c4982efba277bc251349a5a6d6ad37efb39a2a90f53d8be2a40a40",
+      "bytes": 2115417
+    },
+    {
+      "kind": "ai2_tokenizer",
+      "url": "https://huggingface.co/allenai/gpt-neox-olmo-dolma-v1_5/resolve/8571ec72989ee67572049df907dec46cebe92335/tokenizer.json",
+      "sha256": "9ad33b4b39a9f83973c3f8c42a01948dd5b877a28ac9a5356956c4ff4ed0b714",
+      "bytes": 2115113
+    },
+    {
+      "kind": "gpt_neox_tokenizer",
+      "url": "https://huggingface.co/EleutherAI/gpt-neox-20b/resolve/c292233c833e336628618a88a648727eb3dff0a7/tokenizer.json",
+      "sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624",
+      "bytes": 2113710
+    },
+    {
+      "kind": "dataset_card",
+      "url": "https://huggingface.co/datasets/allenai/dolma/resolve/7f48140530a023e9ea4c5cfb141160922727d4d3/README.md",
+      "sha256": "5379c6cbd2b567c0630578a27e0061346b6b89489e71039d9b2b1d176d414635",
+      "bytes": 8747
+    },
+    {
+      "kind": "published_training_configuration",
+      "url": "https://raw.githubusercontent.com/allenai/OLMo/090253dac6688f2532509daa7aa2eb5fae50e956/configs/official-0724/OLMo-7B-0424.yaml",
+      "sha256": "493b4e62a8d9dabb7d7984e48308c62a77d5bca69e4d86afa474a4a5463a07de",
+      "bytes": 144684
+    },
+    {
+      "kind": "published_training_configuration",
+      "url": "https://raw.githubusercontent.com/allenai/OLMo/090253dac6688f2532509daa7aa2eb5fae50e956/configs/official-0724/OLMo-7B-0724.yaml",
+      "sha256": "493b4e62a8d9dabb7d7984e48308c62a77d5bca69e4d86afa474a4a5463a07de",
+      "bytes": 144684
+    },
+    {
+      "kind": "filter_source",
+      "url": "https://raw.githubusercontent.com/allenai/dolma/669f534823b08d266a8fff01f8a1c916a5a56576/python/dolma/taggers/quality.py",
+      "sha256": "845a6f35a1ffaff618da1f9558315f97ad79884f7f400407df2d2db463c08070",
+      "bytes": 2586
+    },
+    {
+      "kind": "filter_source",
+      "url": "https://raw.githubusercontent.com/allenai/dolma/669f534823b08d266a8fff01f8a1c916a5a56576/python/dolma/taggers/language.py",
+      "sha256": "d259ec3cf2f6eeb035e132112d4824a6e4766c77149195f45842cc3a4b40cc14",
+      "bytes": 12320
+    }
+  ],
+  "tokenizer_comparisons": [
+    {
+      "reference_repository": "allenai/gpt-neox-olmo-dolma-v1_5",
+      "reference_revision": "8571ec72989ee67572049df907dec46cebe92335",
+      "target_vocabulary_size": 50280,
+      "reference_vocabulary_size": 50280,
+      "vocabulary_identical": true,
+      "merge_rules_identical": true,
+      "target_merge_rule_count": 50009,
+      "reference_merge_rule_count": 50009,
+      "shared_token_count": 50280,
+      "shared_tokens_with_same_id": 50280,
+      "normalizer_identical": true,
+      "pre_tokenizer_identical": true,
+      "post_processor_identical": false
+    },
+    {
+      "reference_repository": "EleutherAI/gpt-neox-20b",
+      "reference_revision": "c292233c833e336628618a88a648727eb3dff0a7",
+      "target_vocabulary_size": 50280,
+      "reference_vocabulary_size": 50254,
+      "vocabulary_identical": false,
+      "merge_rules_identical": true,
+      "target_merge_rule_count": 50009,
+      "reference_merge_rule_count": 50009,
+      "shared_token_count": 50254,
+      "shared_tokens_with_same_id": 50253,
+      "normalizer_identical": true,
+      "pre_tokenizer_identical": true,
+      "post_processor_identical": false
+    }
+  ],
+  "configuration_comparison": {
+    "paths": [
+      "configs/official-0724/OLMo-7B-0424.yaml",
+      "configs/official-0724/OLMo-7B-0724.yaml"
+    ],
+    "repository_revision": "090253dac6688f2532509daa7aa2eb5fae50e956",
+    "byte_identical": true
+  },
+  "supporting_sources": {
+    "openhermes_dataset_card": "https://huggingface.co/datasets/teknium/OpenHermes-2.5/resolve/b82037821055c377bed0d495e72e46de3bc72e84/README.md",
+    "dolma_quality_filter_training_description": "https://allenai.org/blog/olmo-1-7-7b-a-24-point-improvement-on-mmlu-92b43f7d269d",
+    "rope_research": "https://arxiv.org/html/2104.09864v5",
+    "olmo_original_paper": "https://arxiv.org/html/2402.00838v3",
+    "megawika_paper": "https://arxiv.org/html/2307.07049v1",
+    "training_history_issue": "https://github.com/allenai/OLMo/issues/746"
+  },
+  "limitations": [
+    "Model weight shards were not downloaded or independently matched to training checkpoints.",
+    "Full Dolma corpus, quality-classifier binary and its exact training sample were not downloaded.",
+    "Public recipe evidence does not establish every generator, filtering dependency or original content right.",
+    "Repository revisions record artifacts observed on the audit date, not proof that the same source revision executed the historical training run.",
+    "Configuration similarity does not prove an April-to-July checkpoint continuation path."
+  ],
+  "reproduction": "Fetch each artifact URL and compare raw-byte SHA-256. Parse tokenizer JSON; compare model.vocab maps, model.merges arrays, normalizer, pre_tokenizer and post_processor. Shared-token ID matches count equal vocabulary values on the intersection of keys."
+}

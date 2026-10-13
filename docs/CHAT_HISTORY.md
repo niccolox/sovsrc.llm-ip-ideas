@@ -37,7 +37,7 @@ The spec and README are updated. I checked the document links, section numbering
 
 ### Assistant — answer
 
-Updated the [specification to v0.3](/home/niccolox/Projects/sovsrc.llm/docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) and [README](/home/niccolox/Projects/sovsrc.llm/README.md) with:
+Updated the [specification to v0.3](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) and [README](../README.md) with:
 
 - **Super Sovereign Source LLM IP** as the project name.
 - **Super Intellectual Property (SIP)** covering IP, ideas, contributions and influences.
@@ -73,7 +73,7 @@ The architecture now gives each tool a clear role: Axum owns permissions and fin
 
 ### Assistant — answer
 
-Saved the [solution architecture](/home/niccolox/Projects/sovsrc.llm/docs/SOLUTION_ARCHITECTURE.md) and updated the [spec to v0.4](/home/niccolox/Projects/sovsrc.llm/docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md).
+Saved the [solution architecture](SOLUTION_ARCHITECTURE.md) and updated the [spec to v0.4](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md).
 
 | Technology | Recommended role |
 |---|---|
@@ -104,7 +104,7 @@ I’ll update the README’s opening to clearly describe an LLM that respects in
 
 ### Assistant — answer
 
-Updated the [README](/home/niccolox/Projects/sovsrc.llm/README.md) with **“An LLM that respects intellectual property and ideas.”** The introduction now emphasizes permission, attribution and contributor compensation.
+Updated the [README](../README.md) with **“An LLM that respects intellectual property and ideas.”** The introduction now emphasizes permission, attribution and contributor compensation.
 
 ---
 
@@ -134,9 +134,9 @@ The license package and spec updates are complete. Document checks passed, and t
 
 Created **Sovereign Source Super Intellectual Property License v0.1**:
 
-- [License draft](/home/niccolox/Projects/sovsrc.llm/licenses/SS-SIP-0.1.md): source sharing, required attribution, documented influences and enforcement provisions.
-- [Marketplace terms](/home/niccolox/Projects/sovsrc.llm/licenses/SYNDICATE-MARKETPLACE-TERMS-0.1.md): syndicate authority, listings, commissions, revenue splits and disputes.
-- [Adoption guide and templates](/home/niccolox/Projects/sovsrc.llm/licenses/README.md).
+- [License draft](../licenses/SS-SIP-0.1.md): source sharing, required attribution, documented influences and enforcement provisions.
+- [Marketplace terms](../licenses/SYNDICATE-MARKETPLACE-TERMS-0.1.md): syndicate authority, listings, commissions, revenue splits and disputes.
+- [Adoption guide and templates](../licenses/README.md).
 
 Updated the README and spec to v0.5. Checks passed.
 
@@ -164,7 +164,7 @@ The drafts now use **SIP Creator Rewards**, “qualified use,” “estimated ea
 
 ### Assistant — answer
 
-Updated the [README](/home/niccolox/Projects/sovsrc.llm/README.md), specification and licensing documents with **SIP Creator Rewards**, borrowing vocabulary from [X’s Original Content Rewards](https://help.x.com/en/using-x/original-content-rewards).
+Updated the [README](../README.md), specification and licensing documents with **SIP Creator Rewards**, borrowing vocabulary from [X’s Original Content Rewards](https://help.x.com/en/using-x/original-content-rewards).
 
 The language now emphasizes original contributions, eligibility, qualified use, earnings and payouts. Attribution obligations and agreed compensation remain intact.
 
@@ -200,7 +200,7 @@ The draft now contains the eight-provider comparison and 28 primary sources, plu
 
 ### Assistant — answer
 
-Created the [research audit](/home/niccolox/Projects/sovsrc.llm/docs/FRONTIER_LAB_IP_AND_CREATOR_REWARDS_AUDIT.md) and linked it from README.
+Created the [research audit](FRONTIER_LAB_IP_AND_CREATOR_REWARDS_AUDIT.md) and linked it from README.
 
 It covers eight organizations and 28 primary sources, comparing ownership, training permissions, attribution and compensation. It also proposes SIP royalties, creator rewards, syndicate controls and Nemotron release requirements.
 
@@ -246,7 +246,7 @@ The index is written and linked from the README. It includes source notes for ev
 
 ### Assistant — answer
 
-Created the [single-page comparison index](/home/niccolox/Projects/sovsrc.llm/docs/usa-sovereign-ai-index.html) and [Markdown edition](/home/niccolox/Projects/sovsrc.llm/docs/USA_SOVEREIGN_AI_INDEX.md):
+Created the [single-page comparison index](usa-sovereign-ai-index.html) and [Markdown edition](USA_SOVEREIGN_AI_INDEX.md):
 
 - 10 US lab/provider candidates.
 - 10 open-source paths, including Stanford, Berkeley and MIT.
@@ -292,7 +292,7 @@ Yes—older NVIDIA models offer candidates with **no disclosed Qwen ancestry**:
 
 **My recommendation is Minitron-4B-Base for research.** Its card specifies R&D use. Public disclosures do not establish that every upstream training source and teacher was Qwen-free.
 
-Updated the [research report](/home/niccolox/Projects/sovsrc.llm/docs/NEMOTRON_NO_QWEN_RESEARCH.md), comparison index, README and architecture. The Qwen-dependent Nano checkpoint remains excluded; the entire Nemotron family is not.
+Updated the [research report](NEMOTRON_NO_QWEN_RESEARCH.md), comparison index, README and architecture. The Qwen-dependent Nano checkpoint remains excluded; the entire Nemotron family is not.
 
 ---
 
@@ -316,7 +316,7 @@ The specification and architecture now target Ultra, including its OpenMDW licen
 
 ### Assistant — answer
 
-Set **Nemotron 3 Ultra** as the project target in the README, [specification](/home/niccolox/Projects/sovsrc.llm/docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md), architecture and comparison index:
+Set **Nemotron 3 Ultra** as the project target in the README, [specification](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md), architecture and comparison index:
 
 - **BF16:** reference model and training.
 - **NVFP4:** serving candidate.
@@ -347,7 +347,7 @@ The article is now reflected in the research review and Ultra evaluation criteri
 
 ### Assistant — answer
 
-Incorporated the article into the [research review](/home/niccolox/Projects/sovsrc.llm/docs/NEMOTRON_PERFORMANCE_SOURCE_REVIEW.md), README, specification, architecture and comparison index.
+Incorporated the article into the [research review](NEMOTRON_PERFORMANCE_SOURCE_REVIEW.md), README, specification, architecture and comparison index.
 
 **Nemotron 3 Ultra remains selected.** The review distinguishes the article’s Super results, checks its claims against primary sources, and adds evaluation by cost per verified outcome—including retries, validation and attribution quality.
 
@@ -411,7 +411,7 @@ I’m making NVIDIA AI Enterprise the recommended commercial foundation, with To
 
 ### Assistant — answer
 
-Updated the [specification to v0.7](/home/niccolox/Projects/sovsrc.llm/docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md:213) with:
+Updated the [specification to v0.7](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md#commercial-platform-decision-and-research) with:
 
 - NVIDIA AI Enterprise/NeMo recommendation and platform comparison.
 - TollBit licensing and Stripe Connect payout requirements.
@@ -449,7 +449,7 @@ The strongest opportunity for Sovereign Source is upstream too: creator syndicat
 
 ### Assistant — answer
 
-Created the [upstream supplier research report](/home/niccolox/Projects/sovsrc.llm/docs/UPSTREAM_AI_DATA_SUPPLIERS_RESEARCH.md) and linked it from the README and terms audit. It maps **24 suppliers and related organizations**, plus publications and development communities.
+Created the [upstream supplier research report](UPSTREAM_AI_DATA_SUPPLIERS_RESEARCH.md) and linked it from the README and terms audit. It maps **24 suppliers and related organizations**, plus publications and development communities.
 
 The strongest findings:
 

@@ -163,6 +163,8 @@ Add a synthetic marketplace journey: a steward publishes a reviewed commission o
 
 Use a modular Rust application core and a Python AI service, with Python background workflows managed by Prefect. The [solution architecture](SOLUTION_ARCHITECTURE.md) defines component boundaries, request and training flows, failure recovery, source references and acceptance gates.
 
+The [production system plan](PRODUCTION_SYSTEM_PLAN.md) adds research for open-source infrastructure, conditional frontier API routes, deployment operations, service objectives, creator-payment reconciliation and production budgeting. Its proposed production gates supplement later milestones; M0–M4 remain the local pilot scope.
+
 | Technology | Selected responsibility |
 | --- | --- |
 | React and TypeScript | Contributor, syndicate, customer and reviewer web interface |
