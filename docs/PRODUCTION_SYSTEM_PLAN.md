@@ -209,6 +209,8 @@ For adaptation, calculate `GPU count × measured run hours × contracted hourly 
 
 The schedule assumes a dedicated team, timely source agreements and accessible infrastructure. Gates determine progression; the calendar does not certify production readiness.
 
+The [startup go-to-market plan](STARTUP_GO_TO_MARKET_PLAN.md) sequences paid readiness work, design partnerships and limited production pilots around these gates. Its marketing budget is separate from implementation funding, and its proposed prices and revenue targets require customer validation.
+
 | Phase | Planning window | Owner and deliverable | Exit evidence |
 | --- | --- | --- | --- |
 | Scope and admission | Weeks 1–2 | Product/rights lead: one customer workflow, source contracts, processor policy and model register | Accepted earning rules and benchmark tasks; unresolved model routes remain disabled. |
