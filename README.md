@@ -8,10 +8,13 @@ SIP expands what the project records, recognizes and rewards through evidence an
 
 **Status: specification stage.** This workspace contains project and implementation specifications. The application, trained model and production payment system have not been implemented.
 
+**Research recommendation, 12 October 2026:** evaluate KL3M for a provenance-focused pilot and OLMo-core with newly initialized weights for a foundation trained on SIP-admitted sources. Self-hosted gpt-oss-120b is a conditional teacher candidate; no frontier teacher has qualified under the strict lineage requirement. The [consolidated model decision](docs/MODEL_SELECTION_RESEARCH_SUMMARY.md) explains the tradeoffs and the existing Nemotron 3 Ultra selection.
+
 ## Documentation
 
 | Document | Purpose |
 | --- | --- |
+| [Research summary: foundation model and training teacher](docs/MODEL_SELECTION_RESEARCH_SUMMARY.md) | Consolidated recommendation across source rights, commercial permissions, lineage, model capability, training tools, suppliers, attribution and creator rewards. |
 | [USA Sovereign Source AI index — single-page comparison](docs/usa-sovereign-ai-index.html) ([Markdown](docs/USA_SOVEREIGN_AI_INDEX.md)) | Ten US lab/provider candidates and ten open-source paths across ten parameters, including Berkeley, Stanford and MIT; licenses, ancestry, IP permissions and creator rewards. |
 | [Current project and implementation specification, v0.7](docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.md) | SIP framework, syndicate marketplace, commercial-platform research, requirements, architecture, APIs, milestones and acceptance tests. |
 | [Solution architecture and Nemotron training plan](docs/SOLUTION_ARCHITECTURE.md) | Researched stack responsibilities, Rust/Python contracts, Prefect workflows, PostgreSQL isolation, model selection and training gates. |
