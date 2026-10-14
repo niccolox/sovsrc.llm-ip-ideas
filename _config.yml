@@ -1,0 +1,21 @@
+title: Sovereign Source AI
+description: An LLM platform that respects intellectual property and ideas through permission, attribution and contributor rewards.
+url: https://sovsrc.si
+baseurl: ""
+theme: jekyll-theme-primer
+
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
+
+exclude:
+  - output

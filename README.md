@@ -2,6 +2,8 @@
 
 **An LLM that respects intellectual property and ideas.**
 
+[Website and documentation](https://sovsrc.si)
+
 Super Sovereign Source LLM IP (`sovsrc.llm`) aims to build a capable large language model that uses source material with permission, recognizes the people behind it and lets eligible creators earn from agreed contribution use. Its **Super Intellectual Property (SIP)** framework recognizes works, ideas, contributions and influences through scoped permissions, AI-assisted attribution, voluntary contributor syndicates and auditable creator rewards.
 
 SIP expands what the project records, recognizes and rewards through evidence and agreements. It is a proposed framework, not an assertion that a new statutory IP right already exists. Ownership, permission, credit, governance and payment are recorded separately.
@@ -230,3 +232,7 @@ Project commitments are distinct from government policy and legal requirements. 
 ## Working in this workspace
 
 The project directory is `/home/niccolox/Projects/sovsrc.llm`. The original project specification is preserved under `docs/origin/`; the implementation specification is under `docs/`. Follow applicable `AGENTS.md` instructions when adding implementation work. Any synced files under `sources/` remain read-only references.
+
+### GitHub Pages
+
+The documentation site uses `sovsrc.si` and publishes from the root of `master`. GitHub Pages builds it with Jekyll using `_config.yml`; `CNAME` preserves the custom domain. The README supplies the homepage, and Markdown links are converted to the corresponding web pages. Push documentation changes to `master` to publish them through the Pages build.
