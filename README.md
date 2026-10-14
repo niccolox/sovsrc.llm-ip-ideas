@@ -14,7 +14,7 @@ SIP expands what the project records, recognizes and rewards through evidence an
 
 | Document | Purpose |
 | --- | --- |
-| [Superintelligence should be a win for humans and machines](docs/SUPERINTELLIGENCE_SHARED_PROSPERITY_ARTICLE.md) | Opinion article contrasting extraction and replacement with shared gains, contributor rewards, voluntary syndicates and accountable human control. |
+| [Superintelligence should be a win for humans and machines](docs/SUPERINTELLIGENCE_SHARED_PROSPERITY_ARTICLE.md) | Opinion article contrasting extractive vibe cloning with content rewards, shared gains, upstream attribution, voluntary syndicates and accountable human control. |
 | [Startup go-to-market plan](docs/STARTUP_GO_TO_MARKET_PLAN.md) ([tactic register](docs/STARTUP_GTM_TACTIC_REGISTER.md)) | First customer segment, paid readiness and pilot offers, creator supply, pricing and cost tests, founder-led acquisition, 90-day milestones and a conditional 12-month revenue plan. |
 | [SaaS business plan for markets and community syndicates](docs/SAAS_MARKETS_AND_SYNDICATES_BUSINESS_PLAN.md) | Strategy, operations and tactics for industry knowledge first and financial research second; Dolma integration, syndicate governance, content rewards, pricing, funding scenarios and launch gates. |
 | [Research summary: foundation model and training teacher](docs/MODEL_SELECTION_RESEARCH_SUMMARY.md) | Consolidated recommendation across source rights, commercial permissions, lineage, model capability, training tools, suppliers, attribution and creator rewards. |
