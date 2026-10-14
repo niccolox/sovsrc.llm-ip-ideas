@@ -1,18 +1,31 @@
-# Top ten commercial platforms for training an LLM from scratch
+# Commercial offerings for training an LLM from scratch
 
 **Sovereign Source procurement research — 13 October 2026**
 
-**Start with AWS SageMaker AI as the general-purpose managed-training candidate. Compare it with Together GPU Clusters for a portable, explicitly priced GPU route. Evaluate Databricks AI Runtime if an integrated training workflow is the priority, while treating its Public Preview status as a procurement constraint.** NVIDIA DGX Cloud Lepton with a current NeMo training stack is the strongest architectural fit with the project's existing NVIDIA work, subject to provider, region and implementation validation.
+**For Sovereign Source's first small independent model, evaluate Modal and AWS SageMaker AI training jobs. For an enterprise training program, make AWS the default bidder; for supplier-assisted model development, request a Cerebras pay-per-model proposal.** Together GPU Clusters provides a useful portable GPU price comparison. Baseten Training Jobs and Databricks AI Runtime add managed custom-code alternatives, with different availability and operational conditions.
 
 Training from scratch means starting the model's learned weights from a new initialization and training them on an admitted corpus. Continued pretraining, supervised fine-tuning and reinforcement learning applied to an existing checkpoint preserve that checkpoint's ancestry. A product that offers only those operations does not meet this request.
 
-The ten US-provider offerings below form a procurement shortlist, ordered by proposed fit for an independently controlled Sovereign Source training program. The order weighs managed execution, custom-code control, training operations, portability and commercial clarity; it is not a measured performance ranking. The market spans managed training platforms, managed clusters and contracted training services. Calling all ten turnkey SaaS would obscure the engineering work the customer retains.
+The twelve US-provider offerings below span managed training platforms, managed clusters and contracted training services. They are procurement candidates, not a measured performance ranking. A US supplier does not automatically provide US-only processing, an approved model lineage or unrestricted commercial terms. Calling every offer turnkey SaaS would obscure the engineering work the customer retains.
 
-## Comparison of the ten offerings
+## Choose the operating model first
+
+| Need | First candidate | Why it belongs on the shortlist | Condition before purchase |
+| --- | --- | --- | --- |
+| Small research experiment with Python code | **Modal** | Explicit from-scratch language-model example and usage-based execution | Validate region pricing, checkpoint recovery and the 24-hour Function limit |
+| Managed enterprise pretraining | **AWS SageMaker AI** | Documented pretraining jobs and a path to resilient HyperPod clusters | Price the full job configuration and verify capacity |
+| Supplier engineers help deliver the model | **Cerebras Training Cloud** | Advertised pay-per-model design and training service | Contract specifically for new initialization and usable artifact delivery |
+| Portable GPU cluster operated by the team | **Together GPU Clusters** | Customer training code plus public cluster prices | Select clusters, rather than the separate post-training API |
+| Managed scripts with checkpoint-to-serving workflow | **Baseten Training Jobs** | Generally available container-based jobs and downloadable checkpoints | Prove the chosen pretraining implementation and US deployment arrangement |
+| Training integrated with a Databricks estate | **Databricks AI Runtime** | Managed custom code and MLflow workflow | Accept or resolve current Public Preview limitations |
+
+These are fit recommendations based on the documented capabilities cited in the profiles below. They do not establish which provider will have the lowest cost per successfully trained model.
+
+## Comparison of twelve offerings
 
 **Training platform** means managed execution of customer training code. **Managed cluster** means the supplier operates substantial infrastructure while the customer owns the training program. **Training service** can include supplier engineers delivering a contracted model. These distinctions matter more than a product's use of the word “training.”
 
-| Priority | Commercial offering | Route to training from scratch | Best fit for Sovereign Source | Main qualification |
+| No. | Commercial offering | Route to training from scratch | Best fit for Sovereign Source | Main qualification |
 | --- | --- | --- | --- | --- |
 | 1 | **AWS SageMaker AI training jobs and HyperPod** | Training platform plus resilient clusters; custom containers and pretraining workflows | Enterprise training with a path from bounded jobs to sustained distributed runs | Quotas, regional capacity, storage and networking must be priced separately |
 | 2 | **Google Cloud custom/serverless training** | Managed custom training; the Vertex AI documentation path now redirects to Gemini Enterprise Agent Platform | Teams wanting managed jobs and Google's GPU/TPU ecosystem | Select the custom-training service and supported accelerator path; Gemini model tuning is a different product |
@@ -24,10 +37,30 @@ The ten US-provider offerings below form a procurement shortlist, ordered by pro
 | 8 | **Lambda 1-Click Clusters** | Reserved interconnected GPUs with managed orchestration | A bounded GPU reservation and portable training code | Current advertised cluster tiers start at 16 GPUs and a two-week term; smaller experiments need another offer |
 | 9 | **Cerebras Training Cloud** | Specialized training cloud, with hourly or contracted model-delivery options | Teams willing to evaluate an alternative accelerator and supplier-assisted training | Confirm architecture support, US processing location, checkpoint export and the exact training agreement |
 | 10 | **Crusoe Managed Slurm** | Managed cluster orchestration for customer training jobs | Teams that want a familiar Slurm workflow and managed infrastructure | Training code, corpus design and durable recovery remain customer responsibilities |
+| 11 | **Modal** | Serverless customer Python/PyTorch code, with an explicit small language-model pretraining example | Small experiments and a possible path to distributed jobs | Durable checkpoints, Function time limits, regional pricing and GPU concurrency need explicit configuration |
+| 12 | **Baseten Training Jobs** | Managed containers running customer training scripts across GPU nodes | Teams wanting less infrastructure work and integrated deployment | Fresh-model support is inferred from custom-code execution; validate it in a pilot; Loops is a separate post-training offer |
 
 The linked evidence in the profiles identifies what each platform actually supplies. For generic custom-code platforms, the ability to run a newly initialized language model is a technical inference from their execution model, not proof that a particular LLM recipe has been tested there. Require a working pilot before a substantial commitment.
 
 ## Provider profiles and evidence
+
+### Modal
+
+Modal publishes an example that trains a small language model from a new initialization, demonstrating more than a fine-tuning-only workflow. It runs customer Python/PyTorch code and also documents multi-node training through clustered Functions. The small example establishes the execution route; its toy corpus and runtime are not a budget or quality forecast for Sovereign Source. [From-scratch example](https://modal.com/docs/examples/hp_sweep_gpt), [Multi-node training](https://modal.com/docs/guide/multi-node-training)
+
+Function execution is limited to 24 hours per attempt. Multi-node failures and preemptions affect the whole cluster, so a long program needs durable training-state checkpoints and tested restart logic. Automatic retries alone do not restore optimizer or data-loader state. [Timeouts](https://modal.com/docs/guide/timeouts), [Cluster fault behavior](https://modal.com/docs/guide/multi-node-clusters)
+
+For US operation, pin the relevant execution and routing regions and inspect storage and external integrations. Modal documents US durable storage and logs, but region selection carries a price multiplier; US execution must be included in the costed configuration. [Data residency](https://modal.com/docs/guide/data-residency)
+
+The public base rates convert to about **$3.95/H100-hour** and **$6.25/B200-hour**, before CPU, memory and other applicable charges. The Starter plan advertises 10 concurrent GPUs; Team lists 50 and a $250 monthly plan fee plus usage. Capacity and multi-node requirements still need validation. Modal is a practical first pilot candidate, not an assurance of uninterrupted frontier-scale capacity. [Pricing and plan limits](https://modal.com/pricing)
+
+### Baseten Training Jobs
+
+Baseten distinguishes **Training Jobs, generally available**, from **Loops, in early access**. Jobs runs customer scripts in containers; Loops concentrates on reinforcement learning and supervised post-training. Select Jobs for an independently initialized model. The feasibility of a specific pretraining recipe is an inference from the custom-code interface and must be demonstrated. [Training products](https://www.baseten.co/products/training/)
+
+The Jobs documentation describes multi-node execution, packaged training frameworks, checkpoint synchronization, download and resume. These are useful foundations for Sovereign Source's portability requirements. Preserve all required optimizer, scheduler, RNG and data-position state in the checkpoint; synchronizing files does not prove that a script saved sufficient state. [Training Jobs overview](https://docs.baseten.co/training/overview)
+
+Baseten publishes a separate Training price table, including H100 at $0.10833 per minute, approximately **$6.50 per GPU-hour**. Obtain the actual region, GPU topology, storage and support configuration before comparing it with another service. Product-page statements about artifact ownership should be reflected in the applicable agreement. [Training rate card](https://www.baseten.co/pricing/)
 
 ### AWS SageMaker AI
 
@@ -99,6 +132,18 @@ Crusoe documents managed Slurm orchestration with a control plane, login nodes, 
 
 Use this as another portable Slurm option when the team's preferred training framework fits the offered hardware. Quote the actual node set, networking, shared storage and service scope. Crusoe's serverless fine-tuning quickstart is a separate LoRA product and does not establish a serverless pretraining service. [Product quickstarts](https://docs.cloud.crusoe.ai/quickstart/overview/index.html)
 
+## Training products that do not establish a from-scratch route
+
+The precise product matters even when its supplier also sells general training infrastructure.
+
+| Product | Documented operation | Implication for this purchase |
+| --- | --- | --- |
+| **Thinking Machines Tinker hosted API** | LoRA fine-tuning, SFT, RL, preference optimization and distillation on supported models | Its documented API does not establish customer-controlled fresh foundation initialization. Keep it in the post-training category. [Documentation](https://tinker-docs.thinkingmachines.ai/) |
+| **Together Custom Training** | RL and supervised fine-tuning of existing models | Use Together GPU Clusters or a separately agreed pretraining service. [Product](https://www.together.ai/custom-training) |
+| **Baseten Loops** | SDK for RL and SFT, currently early access | Evaluate Baseten Training Jobs for custom pretraining code. [Product distinction](https://www.baseten.co/products/training/) |
+
+A full-weight update can still be fine-tuning: the decisive question is where the starting weights came from. A model catalog entry called “base” normally identifies a released base checkpoint, not proof of fresh initialization. Ask the supplier to demonstrate the launch configuration rather than infer capability from “custom model” marketing.
+
 ## Ten parameters for the purchasing decision
 
 Apply the same requirements to every bidder. A supplier's general “AI training” claim is insufficient for acceptance.
@@ -120,7 +165,23 @@ Parameters 1, 5, 6 and 7 are admission gates. A low hourly price cannot compensa
 
 ## Pricing and budget interpretation
 
-The clearest comparable public examples in this shortlist are GPU-hour rates. Using the pages reviewed on 13 October 2026, the following arithmetic assumes **16 GPUs continuously allocated for 14 days, or 336 hours**:
+The public rates below were reviewed on **13 October 2026**. They illustrate resource charges; they do not price a completed LLM or establish a performance ranking.
+
+### A short experiment
+
+For **8 GPUs allocated for 24 hours**, equivalent to 192 GPU-hours:
+
+| Offer | Published billing unit | Converted USD per GPU-hour | Resource-charge illustration |
+| --- | ---: | ---: | ---: |
+| Modal H100 SXM5 | $0.001097/second | $3.9492 | $758.25 |
+| Modal B200 | $0.001736/second | $6.2496 | $1,199.92 |
+| Baseten Training H100 | $0.10833/minute | $6.4998 | $1,247.96 |
+
+Sources: [Modal pricing](https://modal.com/pricing), [Baseten Training pricing](https://www.baseten.co/pricing/). Totals use the published units before rounding. Modal separately charges CPU and memory; storage, network, region multipliers, paid plans, support and taxes may add cost. Credits and negotiated discounts are excluded. Confirm the available node configuration and concurrency limit; this arithmetic is not a capacity quote. On Modal, longer programs must span checkpointed executions within its Function timeout.
+
+### A sustained cluster allocation
+
+The following assumes **16 GPUs continuously allocated for 14 days, or 336 hours**:
 
 | Offer and billing basis | Listed USD per GPU-hour | Compute-only illustration |
 | --- | ---: | ---: |
@@ -132,6 +193,8 @@ The clearest comparable public examples in this shortlist are GPU-hour rates. Us
 Sources: [Together's cluster prices](https://www.together.ai/pricing) and [Lambda's cluster prices](https://lambda.ai/1-click-clusters). The products have different commitments and service arrangements. These figures exclude other charges and are not matched performance benchmarks, capacity reservations or supplier quotes. A higher-priced accelerator may complete a job sooner; verify that result on the intended workload.
 
 For the other routes, obtain a workload-specific total: AWS publishes resource pricing with additional connected-service costs; Google describes consumption-based managed compute; Azure bills underlying resources; Databricks requires the selected runtime's commercial rate; NVIDIA depends on the chosen platform/provider arrangement; CoreWeave and Crusoe need the actual cluster specification; Cerebras offers hourly or model-delivery pricing that requires workload scoping. An inference price per million tokens cannot price a pretraining run.
+
+### Estimate the whole program
 
 Estimate the run with measured throughput:
 
@@ -145,13 +208,27 @@ program_cost = compute_cost + storage + networking + platform/support fees
 
 Use a wall-clock throughput measurement that includes the overhead being modeled, or add that overhead separately, but not both. Reserved capacity can bill for time after useful training finishes. Distinguish unique source material from repeated epochs and unsuccessful attempts when recording data consumption and rewards.
 
-The first purchase should validate the pipeline, not promise frontier capability. A proposed first model of roughly 100 million to 1 billion parameters can test initialization, provenance, learning curves and exports, with size and token budget chosen by the engineer. That is a suggested experiment class, not a claim that any fixed GPU-hour allocation will produce a commercially useful general model. Scale only after measured results justify the next spend.
+The first purchase should validate the pipeline, not promise frontier capability. Follow the [open-source research stack's proposed 100–350 million parameter pilot](OPEN_SOURCE_RESEARCH_LLM_STACK.md), with expansion toward 1 billion parameters only after learning curves, recovery and economics justify it. The engineer must choose the token budget and hardware after a memory and throughput test. The example allocations above do not imply a particular model size, completion time or commercially useful capability.
+
+## Buying model delivery rather than compute
+
+If Sovereign Source needs external engineers to build the model, use Cerebras' pay-per-model offer as a first request for proposal, not as a fixed-price promise. Its advertised service includes design and training assistance; the statement of work must establish whether the bid covers fresh pretraining, adaptation of an existing model, or both. [Service scope](https://www.cerebras.ai/cloud)
+
+Specify the following deliverables for any contracted development service:
+
+1. **Starting state and inputs:** reviewed architecture, newly initialized weights, tokenizer provenance, approved corpus and separately authorized synthetic data. Require approval before substituting pretrained components.
+2. **Work and responsibilities:** data preparation, training implementation, numerical debugging, infrastructure, evaluation and source-consumption instrumentation, each assigned to a named party.
+3. **Acceptance milestones:** a recoverable small pilot, measured quality on held-out tasks, a spending ceiling and an explicit decision before scale-up. Define how failed runs, delays and scope changes affect payment.
+4. **Independent delivery:** weights, tokenizer, configuration, runnable training code, intermediate checkpoints, optimizer state, logs, source manifests and evaluation artifacts, with a tested restore and serving path.
+5. **Commercial terms:** intended commercialization and competition rights, confidentiality, permitted supplier reuse, sublicensing where needed, data deletion and access after termination. Identify separately licensed dependencies and source obligations.
+
+Neither a compute invoice nor a promise that the customer owns the weights supplies the rights, reproducibility or content-rewards system by itself.
 
 ## Fit with Sovereign Source rights and content rewards
 
 These platforms provide execution services. None of the reviewed offerings establishes SIP's complete combination of member mandates, contribution and influence review, accepted earning agreements, source-use accounting and beneficiary settlement. Sovereign Source should keep those functions in its own application rather than infer them from a provider's model registry or training dashboard.
 
-Reuse the architecture in the [SaaS business plan](SAAS_MARKETS_AND_SYNDICATES_BUSINESS_PLAN.md) and [production system plan](PRODUCTION_SYSTEM_PLAN.md):
+Reuse the architecture in the [SaaS business plan](SAAS_MARKETS_AND_SYNDICATES_BUSINESS_PLAN.md), [production system plan](PRODUCTION_SYSTEM_PLAN.md) and [open-source research stack](OPEN_SOURCE_RESEARCH_LLM_STACK.md):
 
 1. **Authorize and prepare sources.** Rust/Axum and PostgreSQL hold accepted grants and syndicate mandates. Python/Pydantic validates a manifest. Prefect runs approved preparation jobs, including selected Dolma toolkit steps.
 2. **Release an immutable training input.** Retain asset versions, rights references, notices, tokenizer provenance, filtering decisions and the mapping from packed training records to original sources. Only the admitted data crosses into the supplier environment.
@@ -166,7 +243,7 @@ Training-consumption records can support an agreed corpus allocation. They do no
 
 The shortlist retains the project's US-provider focus. Provider nationality does not establish model ancestry, US-only processing or cleared data rights. A cloud that also offers Qwen or DeepSeek can host a separately controlled training job without loading those weights; the job's complete dependency and data chain is what must pass the project's admission policy.
 
-The existing Nemotron 3 Ultra checkpoint has a recorded conflict with the no-Qwen requirement. Moving it to another supplier, further training it or renaming the result does not remove that conflict. The separate [model-selection recommendation](MODEL_SELECTION_RESEARCH_SUMMARY.md) favors evaluating a new foundation through OLMo-core with newly initialized weights and admitted sources. That recommendation is not a prevalidated deployment on all ten services.
+The existing Nemotron 3 Ultra checkpoint has a recorded conflict with the no-Qwen requirement. Moving it to another supplier, further training it or renaming the result does not remove that conflict. The separate [model-selection recommendation](MODEL_SELECTION_RESEARCH_SUMMARY.md) favors evaluating a new foundation through OLMo-core with newly initialized weights and admitted sources. Validate this implementation on the chosen service; a custom-code interface alone is not an integration test.
 
 A fresh weight initialization also does not resolve provenance for a reused tokenizer, learned filter, teacher-generated data or evaluation contamination. Establish their status explicitly. Training on a customer's own permitted data does not require buying a frontier lab's generated training examples.
 
@@ -174,7 +251,9 @@ Keep infrastructure permission and hosted-model output permission distinct. A pr
 
 ## Recommended pilot and shortlist reduction
 
-Invite comparable proposals from **AWS and Together GPU Clusters** first. Add **NVIDIA DGX Cloud Lepton with an identified US compute provider** if NVIDIA support and the chosen training stack are central to the program. If the organization already runs on Databricks, evaluate AI Runtime in parallel with explicit preview conditions rather than adopting a second data platform solely for a demonstration.
+For the first small experiment, compare **Modal and an AWS SageMaker AI training job** using the same admitted OLMo-core program. Include **Baseten Training Jobs** when its managed job and deployment workflow reduces engineering effort. These are alternative execution environments; avoid building three integrations before selecting one pilot.
+
+For sustained GPU training, request comparable proposals from **AWS and Together GPU Clusters**. Add **NVIDIA DGX Cloud Lepton with an identified US compute provider** when NVIDIA support is central. Evaluate **Databricks AI Runtime** where an existing Databricks workflow offsets its current preview constraints. If the team needs model-development engineers as part of the purchase, seek a separately scoped **Cerebras pay-per-model** proposal.
 
 Use the same admitted corpus, newly initialized architecture, tokenizer and precision for comparisons where technically possible. A Cerebras or TPU proposal may need a separate framework port; document numerical and implementation differences instead of treating its speed as an identical benchmark.
 
@@ -188,4 +267,4 @@ Use the same admitted corpus, newly initialized architecture, tokenizer and prec
 | Compare total cost | Actual invoice, productive throughput, engineering hours and projected full-run cost | Price the same useful training outcome and include operational effort |
 | Scale or stop | Reviewed next-stage proposal | Increase spend only after quality, rights, recovery and economics pass |
 
-**Procurement choice:** AWS is the strongest default for a managed enterprise foundation-training program; Together is the first portable GPU price comparison; Databricks is a strong workflow candidate with current preview constraints; NVIDIA is the closest fit to the existing NeMo-oriented engineering plan. CoreWeave, Lambda and Crusoe provide additional cluster competition, Azure and Google may be preferable where their ecosystems already fit, and Cerebras deserves a separately scoped architecture and service evaluation.
+**Recommended first commitment:** one bounded, recoverable experiment on Modal or AWS with fresh weights, an admitted tokenizer and corpus, source-consumption records and independently usable checkpoints. Select a larger platform or development contract only after the pilot establishes the actual quality, operational effort and cost of the Sovereign Source training program.
