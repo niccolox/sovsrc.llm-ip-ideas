@@ -14,6 +14,7 @@ SIP expands what the project records, recognizes and rewards through evidence an
 
 | Document | Purpose |
 | --- | --- |
+| [Minions and community compute for Sovereign Source](docs/MINIONS_SOVEREIGN_COMPUTE_RESEARCH.md) | Analysis of Apple's idle-Mac inference paper and the linked DockYard claim; proposed stack integration, sovereign execution controls, separate compute rewards and a bounded pilot. |
 | [Why paying AI contributors can lower costs and grow demand](docs/CONTENT_REWARDS_AI_SUSTAINABILITY_ARTICLE.md) ([250-word argument](docs/CONTENT_REWARDS_BUSINESS_CASE_250_WORDS.md)) | Article on useful-data acquisition costs, continuing contributor relationships, goodwill and customer growth, with sourced examples, illustrative economics and a practical test of sustainability. |
 | [Content rewards can open the AI investment economy](docs/AI_CIRCULAR_ECONOMY_CONTENT_REWARDS_ARTICLE.md) | Article connecting AI investment flows to contributor income, worker and public benefits, rewards for training data, processes and documents, and auditable agreements; distinguishes Karp's labor discussion from specific payout proposals. |
 | [Superintelligence should be a win for humans and machines](docs/SUPERINTELLIGENCE_SHARED_PROSPERITY_ARTICLE.md) | Opinion article contrasting extractive vibe cloning with content rewards, shared gains, upstream attribution, voluntary syndicates and accountable human control. |
