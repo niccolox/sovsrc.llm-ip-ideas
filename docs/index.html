@@ -1,0 +1,67 @@
+---
+layout: default
+title: Documentation library
+description: Research, specifications, architecture and business plans for AI that respects intellectual property and rewards contributors.
+permalink: /docs/
+is_library: true
+---
+{% assign documents = site.pages | sort: 'title' %}
+{% assign document_count = 0 %}
+{% for document in documents %}
+  {% assign root = document.path | split: '/' | first %}
+  {% assign extension = document.name | split: '.' | last | downcase %}
+  {% if root == 'docs' and extension == 'md' %}
+    {% assign document_count = document_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+<section class="library-hero" aria-labelledby="library-title">
+  <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> The research library</div>
+  <h1 id="library-title">A foundation for<br><em>shared intelligence.</em></h1>
+  <p>Explore the research, architecture and plans behind AI that respects intellectual property, recognizes ideas and rewards the people who contribute.</p>
+  <div class="hero-links">
+    <a class="primary-link" href="{{ '/docs/MODEL_SELECTION_RESEARCH_SUMMARY.html' | relative_url }}">Start with the research summary <span aria-hidden="true">↗</span></a>
+    <a href="{{ '/docs/SOVEREIGN_SOURCE_AI_CODEX_SPEC.html' | relative_url }}">Read the specification →</a>
+  </div>
+</section>
+
+<section class="library-catalog" aria-labelledby="catalog-title">
+  <div class="catalog-toolbar">
+    <div>
+      <p class="eyebrow">Explore the collection</p>
+      <h2 id="catalog-title">All documents <span class="document-count">{{ document_count }}</span></h2>
+    </div>
+    <div class="library-search" hidden>
+      <label for="document-search">Find a document</label>
+      <input type="search" id="document-search" placeholder="Search titles or topics…" autocomplete="off" aria-controls="document-list">
+    </div>
+  </div>
+  <p id="search-status" class="search-status" role="status" aria-live="polite" hidden></p>
+  <ol class="document-list" id="document-list">
+    {% for document in documents %}
+      {% assign root = document.path | split: '/' | first %}
+      {% assign extension = document.name | split: '.' | last | downcase %}
+      {% if root == 'docs' and extension == 'md' %}
+        {% assign reading_minutes = document.content | number_of_words | divided_by: 220 | plus: 1 %}
+        <li class="document-item" data-search="{{ document.title | escape }} {{ document.name | replace: '_', ' ' | escape }}">
+          <a href="{{ document.url | relative_url }}">
+            <span class="document-title">{{ document.title | default: document.name | escape }}</span>
+            <span class="reading-time">{{ reading_minutes }} min read</span>
+            <span class="document-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ol>
+  <div class="empty-state" id="no-results" hidden>
+    <h3>No documents found</h3>
+    <p>Try a model, company or topic such as attribution, training or rewards.</p>
+    <button type="button" id="clear-search">Clear search</button>
+  </div>
+</section>
+
+<section class="library-note" aria-label="About this library">
+  <h2>A living body of research</h2>
+  <p>These documents describe a proposed platform. Read each report's date and evidence limits; newer research may supersede earlier recommendations. License documents are working drafts.</p>
+  <a href="{{ '/licenses/' | relative_url }}">Explore the licensing framework →</a>
+</section>

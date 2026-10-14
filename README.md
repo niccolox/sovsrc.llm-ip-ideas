@@ -4,6 +4,8 @@
 
 [Website and documentation](https://sovsrc.si)
 
+[Browse the documentation library](https://sovsrc.si/docs/) for searchable website pages of every Markdown document in `docs`.
+
 Super Sovereign Source LLM IP (`sovsrc.llm`) aims to build a capable large language model that uses source material with permission, recognizes the people behind it and lets eligible creators earn from agreed contribution use. Its **Super Intellectual Property (SIP)** framework recognizes works, ideas, contributions and influences through scoped permissions, AI-assisted attribution, voluntary contributor syndicates and auditable creator rewards.
 
 SIP expands what the project records, recognizes and rewards through evidence and agreements. It is a proposed framework, not an assertion that a new statutory IP right already exists. Ownership, permission, credit, governance and payment are recorded separately.
@@ -16,6 +18,7 @@ SIP expands what the project records, recognizes and rewards through evidence an
 
 | Document | Purpose |
 | --- | --- |
+| [AI data brokers and licensed-token billing](docs/LICENSED_CONTENT_PREMIUM_TOKEN_BILLING_RESEARCH.md) | Ten content and licensing offerings compared, actual token-price examples, training and resale restrictions, and a proposed premium-context billing model with auditable SIP rewards. |
 | [Distillation as a Service for frontier labs and sovereign AI](docs/DISTILLATION_AS_A_SERVICE_MARKET_RESEARCH.md) | Nine provider routes compared on managed distillation, portable models, teacher permissions, sovereignty, costs and SIP content rewards; includes current AWS and NVIDIA availability changes. |
 | [Ten leading data brokers and suppliers to frontier AI labs](docs/FRONTIER_AI_DATA_BROKERS_TOP_10_REPORT.md) | Side-by-side comparison of ten content brokers and expert-data suppliers across ten parameters, with buyer evidence, permissions, contributor payments and a syndicate procurement plan. |
 | [Minions and community compute for Sovereign Source](docs/MINIONS_SOVEREIGN_COMPUTE_RESEARCH.md) | Analysis of Apple's idle-Mac inference paper and the linked DockYard claim; proposed stack integration, sovereign execution controls, separate compute rewards and a bounded pilot. |

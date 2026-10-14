@@ -3,12 +3,16 @@ description: An LLM platform that respects intellectual property and ideas throu
 url: https://sovsrc.si
 baseurl: ""
 theme: jekyll-theme-primer
+repository: niccolox/sovsrc.llm-ip-ideas
+source_repository_url: https://github.com/niccolox/sovsrc.llm-ip-ideas
+source_branch: master
 
 plugins:
   - jekyll-optional-front-matter
   - jekyll-readme-index
   - jekyll-relative-links
   - jekyll-titles-from-headings
+  - jekyll-sitemap
 
 defaults:
   - scope:
@@ -19,3 +23,10 @@ defaults:
 
 exclude:
   - output
+  - docs/assets
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+titles_from_headings:
+  strip_title: false
