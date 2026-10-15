@@ -5,6 +5,7 @@
 - **Project:** Super Sovereign Source LLM IP (`sovsrc.llm`)
 - **Core framework:** Super Intellectual Property (`SIP`)
 - **Creator program:** SIP Creator Rewards, the proposed program for compensation under accepted contribution agreements.
+- **Standards proposal:** [LLM Rights and Content Awards 1.0, draft 0.1](LLM_RIGHTS_AND_CONTENT_AWARDS_SPEC.md), dated 2026-10-15. Independent W3C-style interoperability proposal for permission, attribution, provenance and contributor awards; not a W3C publication or a replacement for accepted agreements.
 - **Version:** `0.7`
 - **Date:** 2026-10-10
 - **Status:** Proposed implementation specification; no model, funding, licenses or production deployment implied.
