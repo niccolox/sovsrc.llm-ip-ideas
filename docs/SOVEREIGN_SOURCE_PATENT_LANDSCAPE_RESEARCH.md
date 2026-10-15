@@ -8,7 +8,7 @@
 
 Keep the proposed pilot focused on permissioned retrieval, recorded source use and accepted contributor agreements. That remains a practical engineering choice, but **retrieval with rewards is not an established patent safe harbor**. Obtain a claim-by-claim freedom-to-operate assessment before commercial deployment. This landscape is a research screen, not a legal opinion on infringement, validity or patentability.
 
-Related project documents: [LLM Rights and Content Awards standard](LLM_RIGHTS_AND_CONTENT_AWARDS_SPEC.md), [project specification](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md), [licensed-content billing research](LICENSED_CONTENT_PREMIUM_TOKEN_BILLING_RESEARCH.md) and [research LLM stack](OPEN_SOURCE_RESEARCH_LLM_STACK.md).
+Related project documents: [specification versus patents and open standards](SOVEREIGN_SOURCE_SPEC_PATENT_COMPARISON.md), [LLM Rights and Content Awards standard](LLM_RIGHTS_AND_CONTENT_AWARDS_SPEC.md), [project specification](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md), [licensed-content billing research](LICENSED_CONTENT_PREMIUM_TOKEN_BILLING_RESEARCH.md) and [research LLM stack](OPEN_SOURCE_RESEARCH_LLM_STACK.md).
 
 ## How to read the comparison
 
