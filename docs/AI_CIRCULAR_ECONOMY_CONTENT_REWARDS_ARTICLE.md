@@ -14,7 +14,7 @@ Expanding that circle means building an additional path: paying customers suppor
 
 Alex Karp's participation in the debate over AI and labor brings this distribution question into focus. In a discussion with Teamsters president Sean O'Brien, published by American Compass on 6 March 2026, the conversation addressed the risk of deeper inequality, workers' involvement in technology decisions and what it would take for AI to strengthen the middle class. That is a useful starting point for a broader stakeholder approach. [Discussion published by the organizer](https://www.commonplace.org/p/tech-and-labor-friends-or-foes-with).
 
-The argument developed here takes that concern into commercial practice: AI companies should offer affected stakeholders concrete ways to participate in the value they help create. The content-rewards mechanism below is a Sovereign Source proposal, not a direct-payout formula or announced compensation program attributed to Karp or Palantir.
+The argument developed here takes that concern into commercial practice: AI companies should offer affected stakeholders concrete ways to participate in the value they help create. The content-rewards argument here is a Sovereign Source perspective, not a direct-payout formula or announced compensation program attributed to Karp or Palantir.
 
 A separate, explicit public-participation proposal appears in OpenAI's April 2026 *Industrial Policy for the Intelligence Age*. It suggests a Public Wealth Fund, seeded through collaboration between policymakers and industry, that could invest in diversified assets and distribute returns to citizens. This is a policy proposal rather than evidence of an operating dividend scheme. [OpenAI policy paper, p. 7](https://cdn.openai.com/pdf/561e7512-253e-424b-9734-ef4098440601/Industrial%20Policy%20for%20the%20Intelligence%20Age.pdf#page=7).
 
@@ -26,17 +26,7 @@ Consider a small engineering business with a well-maintained troubleshooting lib
 
 That arrangement must distinguish using documents privately for the business's own assistant from contributing them to a model used by other customers. Permission for the first should not silently become permission for the second. The source provider must have authority over the material, and confidential information, personal data and third-party obligations need their own treatment. A company uploading a document does not establish every worker's or customer's consent to broader reuse.
 
-Several forms of contribution could support different earning agreements:
-
-| Contribution | Possible agreed reward | Evidence needed |
-| --- | --- | --- |
-| Training datasets and curated corpora | License fee, minimum guarantee or participation in a defined model-revenue pool | Approved source versions, rights records and training-consumption manifests |
-| Documents used in retrieval and answers | Qualified-use fee or a share of a covered subscription product | Records distinguishing retrieval, provision to the model and citation |
-| Processes and documented workflows | Commission, adoption payment or an agreed share of measured savings | Accepted deliverable, verified adoption and a disclosed comparison baseline |
-| Expert labels, evaluations and corrections | Payment for accepted work, with optional continuing participation | Quality criteria, review records and accepted versions |
-| Ideas, implementations and documented influences | Bounty or a negotiated share in an adopted contribution | A reviewed relationship and an accepted beneficiary agreement |
-
-These mechanisms should reward useful work without pretending that every contribution has the same legal status or can be measured in the same way. Paying someone to document a process does not establish exclusive ownership of the underlying idea. A training record can show that material was consumed; it cannot establish the precise fraction of every answer caused by that material. A fee for verified use and a revenue share for an agreed contribution can operate without inventing that precision.
+Different contributions can justify different agreements, including payment for licensed material, expert work or continuing updates. Those agreements should respect the rights involved and the limits of available evidence. Recognizing an idea does not establish exclusive ownership of it, and a record of training use does not prove the precise influence of a source on every answer.
 
 There are already commercial experiments with compensation beyond conventional page views. Perplexity's Comet Plus announcement describes allocating participating publishers' revenue across human visits, search citations and agent actions. That illustrates how payment rules can acknowledge consumption mediated by AI. It does not establish a universal training-data royalty or prove that every contributor has been compensated. [Perplexity's announcement, French edition](https://www.perplexity.ai/fr/hub/blog/introducing-comet-plus).
 
@@ -46,15 +36,7 @@ AI companies could benefit through better-maintained inputs, expert feedback and
 
 The comparison with extractive vibe cloning is direct. A replacement product can use a person's work as a reference, compete for their customers and leave them outside the transaction. A content-rewards product can invite them into an agreed relationship with credit, income and a defined commercial scope. The difference should be visible in contracts and payments, rather than resting on a platform's description of itself as collaborative. [Related article on shared prosperity and vibe cloning](SUPERINTELLIGENCE_SHARED_PROSPERITY_ARTICLE.md).
 
-Turning that principle into a working business requires a process that contributors can understand. Before use, the parties need a contribution record identifying the source, its version, the person or organization authorized to supply it and the permissions being granted. An accepted agreement should then specify the covered product, qualifying events, payment formula, permitted deductions, beneficiaries, duration and treatment of later model versions.
-
-During operation, training manifests and usage records should connect qualified activity to the applicable agreement. Afterward, an earnings statement should show the relevant revenue or events, the calculation, any adjustment and the resulting balance. Payment confirmation should remain distinct from a payment merely scheduled or initiated. Contributors need access to the evidence necessary to challenge missing credit, incorrect usage records or an unpaid amount.
-
-For process improvements, measurement deserves particular care. A claim that a workflow saved money needs an agreed baseline and a way to separate its effect from other changes. For shared documents, duplicate registrations must not multiply a single entitlement. A syndicate can administer records and payments for many contributors, but its mandate should be explicit, its fees disclosed and each member's credit and agreed share preserved.
-
-Sovereign Source's proposed economics provide one possible illustration. Where an agreement expressly adopts its 20% contributor pool, a product with **$1 million in monthly eligible collected revenue would allocate $200,000 to contributors**. Under the proposed 60/20/20 division, that means $120,000 for the corpus, $40,000 for prompts and $40,000 for accepted ideas, contributions and influences. Beneficiary shares within those categories require their own accepted rules. [Proposed economics](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md#proposed-economics).
-
-Eligible revenue in that proposal deducts refunds, chargebacks, sales taxes and directly charged payment-processing fees; it does not deduct compute, salaries or general overhead. The remaining $800,000 is revenue available for business costs and other obligations, not $800,000 of profit. Retrieval fees, guarantees and other agreements retain their specified treatment. The example is a proposed contract option, not an industry benchmark or evidence of payments already made.
+Trust depends on understandable agreements, accurate attribution and reliable payment. Contributors should be able to understand how their compensation is determined and raise concerns when an agreement is not honored.
 
 A revenue formula can make obligations easier to inspect than a vague promise to share eventual profits. It also creates a real cost that the business must price and fund. Paid demand, contributor payments, infrastructure expense and product quality must work together. Rewards should not be financed indefinitely by new investment while the underlying service lacks viable economics. Nor should contributors have to spend their earnings back on the same platform for the arrangement to appear successful.
 
@@ -62,8 +44,8 @@ Other benefits must extend to people outside the content marketplace. Employers 
 
 Participation should also preserve the commons. Existing open-license rights must remain usable without joining a marketplace or paying a new royalty. Public-domain material should not acquire artificial exclusivity through registration. People who contribute little identifiable data still deserve access to public services and a voice in decisions affecting them. Economic participation is broader than a claim over training material.
 
-Sovereign Source remains at the specification stage. Its proposed Super Intellectual Property framework and voluntary syndicates are intended to connect source permissions, reviewed contributions and auditable earnings. The first useful demonstration would be modest: willing contributors, one valuable product, a clear agreement, verifiable use and payments the business can afford. Its success should be measured by contributor retention and income, customer value, reliable accounting and the cost of administering the arrangement.
+Sovereign Source is a research initiative exploring permission, attribution and contributor rewards. Its public vision is that more capable AI should expand the opportunities available to the people and communities who make knowledge possible. [Project principles](PUBLIC_OVERVIEW.md).
 
 AI's investment economy can grow to include the production of knowledge as deliberately as it includes the production of compute. A technician who maintains a useful manual, a scientist who curates a dataset and a small company that contributes a proven process should have a practical route to share in the value of an AI service built with their participation. Paying them can help sustain both their work and the next generation of useful intelligence.
 
-*Related proposals: [Sovereign Source marketplace terms](../licenses/SYNDICATE-MARKETPLACE-TERMS-0.1.md), [the SaaS plan for markets and community syndicates](SAAS_MARKETS_AND_SYNDICATES_BUSINESS_PLAN.md), and [research on Palantir and sovereign AI](PALANTIR_SOVEREIGN_AI_RESEARCH.md).*
+*Related articles: [Why Paying AI Contributors Can Lower Costs and Grow Demand](CONTENT_REWARDS_AI_SUSTAINABILITY_ARTICLE.md) and [Superintelligence Should Be a Win for Humans and Machines](SUPERINTELLIGENCE_SHARED_PROSPERITY_ARTICLE.md).*

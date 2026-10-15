@@ -26,20 +26,7 @@ Quality is central to the economics. DataComp-LM researchers reported that their
 
 The commercial inference is that paying for well-chosen material could be worthwhile if it improves the resulting dataset. A useful correction, a documented exception or a missing worked example may contribute more than another large batch of familiar text. Any claimed training savings must be demonstrated on the company's own evaluations; payment alone does not make data accurate or useful.
 
-A hypothetical annual procurement comparison makes the distinction between price and cost clearer. Suppose two approaches produce comparable, deduplicated examples for the same domain, with consistent size and acceptance criteria. All figures below are illustrative assumptions, not industry estimates. The first uses material available under suitable public or open terms without contributor fees; both approaches still pay for review.
-
-| Cost or result | Collection without contributor fees | Paid contributor program |
-| --- | ---: | ---: |
-| Discovery and collection | $200,000 | $100,000 |
-| Preparation, correction and refresh | $300,000 | $150,000 |
-| Quality and permission review | $100,000 | $100,000 |
-| Contributor payments | $0 | $250,000 |
-| Additional program and payment administration | $0 | $50,000 |
-| Total annual procurement cost | **$600,000** | **$650,000** |
-| Accepted examples | 10,000 | 20,000 |
-| Cost per accepted example | **$60.00** | **$32.50** |
-
-In this scenario, the company spends $50,000 more overall and obtains twice as many accepted examples. Its cost per accepted example falls by about 46%. That result depends on the assumed reduction in preparation work and increase in useful supply. The program has not reduced the cash budget, and surplus examples have little value if the company does not need them. Independent model evaluations must establish whether the additional material improves the product. Compute costs and any possible reduction in disputes are outside this comparison.
+The relevant comparison is the total cost of useful, permitted material that improves the product. Contributor payments may increase the overall budget while reducing repeated sourcing and preparation work. Whether that trade-off is worthwhile depends on demonstrated quality and customer value; compensation alone does not guarantee savings.
 
 Goodwill adds a second possible benefit. A contributor who can inspect the terms, receive accurate credit and see a payment arrive has concrete evidence of how the company behaves. That can make continued participation easier to justify. It may also encourage introductions to other qualified contributors, lowering the effort required to recruit new sources.
 
@@ -53,13 +40,13 @@ The strongest form of goodwill comes from recurring conduct. Clear earnings stat
 
 Designing the incentives requires care. Paying simply for words, uploads or repeated citations invites duplication and manufactured activity. A more useful arrangement can pay for accepted deliveries, verified updates, documented use or participation in a defined revenue pool. The earning rule should match the contribution and be agreed before use. Training records can establish that material was consumed without pretending to measure its exact causal share of every answer.
 
-Sovereign Source's proposed Super Intellectual Property framework provides one way to organize these relationships. It records works, ideas, contributions and influences, while keeping permission, credit and payment distinct. Voluntary syndicates could administer accepted agreements for communities of contributors and reduce repeated administration. Their authority, fees and member shares need to remain visible. The project is at the specification stage; these are proposed mechanisms to test in a working service. [Project specification](SOVEREIGN_SOURCE_AI_CODEX_SPEC.md).
+Sovereign Source explores the principle that AI should respect permission, recognize contributions and share value with the people whose knowledge makes it useful. Its public articles discuss these goals as proposals, rather than claims of an operating rewards service. [Project principles](PUBLIC_OVERVIEW.md).
 
 Commercial sustainability also depends on how promises are funded. Guaranteed fees create obligations before revenue arrives. Revenue shares rise with the defined revenue base, but still reduce the amount available for compute, staff and other costs. A company must include both in pricing and cash planning. Rewards should be payable as agreed without requiring contributors to buy subscriptions or spend the proceeds back on the platform.
 
 The case for payments is strongest where knowledgeable suppliers can provide scarce material, improve it over time and help a product solve a valuable problem. It is weaker where the material is redundant, the administrative burden is high or the payment rules attract low-quality submissions. Existing open licenses and public-domain material should remain usable on their existing terms. A contributor marketplace should complement those resources while funding additional work and services.
 
-A practical test would start with one domain and compare the paid program with the company's existing lawful sourcing process over the same period. Count contributor fees, staff time, rejected submissions, review and administration. Measure freshness, contributor retention and cost per useful accepted contribution. Then test the resulting model or retrieval service on held-out tasks, and separately track whether community introductions produce customers who stay. Keeping those measures separate prevents a larger dataset or a popular campaign from being mistaken for a viable business.
+Claims about better data economics need evidence. Comparisons should account for the full cost of acquiring and maintaining useful material, the quality of the resulting service and whether customers continue to benefit. A larger dataset or a popular campaign is not, by itself, proof of a sustainable business.
 
 AI companies depend on people continuing to discover, explain, document and improve the world. Paying those people can help sustain the supply of knowledge on which future products depend. When the arrangement also reduces repeated acquisition work and creates relationships that bring in satisfied customers, contributor rewards become an investment in the company's own durability. Shared success can be good procurement, good product development and good business.
 
