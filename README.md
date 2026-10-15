@@ -18,6 +18,7 @@ SIP expands what the project records, recognizes and rewards through evidence an
 
 | Document | Purpose |
 | --- | --- |
+| [Patents relevant to Sovereign Source AI](docs/SOVEREIGN_SOURCE_PATENT_LANDSCAPE_RESEARCH.md) | Twelve US patents and applications compared on attribution, training-data rewards, licensed generation and marketplaces, with claim-specific architecture implications, prior art and review priorities. |
 | [LLM Rights and Content Awards standard](docs/LLM_RIGHTS_AND_CONTENT_AWARDS_SPEC.md) | Independent W3C-style draft defining permission, attribution, training provenance, contributor and syndicate awards, auditable accounting, JSON interchange and conformance tests. |
 | [AI data brokers and licensed-token billing](docs/LICENSED_CONTENT_PREMIUM_TOKEN_BILLING_RESEARCH.md) | Ten content and licensing offerings compared, actual token-price examples, training and resale restrictions, and a proposed premium-context billing model with auditable SIP rewards. |
 | [Distillation as a Service for frontier labs and sovereign AI](docs/DISTILLATION_AS_A_SERVICE_MARKET_RESEARCH.md) | Nine provider routes compared on managed distillation, portable models, teacher permissions, sovereignty, costs and SIP content rewards; includes current AWS and NVIDIA availability changes. |
