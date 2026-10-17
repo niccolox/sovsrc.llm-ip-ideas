@@ -13,6 +13,7 @@ Visit [sovsrc.si](https://sovsrc.si) or browse the [public library](docs/index.h
 ## Public reading
 
 - [Sovereign Source: principles and purpose](docs/PUBLIC_OVERVIEW.md)
+- [Building a Competing AI Model with Nemotron 3 Ultra](docs/NEMOTRON_COMPETING_MODEL_ARTICLE.md)
 - [Superintelligence Should Be a Win for Humans and Machines](docs/SUPERINTELLIGENCE_SHARED_PROSPERITY_ARTICLE.md)
 - [Content Rewards Can Open the AI Investment Economy](docs/AI_CIRCULAR_ECONOMY_CONTENT_REWARDS_ARTICLE.md)
 - [Why Paying AI Contributors Can Lower Costs and Grow Demand](docs/CONTENT_REWARDS_AI_SUSTAINABILITY_ARTICLE.md)
